@@ -131,6 +131,7 @@
     display: block;
     width: auto;
     height: auto;
+    text-align: center;
   }
 
   img {
@@ -156,6 +157,7 @@
     width: 100%;
     padding-left: 0;
     padding-right: 0;
+    text-align: center;
   }
 
   a {
@@ -183,6 +185,7 @@
   @include breakpoint($large) {
     margin-top: 10px;
     margin-bottom: 20px;
+    text-align: center;
   }
 }
 
