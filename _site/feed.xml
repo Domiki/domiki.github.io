@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-10T20:50:28+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Domiki’s Computer Lecture Note</title><subtitle>Coding, coffee, picture, and starlight.</subtitle><author><name>Domiki</name></author><entry><title type="html">알고리즘</title><link href="http://localhost:4000/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/" rel="alternate" type="text/html" title="알고리즘" /><published>2023-03-09T00:00:00+09:00</published><updated>2023-03-11T05:50:00+09:00</updated><id>http://localhost:4000/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98</id><content type="html" xml:base="http://localhost:4000/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/"><![CDATA[<h1 id="좋은-알고리즘이란">좋은 알고리즘이란?</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-16T15:19:48+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Domiki’s Computer Lecture Note</title><subtitle>Coding, coffee, picture, and starlight.</subtitle><author><name>Domiki</name></author><entry><title type="html">알고리즘</title><link href="http://localhost:4000/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/" rel="alternate" type="text/html" title="알고리즘" /><published>2023-03-09T00:00:00+09:00</published><updated>2023-03-11T05:50:00+09:00</updated><id>http://localhost:4000/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98</id><content type="html" xml:base="http://localhost:4000/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/"><![CDATA[<h1 id="좋은-알고리즘이란">좋은 알고리즘이란?</h1>
 
 <h2 id="알고리즘이란">알고리즘이란?</h2>
 
@@ -251,16 +251,23 @@
         <p>ex&gt; \(n!\)(\(n\) 팩토리얼)</p>
 
         <table>
+          <thead>
+            <tr>
+              <th style="text-align: center"> </th>
+              <th style="text-align: center"> </th>
+              <th style="text-align: center"> </th>
+            </tr>
+          </thead>
           <tbody>
             <tr>
-              <td>\(n=0\)인 경우</td>
-              <td>\(n!=1\)</td>
-              <td>base case</td>
+              <td style="text-align: center">\(n=0\)인 경우</td>
+              <td style="text-align: center">\(n!=1\)</td>
+              <td style="text-align: center">base case</td>
             </tr>
             <tr>
-              <td>\(n&gt;0\)인 경우</td>
-              <td>\(n!=(n-1)!\times n\)</td>
-              <td>recursive case</td>
+              <td style="text-align: center">\(n&gt;0\)인 경우</td>
+              <td style="text-align: center">\(n!=(n-1)!\times n\)</td>
+              <td style="text-align: center">recursive case</td>
             </tr>
           </tbody>
         </table>
@@ -323,7 +330,710 @@
   </li>
   <li>Merge Sort(합병 정렬)
     <ol>
-      <li>Divide</li>
+      <li>Divide: 리스트를 반으로 나눈다.</li>
+      <li>Conquer: 왼쪽 리스트와 오른쪽 리스트를 각각 정렬한다.</li>
+      <li>Combine: 정렬된 두 리스트를 하나의 정렬된 리스트로 합병한다.</li>
+    </ol>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">def</span> <span class="nf">merge</span><span class="p">(</span><span class="n">list1</span><span class="p">,</span> <span class="n">list2</span><span class="p">):</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="n">merged_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">list1</span><span class="p">)</span> <span class="ow">and</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">list2</span><span class="p">):</span>
+      <span class="k">if</span> <span class="n">list1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">list2</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+        <span class="n">merged_list</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">list2</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+        <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="n">merged_list</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">list1</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+      
+    <span class="k">return</span> <span class="n">merged_list</span> <span class="o">+</span> <span class="n">list1</span><span class="p">[</span><span class="n">i</span><span class="p">:]</span> <span class="o">+</span> <span class="n">list2</span><span class="p">[</span><span class="n">j</span><span class="p">:]</span>
+    
+  <span class="k">def</span> <span class="nf">merge_sort</span><span class="p">(</span><span class="n">my_list</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+      <span class="k">return</span> <span class="n">my_list</span>
+
+    <span class="n">left_half</span> <span class="o">=</span> <span class="n">my_list</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span><span class="p">]</span>
+    <span class="n">right_half</span> <span class="o">=</span> <span class="n">my_list</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span><span class="p">:]</span>
+
+    <span class="k">return</span> <span class="n">merge</span><span class="p">(</span><span class="n">merge_sort</span><span class="p">(</span><span class="n">left_half</span><span class="p">),</span> <span class="n">merge_sort</span><span class="p">(</span><span class="n">right_half</span><span class="p">))</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Quick Sort(퀵 정렬)
+    <ul>
+      <li>pivot 기준으로 작은 값은 좌측, 큰 값은 우측으로 정렬</li>
+      <li>partition: 그룹 4개로 분류.
+        <ol>
+          <li>Pivot: 기준점</li>
+          <li>Small: Pivot보다 작음</li>
+          <li>Big: Pivot보다 큼</li>
+          <li>Unknown: 아직 모름</li>
+        </ol>
+
+        <ul>
+          <li>
+            <p>과정</p>
+
+            <ol>
+              <li>Unknown, Big은 start에서 시작, Pivot은 end에서 시작</li>
+              <li>Unknown이 Pivot보다 크면 Unknown + 1</li>
+              <li>Unknown이 Pivot보다 작으면 Big과 Unknown이 있는 자리 바꾸고 Unknown, Big + 1</li>
+              <li>Unknown이 Pivot의 위치와 같아지면 Big과 Pivot의 위치 바꾸고 종료</li>
+            </ol>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">def</span> <span class="nf">quicksort</span><span class="p">(</span><span class="n">my_list</span><span class="p">,</span> <span class="n">start</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="bp">None</span><span class="p">):</span>
+  <span class="k">if</span> <span class="n">end</span> <span class="o">==</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="n">end</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+    
+  <span class="k">if</span> <span class="n">start</span> <span class="o">&gt;=</span> <span class="n">end</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">my_list</span>
+    
+  <span class="n">mid</span> <span class="o">=</span> <span class="n">partition</span><span class="p">(</span><span class="n">my_list</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+  <span class="n">quicksort</span><span class="p">(</span><span class="n">my_list</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+  <span class="n">quicksort</span><span class="p">(</span><span class="n">my_list</span><span class="p">,</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">partition</span><span class="p">(</span><span class="n">my_list</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
+  <span class="n">b</span> <span class="o">=</span> <span class="n">start</span>
+  <span class="n">i</span> <span class="o">=</span> <span class="n">start</span>
+  <span class="n">p</span> <span class="o">=</span> <span class="n">end</span>
+
+  <span class="k">while</span><span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">p</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">my_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">my_list</span><span class="p">[</span><span class="n">p</span><span class="p">]:</span>
+      <span class="n">my_list</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">my_list</span><span class="p">[</span><span class="n">b</span><span class="p">]</span> <span class="o">=</span> <span class="n">my_list</span><span class="p">[</span><span class="n">b</span><span class="p">],</span> <span class="n">my_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+      <span class="n">b</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+  <span class="n">my_list</span><span class="p">[</span><span class="n">p</span><span class="p">],</span> <span class="n">my_list</span><span class="p">[</span><span class="n">b</span><span class="p">]</span> <span class="o">=</span> <span class="n">my_list</span><span class="p">[</span><span class="n">b</span><span class="p">],</span> <span class="n">my_list</span><span class="p">[</span><span class="n">p</span><span class="p">]</span>
+  <span class="k">return</span> <span class="n">b</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="dynamic-programming">Dynamic Programming</h2>
+
+<ul>
+  <li>Dynamic Programming의 조건
+    <ol>
+      <li>최적 부분 구조(Optimal Substructure)
+        <ul>
+          <li>부분 문제들의 최적의 답을 이용해서 기존 문제의 최적의 답을 구할 수 있다는 것</li>
+          <li>ex&gt; 피보나치, 최단 경로 찾기(이전 부분 문제의 최적의 경로를 찾고, 그 이후부터 최저의 경로를 찾기)</li>
+        </ul>
+      </li>
+      <li>중복되는 부분 문제(Overlapping Subproblems)
+        <ul>
+          <li>같은 것을 여러 번 해결할 때</li>
+        </ul>
+      </li>
     </ol>
   </li>
-</ul>]]></content><author><name>Domiki</name></author><category term="Algorithm" /><summary type="html"><![CDATA[좋은 알고리즘이란?]]></summary></entry></feed>
+  <li>최적 부분 구조가 있다 → 기존 문제를 부분 문제로 나눠서 풀 수 있다 → 중복되는 부분 문제들이 있을 수 있다 ⇒ Dynamic Programming</li>
+  <li>한 번 계산한 결과를 재활용하는 방식</li>
+  <li>방법
+    <ol>
+      <li>Memoization: 중복되는 계산은 한 번만 계산 후 메모
+        <ul>
+          <li>하향식 접근(Top-down Approach)</li>
+          <li>재귀</li>
+        </ul>
+      </li>
+    </ol>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">def</span> <span class="nf">fib_memo</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">cache</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">cache</span><span class="p">:</span>
+      <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="n">cache</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="n">cache</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">fib_memo</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">cache</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib_memo</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="n">cache</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">cache</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+  
+  <span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">fib_cache</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">return</span> <span class="n">fib_memo</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">fib_cache</span><span class="p">)</span>
+</code></pre></div>    </div>
+
+    <ol>
+      <li>Tabulation: Table 방식으로 정리
+        <ul>
+          <li>상향식 접근(Bottom-up Approach)</li>
+          <li>반복문</li>
+        </ul>
+      </li>
+    </ol>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">def</span> <span class="nf">fib_tab</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">table</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">table</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">table</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">table</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+
+    <span class="k">return</span> <span class="n">table</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+</code></pre></div>    </div>
+
+    <p>** 시간 복잡도 \(O(n)\), 공간 복잡도 \(O(n)\)
+    but, 이전 값과 현재 값만 저장하면 공간 최적화(\(O(1)\)), 모든 계산값을 저장할 필요가 없다면 공간 사용을 최적화!</p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">def</span> <span class="nf">fib_optimized</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">previous</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">current</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">current</span><span class="p">,</span> <span class="n">previous</span> <span class="o">=</span> <span class="n">current</span> <span class="o">+</span> <span class="n">previous</span><span class="p">,</span> <span class="n">current</span>
+      
+    <span class="k">return</span> <span class="n">current</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Memoization과 Tabulation의 공통점과 차이점</p>
+
+    <table>
+  <tr bgcolor="#e9dcbe" style="text-align: center; border-bottom: 2px solid #afa58f">
+    <th> </th>
+    <th class="text-center"> Memoization </th>
+    <th class="text-center"> Tabulation </th>
+  </tr>
+  <tr align="center">
+    <td> 공통점 </td>
+    <td colspan="2"> 둘 다 중복되는 부분 문제의 비효율을 해결 </td>
+  </tr>
+  <tr align="center">
+    <td rowspan="2"> 차이점 </td>
+    <td> 재귀 → 재귀의 문제점과 동일(memory overflow) </td>
+    <td> memory overflow 문제점 X </td>
+  </tr>
+  <tr align="center">
+    <td> 필요없는 계산 안해도됨 </td>
+    <td> 필요없는 계산까지 할 가능성 높음 </td>
+  </tr>
+</table>
+  </li>
+</ul>
+
+<h2 id="greedy-algorithm">Greedy Algorithm</h2>
+
+<ul>
+  <li>미래를 내다보지 않고, 당장 눈 앞에 보이는 최적의 선택을 하는 방식</li>
+  <li>장점: 간단하고 빠르다.</li>
+  <li>단점: 최적의 답이 보장되지 않는다.</li>
+  <li>사용하는 때: 최적의 답이 필요 없을 때, 기존 알고리즘이 너무 느릴 때</li>
+  <li>Greedy Algorithm이 최적의 답을 보장해 주는 문제도 있다.
+    <ul>
+      <li>최적 부분 구조(Optimal Substructure)</li>
+      <li>탐욕적 선택 속성(Greedy Choice Property): 각 단계에서 탐욕스런 선택이 최종 답을 구하기 위한 최적의 선택</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="문제-해결-능력-기르기">문제 해결 능력 기르기</h1>
+
+<details>
+<summary> <b>투자 귀재 규식이 II</b> </summary>
+<div>
+    <p><br />
+  규식이는 친구들 사이에서 투자의 귀재로 알려져 있습니다. 페이수북과 인수타그램에 자신의 성과를 과시하기 때문인데요. 사실 규식이가 그 정도의 실력자는 아닙니다. 성과가 좋을 때에만 SNS에 공유해서 그렇게 비춰질 뿐이죠. 계속해서 멋진 모습을 보여주기 위해, 특정 기간 중 수익이 가장 큰 구간을 찾아내는 함수 <strong><code class="language-plaintext highlighter-rouge">sublist_max</code></strong>를 작성해 보려고 합니다. Divide and Conquer 방식으로 이 문제를 한 번 풀어봅시다! 시간 복잡도는 \(O(n\lg{n})\)이 되어야 합니다.</p>
+
+    <p><strong><code class="language-plaintext highlighter-rouge">sublist_max</code></strong> 함수는 3개의 파라미터를 받습니다.</p>
+
+    <ul>
+      <li><strong><code class="language-plaintext highlighter-rouge">profits</code>: 며칠 동안의 수익이 담겨 있는 리스트</strong></li>
+      <li><strong><code class="language-plaintext highlighter-rouge">start</code>: 살펴볼 구간의 시작 인덱스</strong></li>
+      <li><strong><code class="language-plaintext highlighter-rouge">end</code>: 살펴볼 구간의 끝 인덱스</strong></li>
+    </ul>
+
+    <p><strong><code class="language-plaintext highlighter-rouge">sublist_max</code></strong>는 <strong><code class="language-plaintext highlighter-rouge">profits</code></strong>의 <strong><code class="language-plaintext highlighter-rouge">start</code></strong>부터 <strong><code class="language-plaintext highlighter-rouge">end</code></strong>까지 구간에서 가능한 가장 큰 수익을 리턴합니다.</p>
+
+    <p>우선 함수 <strong><code class="language-plaintext highlighter-rouge">sublist_max</code></strong>는 파라미터로 리스트 <strong><code class="language-plaintext highlighter-rouge">profits</code></strong>를 받는데요. <strong><code class="language-plaintext highlighter-rouge">profits</code></strong>에는 며칠 동안의 수익이 담겨 있습니다. 예를 들어서 <strong><code class="language-plaintext highlighter-rouge">profits</code></strong>가 <strong><code class="language-plaintext highlighter-rouge">[7, -3, 4, -8]</code></strong>이라면 첫 날에는 7달러를 벌었고, 둘째 날에는 3달러를 잃었고, 셋째 날에는 4달러를 벌었고, 마지막 날에는 8달러를 잃은 거죠. <strong><code class="language-plaintext highlighter-rouge">profits</code></strong>가 <strong><code class="language-plaintext highlighter-rouge">[7, -3, 4, -8]</code></strong>이라면 무엇을 리턴해야 할까요? <strong><code class="language-plaintext highlighter-rouge">profits</code></strong>에서 가장 많은 수익을 낸 구간은 <strong><code class="language-plaintext highlighter-rouge">[7, -3, 4]</code></strong>입니다. 이 구간에서 낸 수익은 8달러이니, <strong><code class="language-plaintext highlighter-rouge">8</code></strong>을 리턴하면 되겠죠! 만약 <strong><code class="language-plaintext highlighter-rouge">profits</code></strong>가 <strong><code class="language-plaintext highlighter-rouge">[-2, -3, 4, -1, -2, 1, 5, -3]</code></strong>이라면? <strong><code class="language-plaintext highlighter-rouge">profits</code></strong>에서 수익이 가장 큰 구간은 <strong><code class="language-plaintext highlighter-rouge">[4, -1, -2, 1, 5]</code></strong>입니다. 이 구간에서 낸 수익은 7달러이니, <strong><code class="language-plaintext highlighter-rouge">7</code></strong>을 리턴하겠죠?</p>
+
+    <p>합병 정렬을 구현할 때 <strong><code class="language-plaintext highlighter-rouge">merge_sort</code></strong> 함수를 깔끔하게 작성하기 위해 추가로 <strong><code class="language-plaintext highlighter-rouge">merge</code></strong> 함수를 작성했던 것 기억 나시나요? 마찬가지로 퀵 정렬을 구현할 때 <strong><code class="language-plaintext highlighter-rouge">quicksort</code></strong> 함수에 추가로 <strong><code class="language-plaintext highlighter-rouge">partition</code></strong> 함수를 작성했습니다. 이번에도 <strong><code class="language-plaintext highlighter-rouge">sublist_max</code></strong> 함수에 추가로 새로운 함수를 작성하면 도움이 되실 겁니다.</p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">def</span> <span class="nf">sublist_max</span><span class="p">(</span><span class="n">profits</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
+    <span class="c1"># 코드를 작성하세요. 
+</span>
+  <span class="c1"># 테스트
+</span>  <span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">]</span>
+  <span class="k">print</span><span class="p">(</span><span class="n">sublist_max</span><span class="p">(</span><span class="n">list1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">list1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+
+  <span class="n">list2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+  <span class="k">print</span><span class="p">(</span><span class="n">sublist_max</span><span class="p">(</span><span class="n">list2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">list2</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+
+  <span class="n">list3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">9</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">]</span>
+  <span class="k">print</span><span class="p">(</span><span class="n">sublist_max</span><span class="p">(</span><span class="n">list3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">list3</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+
+  <span class="n">list4</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">9</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">9</span><span class="p">,</span> <span class="o">-</span><span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+  <span class="k">print</span><span class="p">(</span><span class="n">sublist_max</span><span class="p">(</span><span class="n">list4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">list4</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+</code></pre></div>    </div>
+
+    <details>
+<summary> <b>모범 답안</b> </summary>
+<div>
+
+        <ol>
+          <li>
+            <p>내가 한 풀이 1</p>
+
+            <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">def</span> <span class="nf">sublist_max</span><span class="p">(</span><span class="n">profits</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
+        
+     <span class="c1"># base case
+</span>     <span class="k">if</span> <span class="n">start</span> <span class="o">==</span> <span class="n">end</span><span class="p">:</span>
+         <span class="k">return</span> <span class="n">profits</span><span class="p">[</span><span class="n">start</span><span class="p">]</span>
+        
+     <span class="c1"># divide
+</span>     <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">start</span> <span class="o">+</span> <span class="n">end</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+
+     <span class="c1"># conquer
+</span>     <span class="n">left_max</span> <span class="o">=</span> <span class="n">sublist_max</span><span class="p">(</span><span class="n">profits</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">mid</span><span class="p">)</span>
+     <span class="n">right_max</span> <span class="o">=</span> <span class="n">sublist_max</span><span class="p">(</span><span class="n">profits</span><span class="p">,</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+
+     <span class="n">mid_left_max</span> <span class="o">=</span> <span class="n">profits</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span>
+     <span class="n">temp_mid_left_max</span> <span class="o">=</span> <span class="n">profits</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span>
+     <span class="n">mid_right_max</span> <span class="o">=</span> <span class="n">profits</span><span class="p">[</span><span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+     <span class="n">temp_mid_right_max</span> <span class="o">=</span> <span class="n">profits</span><span class="p">[</span><span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+
+     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">start</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+         <span class="n">temp_mid_left_max</span> <span class="o">=</span> <span class="n">temp_mid_left_max</span> <span class="o">+</span> <span class="n">profits</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+         <span class="n">mid_left_max</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">temp_mid_left_max</span><span class="p">,</span> <span class="n">mid_left_max</span><span class="p">)</span>
+        
+     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">mid</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">end</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+         <span class="n">temp_mid_right_max</span> <span class="o">=</span> <span class="n">temp_mid_right_max</span> <span class="o">+</span> <span class="n">profits</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+         <span class="n">mid_right_max</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">temp_mid_right_max</span><span class="p">,</span> <span class="n">mid_right_max</span><span class="p">)</span>
+        
+     <span class="n">mid_max</span> <span class="o">=</span> <span class="n">mid_left_max</span> <span class="o">+</span> <span class="n">mid_right_max</span>
+
+     <span class="c1"># combine
+</span>     <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">left_max</span><span class="p">,</span> <span class="n">right_max</span><span class="p">,</span> <span class="n">mid_max</span><span class="p">)</span>
+</code></pre></div>            </div>
+          </li>
+          <li>
+            <p>내가 한 풀이2</p>
+
+            <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">def</span> <span class="nf">max_crossing_sum</span><span class="p">(</span><span class="n">profits</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
+     <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">start</span> <span class="o">+</span> <span class="n">end</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+     <span class="n">max1</span> <span class="o">=</span> <span class="n">profits</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span>
+     <span class="n">sum1</span> <span class="o">=</span> <span class="n">max1</span>
+     <span class="n">max2</span> <span class="o">=</span> <span class="n">profits</span><span class="p">[</span><span class="n">mid</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+     <span class="n">sum2</span> <span class="o">=</span> <span class="n">max2</span>
+     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">start</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+         <span class="n">sum1</span> <span class="o">=</span> <span class="n">sum1</span> <span class="o">+</span> <span class="n">profits</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+         <span class="n">max1</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">sum1</span><span class="p">,</span> <span class="n">max1</span><span class="p">)</span>
+     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">mid</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">end</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+         <span class="n">sum2</span> <span class="o">=</span> <span class="n">sum2</span> <span class="o">+</span> <span class="n">profits</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+         <span class="n">max2</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">sum2</span><span class="p">,</span> <span class="n">max2</span><span class="p">)</span>
+     <span class="k">return</span> <span class="n">max1</span> <span class="o">+</span> <span class="n">max2</span>
+
+ <span class="k">def</span> <span class="nf">sublist_max</span><span class="p">(</span><span class="n">profits</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
+     <span class="k">if</span> <span class="n">start</span> <span class="o">&lt;</span> <span class="n">end</span><span class="p">:</span>
+         <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">start</span> <span class="o">+</span> <span class="n">end</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+         <span class="n">left_max</span> <span class="o">=</span> <span class="n">sublist_max</span><span class="p">(</span><span class="n">profits</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">mid</span><span class="p">)</span>
+         <span class="n">right_max</span> <span class="o">=</span> <span class="n">sublist_max</span><span class="p">(</span><span class="n">profits</span><span class="p">,</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+         <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">left_max</span><span class="p">,</span> <span class="n">right_max</span><span class="p">,</span> <span class="n">max_crossing_sum</span><span class="p">(</span><span class="n">profits</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">))</span>
+     <span class="k">else</span><span class="p">:</span>
+         <span class="k">return</span> <span class="n">profits</span><span class="p">[</span><span class="n">start</span><span class="p">]</span>
+</code></pre></div>            </div>
+          </li>
+          <li>
+            <p>모범답안</p>
+
+            <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">def</span> <span class="nf">max_crossing_sum</span><span class="p">(</span><span class="n">profits</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
+     <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">start</span> <span class="o">+</span> <span class="n">end</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>      <span class="c1"># 중간 인덱스
+</span>
+     <span class="s">'''
+     왼쪽에서의 가장 큰 수익 계산
+     인덱스 mid부터 인덱스 0까지 범위를 넓혀가며 최대 수익을 찾는다
+     '''</span>
+     <span class="n">left_sum</span> <span class="o">=</span> <span class="mi">0</span>                  <span class="c1"># 왼쪽 누적 수익
+</span>     <span class="n">left_max</span> <span class="o">=</span> <span class="n">profits</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span>       <span class="c1"># 왼쪽 최고 수익; 왼쪽 반 중 가장 오른쪽 값으로 초기화
+</span>
+     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">mid</span><span class="p">,</span> <span class="n">start</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+         <span class="n">left_sum</span> <span class="o">+=</span> <span class="n">profits</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+         <span class="n">left_max</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">left_max</span><span class="p">,</span> <span class="n">left_sum</span><span class="p">)</span>
+
+     <span class="s">'''
+     오른쪽에서의 가장 큰 수익 계산
+     인덱스 mid+1부터 인덱스 end까지 범위를 넓혀가며 최대 수익을 찾는다
+     '''</span>
+     <span class="n">right_sum</span> <span class="o">=</span> <span class="mi">0</span>                 <span class="c1"># 오른쪽 누적 수익
+</span>     <span class="n">right_max</span> <span class="o">=</span> <span class="n">profits</span><span class="p">[</span><span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>  <span class="c1"># 오른쪽 최고 수익; 오른쪽 반 중 가장 왼쪽 값으로 초기화
+</span>
+     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">end</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+         <span class="n">right_sum</span> <span class="o">+=</span> <span class="n">profits</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+         <span class="n">right_max</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">right_max</span><span class="p">,</span> <span class="n">right_sum</span><span class="p">)</span>
+
+     <span class="k">return</span> <span class="n">left_max</span> <span class="o">+</span> <span class="n">right_max</span>
+
+
+ <span class="k">def</span> <span class="nf">sublist_max</span><span class="p">(</span><span class="n">profits</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
+     <span class="c1"># 범위에 하나의 항목밖에 없으면, 그 항목을 리턴한다
+</span>     <span class="k">if</span> <span class="n">start</span> <span class="o">==</span> <span class="n">end</span><span class="p">:</span>
+         <span class="k">return</span> <span class="n">profits</span><span class="p">[</span><span class="n">start</span><span class="p">]</span>
+
+     <span class="c1"># 중간 인덱스
+</span>     <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">start</span> <span class="o">+</span> <span class="n">end</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+
+     <span class="c1"># 상황별로 최대 수익을 구한다
+</span>     <span class="n">max_left</span> <span class="o">=</span> <span class="n">sublist_max</span><span class="p">(</span><span class="n">profits</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">mid</span><span class="p">)</span>
+     <span class="n">max_right</span> <span class="o">=</span> <span class="n">sublist_max</span><span class="p">(</span><span class="n">profits</span><span class="p">,</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+     <span class="n">max_cross</span> <span class="o">=</span> <span class="n">max_crossing_sum</span><span class="p">(</span><span class="n">profits</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+
+     <span class="c1"># 위 세 경우 중 가장 큰 결괏값을 리턴한다
+</span>     <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">max_left</span><span class="p">,</span> <span class="n">max_right</span><span class="p">,</span> <span class="n">max_cross</span><span class="p">)</span>
+</code></pre></div>            </div>
+          </li>
+        </ol>
+
+      </div>
+</details>
+
+  </div>
+</details>
+
+<details>
+<summary> <b>투자 귀재 규식이 III</b> </summary>
+<div>
+    <p><br />
+  이미 sublist_max 함수를 Divide and Conquer 방식으로 작성했는데요. 이번 과제에서는 시간 복잡도를 \(O(n)\)로 한 번 더 단축해보세요! 과제 설명은 ‘투자 귀재 규식이 II’를 참고하세요!</p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">def</span> <span class="nf">sublist_max</span><span class="p">(</span><span class="n">profits</span><span class="p">):</span>
+    <span class="c1"># 코드를 작성하세요.
+</span>      
+  <span class="c1"># 테스트
+</span>  <span class="k">print</span><span class="p">(</span><span class="n">sublist_max</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">]))</span>
+  <span class="k">print</span><span class="p">(</span><span class="n">sublist_max</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+</code></pre></div>    </div>
+
+    <details>
+<summary> <b>모범 답안</b> </summary>
+<div>
+
+        <ol>
+          <li>
+            <p>내가 한 풀이 1</p>
+
+            <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">def</span> <span class="nf">sublist_max</span><span class="p">(</span><span class="n">profits</span><span class="p">):</span>
+ <span class="n">previous_max</span> <span class="o">=</span> <span class="n">profits</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+ <span class="n">current_max</span> <span class="o">=</span> <span class="n">profits</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+ <span class="k">for</span> <span class="n">profit</span> <span class="ow">in</span> <span class="n">profits</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+     <span class="k">if</span> <span class="n">profit</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+         <span class="k">if</span> <span class="n">current_max</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+             <span class="n">current_max</span> <span class="o">=</span> <span class="n">profit</span>
+         <span class="k">else</span><span class="p">:</span>
+             <span class="n">current_max</span> <span class="o">+=</span> <span class="n">profit</span>
+         <span class="k">if</span> <span class="n">previous_max</span> <span class="o">&lt;</span> <span class="n">current_max</span><span class="p">:</span>
+             <span class="n">previous_max</span> <span class="o">=</span> <span class="n">current_max</span>
+     <span class="k">else</span><span class="p">:</span>
+         <span class="n">current_max</span> <span class="o">+=</span> <span class="n">profit</span>
+    
+ <span class="k">return</span> <span class="n">previous_max</span>
+</code></pre></div>            </div>
+          </li>
+          <li>
+            <p>내가 한 풀이2</p>
+
+            <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">def</span> <span class="nf">sublist_max</span><span class="p">(</span><span class="n">profits</span><span class="p">):</span>
+ <span class="n">max_profit_so_far</span> <span class="o">=</span> <span class="n">profits</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+ <span class="n">max_check</span> <span class="o">=</span> <span class="n">profits</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    
+ <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">profits</span><span class="p">)):</span>
+     <span class="n">max_check</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">max_check</span> <span class="o">+</span> <span class="n">profits</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">profits</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+     <span class="n">max_profit_so_far</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">max_profit_so_far</span><span class="p">,</span> <span class="n">max_check</span><span class="p">)</span>
+    
+ <span class="k">return</span> <span class="n">max_profit_so_far</span>
+</code></pre></div>            </div>
+          </li>
+          <li>
+            <p>모범답안</p>
+
+            <ol>
+              <li>
+                <p><strong>힌트 1</strong></p>
+
+                <p>아래 리스트를 예시로 생각을 해 봅시다.</p>
+
+                <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> profits = [7, -3, 4, -8]
+        
+</code></pre></div>                </div>
+
+                <p><strong><code class="language-plaintext highlighter-rouge">profits</code></strong>의 최대 수익은 아래 두 가지 중 하나입니다.</p>
+
+                <ol>
+                  <li><strong>부분 문제 <code class="language-plaintext highlighter-rouge">[7, -3, 4]</code>의 최대 수익 (<code class="language-plaintext highlighter-rouge">sublist_max([7, -3, 4])</code>)</strong></li>
+                  <li><strong>부분 문제 <code class="language-plaintext highlighter-rouge">[7, -3, 4, -8]</code>에서 <code class="language-plaintext highlighter-rouge">8</code> 을 포함한 구간의 최대 수익</strong></li>
+                </ol>
+
+                <p>첫 번째 경우는 당연하죠? 최대 수익 구간에 마지막 요소가 포함되지 않을 때 최대 수익은 부분 문제와 똑같습니다.</p>
+
+                <p>두 번째 경우는 첫 번째와는 반대되는 경우인데요. 마지막 요소 <strong><code class="language-plaintext highlighter-rouge">-8</code></strong>가 포함돼서 최대 수익이 기존 값에서 변하는 경우죠. <strong><code class="language-plaintext highlighter-rouge">-8</code></strong>가 포함되는 구간은 <strong><code class="language-plaintext highlighter-rouge">-8</code></strong>이 포함된 구간들은 총 네 개의 구간이 있습니다.</p>
+
+                <ol>
+                  <li><strong><code class="language-plaintext highlighter-rouge">[-8]</code></strong></li>
+                  <li><strong><code class="language-plaintext highlighter-rouge">[4, -8]</code></strong></li>
+                  <li><strong><code class="language-plaintext highlighter-rouge">[-3, 4, -8]</code></strong></li>
+                  <li><strong><code class="language-plaintext highlighter-rouge">[7, -3, 4, -8]</code></strong></li>
+                </ol>
+
+                <p>이 구간들에서 나올 수 있는 최대 수익이 바로 마지막 요소 <strong><code class="language-plaintext highlighter-rouge">-8</code></strong>가 포함된 경우의 최대 수익이죠.</p>
+
+                <p>첫 번째 경우는:</p>
+
+                <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">max_profit_so_far</span> <span class="o">=</span> <span class="n">sublist_max</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+</code></pre></div>                </div>
+
+                <p>두 번째 경우는:</p>
+
+                <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">max_check</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">sum</span><span class="p">([</span><span class="o">-</span><span class="mi">8</span><span class="p">]),</span> <span class="nb">sum</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">]),</span> <span class="nb">sum</span><span class="p">([</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">]),</span> <span class="nb">sum</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">]))</span>
+</code></pre></div>                </div>
+
+                <p>이렇게 표현할 수 있겠네요.</p>
+              </li>
+              <li>
+                <p><strong>힌트 2</strong></p>
+
+                <p><strong><code class="language-plaintext highlighter-rouge">sublist_max(profits)</code></strong>는,</p>
+
+                <ol>
+                  <li><strong><code class="language-plaintext highlighter-rouge">max_profit_so_far = sublist_max([7, -3, 4])</code></strong></li>
+                  <li><strong><code class="language-plaintext highlighter-rouge">max_check = max(sum([-8]), sum([4, -8]), sum([-3, 4, -8]), sum([7, -3, 4, -8]))</code></strong></li>
+                </ol>
+
+                <p>이 두 값 중 더 큰 값이고, 코드로 나타내면,</p>
+
+                <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">max_profit_so_far</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">max_profit_so_far</span><span class="p">,</span> <span class="n">max_check</span><span class="p">)</span>
+</code></pre></div>                </div>
+
+                <p>이렇게 표현할 수 있습니다. For 문을 돌면서 각 요소까지의  <strong><code class="language-plaintext highlighter-rouge">max_profit_so_far</code></strong>과 <strong><code class="language-plaintext highlighter-rouge">max_check</code></strong>를 효율적으로 구할 수 있는 방법에 대해서 생각해보세요.</p>
+              </li>
+              <li>
+                <p><strong>힌트 3</strong></p>
+
+                <p>두 정보 다 바로 전 부분 문제에서 받아올 수 있는 정보를 이용해서 효율적으로 알아낼 수 있는데요.</p>
+
+                <p><strong><code class="language-plaintext highlighter-rouge">max_profit_so_far = sublist_max([7, -3, 4])</code></strong> 이 정보는 바로 전 요소까지의 부분 문제의 답을 그대로 쓰면 되겠죠?</p>
+
+                <p><strong><code class="language-plaintext highlighter-rouge">max_check</code></strong>도 마찬가지인데요.</p>
+
+                <p><strong><code class="language-plaintext highlighter-rouge">max_check_1 = max(sum([-8]), sum([4, -8]), sum([-3, 4, -8]), sum([7, -3, 4, -8]))</code></strong>를 하나하나 계산할 필요 없이, 바로 전 부분 문제에서 계산한 <strong><code class="language-plaintext highlighter-rouge">max_check_2 = max(sum([4]), sum([-3, 4]), sum([7, -3, 4]))</code></strong>을 구했을 때의 값 저장해놓았으면,</p>
+
+                <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">max_check_1</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">max_check_2</span> <span class="o">-</span> <span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">)</span>
+</code></pre></div>                </div>
+
+                <p>이렇게 구할 수 있겠죠?</p>
+              </li>
+              <li>
+                <p><strong>정답</strong></p>
+
+                <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">def</span> <span class="nf">sublist_max</span><span class="p">(</span><span class="n">profits</span><span class="p">):</span>
+   <span class="n">max_profit_so_far</span> <span class="o">=</span> <span class="n">profits</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># 반복문에서 현재까지의 부분 문제의 답
+</span>   <span class="n">max_check</span> <span class="o">=</span> <span class="n">profits</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># 가장 끝 요소를 포함하는 구간의 최대 합
+</span>          
+   <span class="c1"># 반복문을 통하여 각 요소까지의 최대 수익을 저장한다
+</span>   <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">profits</span><span class="p">)):</span>
+       <span class="c1"># 새로운 요소를 포함하는 구간의 최대합을 비교를 통해 정한다
+</span>       <span class="n">max_check</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">max_check</span> <span class="o">+</span> <span class="n">profits</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">profits</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+              
+       <span class="c1"># 최대 구간 합을 비교를 통해 정한다
+</span>       <span class="n">max_profit_so_far</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">max_profit_so_far</span><span class="p">,</span> <span class="n">max_check</span><span class="p">)</span>
+          
+   <span class="k">return</span> <span class="n">max_profit_so_far</span>
+</code></pre></div>                </div>
+              </li>
+            </ol>
+          </li>
+        </ol>
+
+      </div>
+</details>
+
+  </div>
+</details>
+
+<details>
+<summary> <b>중복되는 항목 찾기 II</b> </summary>
+<div>
+    <p><br />
+  \((N + 1)\)의 크기인 리스트에, 1부터 N까지의 임의의 자연수가 요소로 할당되어 있습니다. 그렇다면 어떤 수는 꼭 한 번은 반복되겠지요.</p>
+
+    <p>예를 들어 <strong><code class="language-plaintext highlighter-rouge">[1, 3, 4, 2, 5, 4]</code></strong>와 같은 리스트 있을 수도 있고, <strong><code class="language-plaintext highlighter-rouge">[1, 1, 1, 6, 2, 2, 3]</code></strong>과 같은 리스트가 있을 수도 있습니다. (몇 개의 수가 여러 번 중복되어 있을 수도 있습니다.)</p>
+
+    <p>이러한 리스트에서 반복되는 요소를 찾아내려고 합니다.</p>
+
+    <p>중복되는 어떠한 수 ‘하나’만 찾아내도 됩니다. 즉 <strong><code class="language-plaintext highlighter-rouge">[1, 1, 1, 6, 2, 2, 3]</code></strong>의 예시에서 1, 2를 모두 리턴하지 않고, 1 또는 2 하나만 리턴하게 하면 됩니다.</p>
+
+    <p>저번 과제에서는 사전을 정의해서 문제를 푸는 방법을 사용했는데요, 이번 과제에서는 두 가지의 제약이 있습니다.</p>
+
+    <ol>
+      <li>\(**O(n)\) 이상의 공간을 사용할 수 없습니다. 즉 사전이나 리스트와 같이 인풋 리스트의 길이에 비례하는 공간 저장 도구를 사용할 수 없습니다!**</li>
+      <li><strong>인풋으로 받는 리스트 <code class="language-plaintext highlighter-rouge">some_list</code>의 요소들을 바꾸거나 변형할 수 없습니다.</strong></li>
+    </ol>
+
+    <p><strong>전에 풀었던 같은 문제를 다른 제약들이 걸려 있는 상황에서 풀어보세요.</strong></p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">def</span> <span class="nf">find_same_number</span><span class="p">(</span><span class="n">some_list</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
+    <span class="c1"># 필요한 경우, start와 end를 옵셔널 파라미터로 만들어도 됩니다.
+</span>    <span class="c1"># 코드를 쓰세요
+</span>
+
+  <span class="c1"># 중복되는 수 ‘하나’만 리턴합니다.
+</span>  <span class="k">print</span><span class="p">(</span><span class="n">find_same_number</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">]))</span>
+  <span class="k">print</span><span class="p">(</span><span class="n">find_same_number</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]))</span>
+  <span class="k">print</span><span class="p">(</span><span class="n">find_same_number</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">]))</span>
+</code></pre></div>    </div>
+
+    <details>
+<summary> <b>모범 답안</b> </summary>
+<div>
+
+        <ol>
+          <li>
+            <p>내가 한 풀이 1</p>
+
+            <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">def</span> <span class="nf">find_same_number</span><span class="p">(</span><span class="n">some_list</span><span class="p">):</span>
+ <span class="n">start</span> <span class="o">=</span> <span class="mi">1</span>
+ <span class="n">end</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">some_list</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+
+ <span class="k">while</span><span class="p">(</span><span class="n">start</span> <span class="o">!=</span> <span class="n">end</span><span class="p">):</span>
+     <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">start</span> <span class="o">+</span> <span class="n">end</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+     <span class="n">lower</span> <span class="o">=</span> <span class="mi">0</span>
+     <span class="n">upper</span> <span class="o">=</span> <span class="mi">0</span>
+
+     <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">some_list</span><span class="p">:</span>
+         <span class="k">if</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;=</span> <span class="n">num</span> <span class="o">&lt;=</span> <span class="n">end</span><span class="p">:</span>
+             <span class="n">upper</span> <span class="o">+=</span> <span class="mi">1</span>
+         <span class="k">elif</span> <span class="n">start</span> <span class="o">&lt;=</span> <span class="n">num</span> <span class="o">&lt;=</span> <span class="n">mid</span><span class="p">:</span>
+             <span class="n">lower</span> <span class="o">+=</span> <span class="mi">1</span>
+
+     <span class="k">if</span> <span class="n">lower</span> <span class="o">&gt;</span> <span class="n">mid</span> <span class="o">-</span> <span class="n">start</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span>
+         <span class="n">end</span> <span class="o">=</span> <span class="n">mid</span>
+     <span class="k">elif</span> <span class="n">upper</span> <span class="o">&gt;</span> <span class="n">end</span> <span class="o">-</span> <span class="n">mid</span><span class="p">:</span>
+         <span class="n">start</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span>
+        
+ <span class="k">return</span> <span class="n">start</span>
+</code></pre></div>            </div>
+          </li>
+          <li>
+            <p>내가 한 풀이2</p>
+
+            <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">def</span> <span class="nf">find_same_number</span><span class="p">(</span><span class="n">some_list</span><span class="p">,</span> <span class="n">start</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+ <span class="k">if</span> <span class="n">end</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+     <span class="n">end</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">some_list</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+    
+ <span class="k">if</span> <span class="p">(</span><span class="n">start</span> <span class="o">==</span> <span class="n">end</span><span class="p">):</span>
+     <span class="k">return</span> <span class="n">start</span>
+ <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">start</span> <span class="o">+</span> <span class="n">end</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+ <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+ <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">some_list</span><span class="p">:</span>
+     <span class="k">if</span> <span class="p">(</span><span class="n">start</span> <span class="o">&lt;=</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">mid</span><span class="p">):</span>
+         <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+ <span class="k">if</span> <span class="p">(</span><span class="n">count</span> <span class="o">&gt;</span> <span class="n">mid</span> <span class="o">-</span> <span class="n">start</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+     <span class="k">return</span> <span class="n">find_same_number</span><span class="p">(</span><span class="n">some_list</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">mid</span><span class="p">)</span>
+ <span class="k">else</span><span class="p">:</span>
+     <span class="k">return</span> <span class="n">find_same_number</span><span class="p">(</span><span class="n">some_list</span><span class="p">,</span> <span class="n">mid</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+</code></pre></div>            </div>
+          </li>
+          <li>
+            <p>모범답안</p>
+
+            <ol>
+              <li>
+                <p><strong>힌트 1</strong></p>
+
+                <p>이진 탐색 알고리즘 기억나시나요?</p>
+
+                <p>정렬된 리스트에서 특정 값을 찾고 싶을 때 리스트의 탐색 범위를 반씩 줄여나가면서 리스트 안에 값이 있는지 확인하는 알고리즘인데요.</p>
+
+                <p>이진 탐색과 비슷하게 중복되는 요소 탐색 범위를 반씩 줄여나갈 수 있는 방식이 있는지 한 번 고민해보세요.</p>
+              </li>
+              <li>
+                <p><strong>힌트 2</strong></p>
+
+                <p><strong><code class="language-plaintext highlighter-rouge">number_array = [1, 2, 4, 6, 2, 5, 3]</code></strong> 이 리스트를 인풋이라고 생각해봅시다. 길이가 7인 리스트에 1부터 6까지의 자연수들이 들어있는데요. 중복되는 요소가 1부터 3까지의 범위에 있는지  4부터 6까지의 범위에 있는지 알 수 있는 방법을 생각해보세요.</p>
+              </li>
+              <li>
+                <p><strong>힌트 3</strong></p>
+
+                <p>다시 <strong><code class="language-plaintext highlighter-rouge">number_array = [1, 2, 4, 6, 2, 5, 3]</code></strong> 를 살펴봅시다.</p>
+
+                <p>리스트 안에 숫자는 7개고 이 7개의 숫자가 1 ~ 6까지의 자연수일 수 있으니까 범위 1 ~ 3에 있는 숫자가 4개 이상이거나 범위 4 ~ 6에 있는 숫자가 4개 이상일 수밖에는 없겠죠?</p>
+
+                <p>(두 범위가 모두 4보다 작은 것은 말이 안 되죠. 숫자는 7개이고 1 ~ 3인 숫자가 3개 이하고 4 ~ 6인 숫자도 3개 이하면 절대 총 숫자가 7개가 될 수 없기 때문입니다.)</p>
+
+                <p>그럼 1 ~ 3 범위에 속하는 숫자가 4개 이상이라면 1 ~ 3 범위에는 적어도 한 숫자는 다시 반복되는 요소일 수밖에 없겠네요. 숫자는 4개인데 요소가 될 수 있는 자연수는 1, 2, 3 세 개밖에는 없으니까요. 반대로 4 ~ 6 범위에 속하는 숫자가 4개 이상일 때도 동일합니다.</p>
+
+                <p>기존 탐색 범위를 1~6에서 1~3 또는 4~6로  줄일 수 있군요! 범위를 계속 줄이면 결국 답을 찾을 수 있겠죠?</p>
+              </li>
+              <li>
+                <p><strong>힌트 4</strong></p>
+
+                <p>아직 좀 이해하시기 힘드시다면, 실제로 반복되는 숫자를 찾는 예시를 통해 차근차근 알아봅시다.</p>
+
+                <p><strong><code class="language-plaintext highlighter-rouge">number_array = [1, 2, 4, 6, 2, 5, 3]</code></strong> 일 경우를 생각해봅시다.</p>
+
+                <ol>
+                  <li><strong>1 ~ 3 범위에 있는 자연수의 갯수: 4개, 4 ~ 6 범위에 있는 자연수의 갯수: 3개</strong></li>
+                </ol>
+
+                <p>→ 1 ~ 3 범위에 반복되는 자연수가 있을 수밖에 없다.</p>
+
+                <ol>
+                  <li><strong>1 범위에 있는 자연수의 갯수: 1개, 2 ~ 3 범위에 있는 자연수의 갯수: 3개</strong></li>
+                </ol>
+
+                <p>→ 2 ~ 3 범위에 반복되는 자연수가 있을 수밖에 없다</p>
+
+                <ol>
+                  <li><strong>2 범위에 있는 자연수의 갯수: 2개 → 반복되는 숫자 2을 찾았다 (끝)</strong></li>
+                </ol>
+
+                <p>이런 식으로 반복되는 숫자를 찾을 수 있습니다!</p>
+
+                <p><em>위 방식대로 반복되는 숫자를 찾는 코드를 써볼까요?</em></p>
+              </li>
+              <li>
+                <p><strong>정답</strong></p>
+
+                <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="k">def</span> <span class="nf">find_same_number</span><span class="p">(</span><span class="n">some_list</span><span class="p">,</span> <span class="n">start</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="bp">None</span><span class="p">):</span>
+       <span class="k">if</span> <span class="n">end</span> <span class="o">==</span> <span class="bp">None</span><span class="p">:</span>
+           <span class="n">end</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">some_list</span><span class="p">)</span>
+
+       <span class="c1"># 반복 요소를 찾으면 리턴한다
+</span>       <span class="k">if</span> <span class="n">start</span> <span class="o">==</span> <span class="n">end</span><span class="p">:</span>
+           <span class="k">return</span> <span class="n">start</span>
+
+       <span class="c1"># 중간 지점을 구한다
+</span>       <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">start</span> <span class="o">+</span> <span class="n">end</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+
+       <span class="c1"># 왼쪽 범위의 숫자를 센다. 오른쪽은 리스트 길이에서 왼쪽 길이를 빼면 되기 때문에 세지 않는다
+</span>       <span class="n">left_count</span> <span class="o">=</span> <span class="mi">0</span>
+
+       <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">some_list</span><span class="p">:</span>
+           <span class="k">if</span> <span class="n">start</span> <span class="o">&lt;=</span> <span class="n">element</span> <span class="ow">and</span> <span class="n">element</span> <span class="o">&lt;=</span> <span class="n">mid</span><span class="p">:</span>
+               <span class="n">left_count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+       <span class="c1"># 왼쪽과 오른쪽 범위중 과반 수 이상의 숫자가 있는 범위 내에서 탐색을 다시한다
+</span>       <span class="k">if</span> <span class="n">left_count</span> <span class="o">&gt;</span> <span class="n">mid</span> <span class="o">-</span> <span class="n">start</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span>
+           <span class="k">return</span> <span class="n">find_same_number</span><span class="p">(</span><span class="n">some_list</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">mid</span><span class="p">)</span>
+
+       <span class="k">return</span> <span class="n">find_same_number</span><span class="p">(</span><span class="n">some_list</span><span class="p">,</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+
+   <span class="k">print</span><span class="p">(</span><span class="n">find_same_number</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">]))</span>
+   <span class="k">print</span><span class="p">(</span><span class="n">find_same_number</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]))</span>
+   <span class="k">print</span><span class="p">(</span><span class="n">find_same_number</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">]))</span>
+</code></pre></div>                </div>
+              </li>
+            </ol>
+          </li>
+        </ol>
+
+      </div>
+</details>
+
+  </div>
+</details>]]></content><author><name>Domiki</name></author><category term="Algorithm" /><summary type="html"><![CDATA[좋은 알고리즘이란?]]></summary></entry></feed>
