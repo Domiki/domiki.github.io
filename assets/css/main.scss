@@ -7,3 +7,13 @@ search: false
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
+@font-face {
+  font-family: 'default font';
+  src: url('../font.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'coding font';
+  src: url('../font_coding.ttc') format('truetype');
+}

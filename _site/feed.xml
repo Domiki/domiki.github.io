@@ -1,4 +1,430 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-25T21:44:54+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Domiki’s Computer Lecture Note</title><subtitle>Coding, coffee, picture, and starlight.</subtitle><author><name>Domiki</name></author><entry><title type="html">좋은 알고리즘이란?</title><link href="http://localhost:4000/coding/computer%20science/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%981/" rel="alternate" type="text/html" title="좋은 알고리즘이란?" /><published>2023-03-16T00:00:00+09:00</published><updated>2023-03-17T00:20:00+09:00</updated><id>http://localhost:4000/coding/computer%20science/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%981</id><content type="html" xml:base="http://localhost:4000/coding/computer%20science/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%981/"><![CDATA[<h2 id="알고리즘이란">알고리즘이란?</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-25T22:42:41+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Domiki’s Computer Lecture Note</title><subtitle>Coding, coffee, picture, and starlight.</subtitle><author><name>Domiki</name></author><entry><title type="html">그래프</title><link href="http://localhost:4000/coding/computer%20science/data%20structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B03/" rel="alternate" type="text/html" title="그래프" /><published>2023-03-16T00:00:00+09:00</published><updated>2023-03-17T02:12:00+09:00</updated><id>http://localhost:4000/coding/computer%20science/data%20structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B03</id><content type="html" xml:base="http://localhost:4000/coding/computer%20science/data%20structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B03/"><![CDATA[<h2 id="그래프란">그래프란?</h2>
+
+<ul>
+  <li>그래프: 연결 데이터를 저장할 수 있는 자료 구조
+    <ul>
+      <li>연결 관계를 표현
+        <ul>
+          <li>e.g. 위치 데이터, 사회 연결망, 통신, 생물(유전자와 단백질 상호 관계) …</li>
+          <li>c.f. 선형적 자료구조(배열, 링크드 리스트), 계층적 자료구조(트리)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>그래프 기본
+    <ul>
+      <li>그래프 노드: 하나의 데이터 단위를 나타내는 객체</li>
+      <li>그래프 엣지: 두 노드의 직접적인 연결 관계 데이터. (노드1, 노드2) 또는 (노드2, 노드1)
+        <ul>
+          <li>인접하다: 두 노드 사이에 엣지가 있다.</li>
+          <li>방향 그래프(directed graph): 엣지들이 방향을 가짐. (e.g. 인스타그램 팔로우)
+            <ul>
+              <li>노드1에서 노드2로 가는 화살표를 생각할 때, 노드 1을 떠나서 노드2로 들어가는 엣지라 표현. (노드1, 노드2)로 표현</li>
+            </ul>
+          </li>
+          <li>가중치 그래프(undirected graph): 엣지들이 연결 관계뿐만 아니라 어떤 정보를 나타내는 수치를 가짐</li>
+        </ul>
+      </li>
+      <li>차수: 하나의 노드에 연결된 엣지들의 수
+        <ul>
+          <li>무방향 그래프: 하나의 노드에 연결된 엣지들의 수</li>
+          <li>방향 그래프: 노드를 떠나는 엣지들의 수를 출력 차수, 노드로 들어오는 엣지의 수를 입력 차수로 구분</li>
+        </ul>
+      </li>
+      <li>경로
+        <ul>
+          <li>한 노드에서 다른 노드까지 가는 길</li>
+          <li>거리
+            <ul>
+              <li>비가중치 그래프: 한 경로에 있는 엣지의 수</li>
+              <li>가중치 그래프: 한 경로에 있는 엣지들의 가중치 합</li>
+            </ul>
+          </li>
+          <li>최단 경로(Shortest Path): 두 노드 사이의 경로 중 거리가 가장 짧은 경로</li>
+          <li>사이클: 한 노드에서 시작해서 같은 노드로 돌아오는 경로</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>인접 행렬(adjacency matrix)
+    <ul>
+      <li>
+        <p>노드들의 연결 관계(엣지)를 나타내는 2차원 리스트</p>
+
+        <p><img src="/assets/images/자료구조/img8.png" alt="그래프 인접 행렬" />
+<img src="/assets/images/자료구조/img9.png" alt="가중치 그래프 인접 행렬" />
+<img src="/assets/images/자료구조/img10.png" alt="방향 그래프 인접 행렬" /></p>
+      </li>
+      <li>
+        <p>인접 행렬 만들기</p>
+        <ul>
+          <li>각 노드를 리스트에 저장해 고유 정수 인덱스를 준다.</li>
+          <li>노드 수 X 노드 수 크기의 행렬을 만든다.</li>
+          <li>노드들의 엣지 유무 및 가중치에 따라 행렬의 요소를 채운다.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>인접 리스트
+    <ul>
+      <li>각 노드의 엣지를 리스트에 저장하는 방법</li>
+      <li>
+        <p>그래프 노드가 연결된 노드들에 대한 레퍼런스를 리스트로 저장</p>
+
+        <p><img src="/assets/images/자료구조/img11.png" alt="인접 리스트 정의" /></p>
+
+        <table>
+          <thead>
+            <tr>
+              <th style="text-align: center">무방향 그래프</th>
+              <th style="text-align: center">방향 그래프</th>
+              <th style="text-align: center">가중치 그래프</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align: center"><code class="language-plaintext highlighter-rouge">A.adjacent=[B]</code><br /><code class="language-plaintext highlighter-rouge">B.adjacent=[A]</code></td>
+              <td style="text-align: center"><code class="language-plaintext highlighter-rouge">A.adjacent=[B]</code><br /><code class="language-plaintext highlighter-rouge">B.adjacent=[]</code></td>
+              <td style="text-align: center"><code class="language-plaintext highlighter-rouge">A.adjacent=[(B, 4)]</code><br /><code class="language-plaintext highlighter-rouge">B.adjacent=[(A, 4)]</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+    </ul>
+  </li>
+  <li>인접 행렬 vs 인접 리스트
+    <ul>
+      <li>복잡도 표현 기호
+        <ul>
+          <li>$V$: 그래프 안에 있는 모든 노드(Vertex)들의 집합</li>
+          <li>$E$: 그래프 안에 있는 모든 엣지(Edge)들의 집합
+            <ul>
+              <li>최악의 경우 $V^2$에 비례</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <table>
+  <tr bgcolor="#e9dcbe" style="text-align: center; border-bottom: 2px solid #afa58f">
+    <th> </th>
+    <th> </th>
+    <th class="text-center"> 인접 행렬 </th>
+    <th class="text-center"> 인접 리스트 </th>
+  </tr>
+  <tr align="center">
+    <td> 공간 복잡도 </td>
+    <td> </td>
+    <td> <span style="color: red">$O(V^2)$</span> <br /> $V \times V$행렬 </td>
+    <td> <span style="color: red"> $O(V+E)$ (최악 $O(V^2)$)</span> <br /> 인접 리스트 저장 $O(V)$, 엣지 저장 $O(E)$ </td>
+  </tr>
+  <tr align="center">
+    <td rowspan="2"> 시간 복잡도 </td>
+    <td> 두 노드 연결 확인 소요시간 </td>
+    <td> <span style="color: red">$O(1)$</span> </td>
+    <td> <span style="color: red">$O(V)$</span> </td>
+  </tr>
+  <tr align="center">
+    <td> 노드에 연결된 모든 노드를 알아내는 데 걸리는 시간 </td>
+    <td> <span style="color: red">$O(V)$</span><br /> 연결관계를 확인하려면 항상 길이가 $V$인 리스트에서 0과 1인지 파악해야 함 </td>
+    <td> <span style="color: red">$O(V)$</span><br /> 각 노드가 자신과 인접한 노드들에 대한 레퍼런스만 가지고 있으므로 인접행렬을 사용하는 것 보다 더 빨리 실행됨.<br /><i>알고리즘 구현 할 때 인접 리스트가 시간적으로 더 효율적</i> </td>
+  </tr>
+</table>
+  </li>
+</ul>
+
+<h2 id="그래프-탐색">그래프 탐색</h2>
+
+<h3 id="그래프-탐색이란">그래프 탐색이란?</h3>
+<ul>
+  <li>하나의 시작점 노드에서 연결된 노드들을 모두 찾는 것</li>
+  <li>하나의 노드에서 연결된 모든 노드를 다 돌기 때문에 그래프 순회라고도 함</li>
+  <li>활용
+    <ol>
+      <li>주어진 두 노드가 연결되었는지 유무 확인(BFS, DFS)</li>
+      <li>두 노드 사이의 최단 경로를 구할 수 있음(BFS(비가중치 그래프), Dijkstra)</li>
+    </ol>
+  </li>
+</ul>
+
+<h3 id="bfsbreadth-first-search">BFS(Breadth First Search)</h3>
+<ul>
+  <li>
+    <p>그래프를 너비 우선적으로 탐색</p>
+
+    <p><img src="/assets/images/자료구조/img12.png" alt="BFS" /></p>
+  </li>
+  <li>자료형으로 큐 사용</li>
+  <li>알고리즘
+    <ol>
+      <li>시작 노드를 방문 표시 후 큐에 삽입</li>
+      <li>큐에 아무 노드가 없을 때 까지
+        <ol>
+          <li>큐 가장 앞 노드를 꺼낸다.</li>
+          <li>꺼낸 노드에 인접한 노드들을 모두 보면서
+            <ol>
+              <li>처음 방문한 노드면
+                <ol>
+                  <li>방문한 노드 표시를 해준다.</li>
+                  <li>큐에 넣어준다.</li>
+                </ol>
+              </li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+    </ol>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">bfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">start_node</span><span class="p">):</span>
+  <span class="s">"""bfs 함수"""</span>
+  <span class="n">queue</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span> <span class="c1"># 빈 큐 생성
+</span>
+  <span class="c1"># 모든 노드를 방문하지 않은 노드로 표시
+</span>  <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">.</span><span class="n">values</span><span class="p">():</span>
+    <span class="n">node</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="bp">False</span>
+    
+  <span class="c1"># 시작점 노드를 방문 표시한 후 큐에 넣어준다.
+</span>  <span class="n">start_node</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="bp">True</span>
+  <span class="n">queue</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">start_node</span><span class="p">)</span>
+
+  <span class="k">while</span> <span class="n">queue</span><span class="p">:</span>  <span class="c1"># 큐에 노드가 있는 동안
+</span>     <span class="n">current</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="n">popleft</span><span class="p">()</span>  <span class="c1"># 큐의 가장 앞 데이터를 갖고 온다.
+</span>     <span class="k">for</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="n">current</span><span class="p">.</span><span class="n">adjacent</span><span class="p">:</span>  <span class="c1"># 인접한 노드를 돌면서
+</span>      <span class="k">if</span> <span class="ow">not</span> <span class="n">neighbor</span><span class="p">.</span><span class="n">visited</span><span class="p">:</span>  <span class="c1"># 방문하지 않은 노드면
+</span>        <span class="n">neighbor</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="bp">True</span> <span class="c1"># 방문 표시를 하고
+</span>        <span class="n">queue</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">neighbor</span><span class="p">)</span>  <span class="c1"># 큐에 넣는다.
+</span></code></pre></div>    </div>
+  </li>
+  <li>시간 복잡도
+    <ul>
+      <li>전처리(모든 노드를 방문하지 않는 노드로 표시): $O(V)$</li>
+      <li>큐에서 노드를 넣고 빼기: 큐에는 노드가 딱 한 번 들어갔다 나오므로 $O(V)$</li>
+      <li>큐에서 뺀 노드의 인접한 노드들을 도는 데 걸리는 시간: 모든 노드들의 인접 리스트를 딱 한 번만 돌게 되므로 엣지 수에 비례: $O(E)$</li>
+    </ul>
+
+    <p>⇒ $O(V+E)$</p>
+  </li>
+</ul>
+
+<h3 id="dfsdepth-first-search">DFS(Depth First Search)</h3>
+<ul>
+  <li>
+    <p>그래프를 깊이 우선적으로 탐색</p>
+
+    <p><img src="/assets/images/자료구조/img13.png" alt="DFS" /></p>
+  </li>
+  <li>자료형으로 스택 사용</li>
+  <li>알고리즘
+    <ol>
+      <li>시작 노드를 스택삽입 표시 후 스택에 삽입</li>
+      <li>스택에 아무 노드가 없을 때 까지
+        <ol>
+          <li>스택의 가장 위 노드를 꺼낸다.</li>
+          <li>노드를 방문 표시한다.</li>
+          <li>꺼낸 노드에 인접한 노드들을 모두 보면서
+            <ol>
+              <li>처음 방문하거나 스택에 없는 노드면
+                <ol>
+                  <li>스택삽입 표시를 해준다.</li>
+                  <li>스택에 넣어준다.</li>
+                </ol>
+              </li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+    </ol>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">start_node</span><span class="p">):</span>
+  <span class="s">"""dfs 함수"""</span>
+  <span class="n">stack</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span> <span class="c1"># 빈 스택 생성
+</span>
+  <span class="c1"># 모든 노드를 처음 보는 노드로 초기화
+</span>  <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">.</span><span class="n">values</span><span class="p">():</span>
+    <span class="n">node</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="mi">0</span>
+
+  <span class="n">start_node</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># 시작 노드를 스택에 넣는다는 표시(옅은 회색)을 하고
+</span>  <span class="n">stack</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">start_node</span><span class="p">)</span>  <span class="c1"># 스택에 넣는다.
+</span>
+  <span class="k">while</span> <span class="n">stack</span><span class="p">:</span>  <span class="c1"># 스택에 노드가 남아 있을 때 까지
+</span>    <span class="n">current</span> <span class="o">=</span> <span class="n">stack</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span> <span class="c1"># 스택 가장 위(뒤) 데이터를 갖고 온다.
+</span>    <span class="n">current</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># 현재 노드를 방문 표시한다.
+</span>    <span class="k">for</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="n">current</span><span class="p">.</span><span class="n">adjacent</span><span class="p">:</span>
+      <span class="k">if</span> <span class="n">neighbor</span><span class="p">.</span><span class="n">visited</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># 처음 보는 노드들만
+</span>        <span class="n">neighbor</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># 스택에 넣는다는 표시를 하고
+</span>        <span class="n">stack</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">neighbor</span><span class="p">)</span>  <span class="c1"># 스택에 넣는다.
+</span>    
+<span class="s">'''
+  visited를 True, False가 아닌 0, 1, 2로 세분화 하는 이유
+  =&gt; stack에 넣는 과정에서 방문 과정(visited = True)을 수행하면 A -&gt; B -&gt; C 의 방문으로 표시가 된다.
+     이는 DFS의 과정이 아니기 때문에(A -&gt; B -&gt; D -&gt; ...) pop을 수행한 이후 방문 표시를 해준다.
+     단순 출력을 위해서라면 True, False로 교체하고 current.visited = 2 부분을 print()로 바꾸면 된다.
+'''</span>
+
+<span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">start_node</span><span class="p">):</span>
+  <span class="n">stack</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span>
+
+  <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">.</span><span class="n">values</span><span class="p">():</span>
+    <span class="n">node</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="bp">False</span>
+    
+  <span class="n">start_node</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="bp">True</span>
+  <span class="n">stack</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">start_node</span><span class="p">)</span>
+
+  <span class="k">while</span> <span class="n">stack</span><span class="p">:</span>
+     <span class="n">current</span> <span class="o">=</span> <span class="n">stack</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span>
+     <span class="k">print</span><span class="p">(</span><span class="n">current</span><span class="p">)</span>
+     <span class="k">for</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="n">current</span><span class="p">.</span><span class="n">adjacent</span><span class="p">:</span>
+      <span class="k">if</span> <span class="ow">not</span> <span class="n">neighbor</span><span class="p">.</span><span class="n">visited</span><span class="p">:</span>
+        <span class="n">neighbor</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="n">stack</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">neighbor</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li>시간 복잡도
+    <ul>
+      <li>전처리(모든 노드를 방문하지 않은 노드로 표시): $O(V)$</li>
+      <li>스택에서 노드를 넣고 빼기: 스택에는 노드가 딱 한 번 들어갔다 나오므로 $O(V)$</li>
+      <li>스택에서 뺀 노드의 인접한 노드들을 도는데 걸리는 시간: 모든 노드들의 인접 리스트를 딱 한 번만 돌게 되므로 엣지 수에 비례: $O(E)$</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="최단-경로-알고리즘">최단 경로 알고리즘</h2>
+
+<h3 id="bfs">BFS</h3>
+<ul>
+  <li>predecessor(BFS를 할 때 특정 노드에 오기 직전의 노드)를 멤버 변수에 추가</li>
+  <li>알고리즘
+    <ol>
+      <li>시작 노드를 방문 표시 후 큐에 삽입</li>
+      <li>큐에 아무 노드가 없을 때 까지
+        <ol>
+          <li>큐의 가장 앞 노드를 꺼낸다.</li>
+          <li>꺼낸 노드에 인접한 노드들을 모두 보면서
+            <ol>
+              <li>처음 방문한 노드면
+                <ol>
+                  <li>방문한 노드 표시를 해준다.</li>
+                  <li><em>predecessor 변수를 큐에서 꺼낸 노드로 설정</em></li>
+                  <li>큐에 넣어준다.</li>
+                </ol>
+              </li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li>Backtracking
+    <ol>
+      <li>현재 노드를 경로에 추가한다.</li>
+      <li>현재 노드의 predecessor로 가면서 경로에 추가한다.</li>
+      <li>predecessor가 없을 때 까지 위 단계 반복.</li>
+      <li>경로를 뒤집는다.</li>
+    </ol>
+  </li>
+  <li>predecessor는 해당 노드를 가장 빨리 발견하는 이전 노드를 저장함 → BFS 경로가 최단경로</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">bfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">start_node</span><span class="p">):</span>
+  <span class="s">"""최단 경로용 bfs 함수"""</span>
+  <span class="n">queue</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span> <span class="c1"># 빈 큐 생성
+</span>
+  <span class="c1"># 모든 노드를 방문하지 않은 노드로 표시, 모든 predecessor는 None으로 초기화
+</span>  <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">.</span><span class="n">values</span><span class="p">():</span>
+    <span class="n">node</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="n">node</span><span class="p">.</span><span class="n">predecessor</span> <span class="o">=</span> <span class="bp">None</span>
+
+  <span class="c1"># 시작점 노드를 방문 표시한 후 큐에 넣어준다.
+</span>  <span class="n">node</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="bp">True</span>
+  <span class="n">queue</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">start_node</span><span class="p">)</span>
+
+  <span class="k">while</span> <span class="n">queue</span><span class="p">:</span>  <span class="c1"># 큐에 노드가 있을 때 까지
+</span>    <span class="n">current</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="n">popleft</span><span class="p">()</span> <span class="c1"># 큐의 가장 앞 데이터를 갖고 온다.
+</span>    <span class="k">for</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="n">current</span><span class="p">.</span><span class="n">adjacent</span><span class="p">:</span> <span class="c1"># 인접한 노드를 돌면서
+</span>      <span class="k">if</span> <span class="ow">not</span> <span class="n">neighbor</span><span class="p">.</span><span class="n">visited</span><span class="p">:</span>  <span class="c1"># 방문하지 않은 노드면
+</span>        <span class="n">neighbor</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="bp">True</span> <span class="c1"># 방문 표시를 하고
+</span>        <span class="n">neighbor</span><span class="p">.</span><span class="n">predecessor</span> <span class="o">=</span> <span class="n">current</span>  <span class="c1"># 이 노드가 어디서 왔는지 표시
+</span>        <span class="n">queue</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">neighbor</span><span class="p">)</span>  <span class="c1"># 큐에 넣는다.
+</span>
+<span class="k">def</span> <span class="nf">back_track</span><span class="p">(</span><span class="n">destination_node</span><span class="p">):</span>
+  <span class="s">"""최단 경로를 찾기 위한 back tracking 함수"""</span>
+  <span class="n">res_str</span> <span class="o">=</span> <span class="s">""</span>  <span class="c1"># 리턴할 문자 결과열
+</span>  <span class="n">temp</span> <span class="o">=</span> <span class="n">destination_node</span> <span class="c1"># 도착 노드에서 시작 노드까지 찾아가는 데 사용할 변수
+</span>
+  <span class="c1"># 시작 노드로 갈 때까지
+</span>  <span class="k">while</span> <span class="n">temp</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="n">res_str</span> <span class="o">=</span> <span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">temp</span><span class="p">.</span><span class="n">value</span><span class="si">}</span><span class="s"> </span><span class="si">{</span><span class="n">res_str</span><span class="si">}</span><span class="s">"</span> <span class="c1"># 결과 문자열에 방문한 노드 값을 더하고
+</span>    <span class="n">temp</span> <span class="o">=</span> <span class="n">temp</span><span class="p">.</span><span class="n">predecessor</span> <span class="c1"># temp를 다음 노드로 바꿔준다.
+</span>  
+  <span class="k">return</span> <span class="n">res_str</span>
+</code></pre></div></div>
+
+<h3 id="dijkstra">Dijkstra</h3>
+<ul>
+  <li>변수
+    <ol>
+      <li><code class="language-plaintext highlighter-rouge">distance</code>: 특정 노드까지의 “최단 거리 예상치”(현재까지 아는 정보로 계산한 최단 거리)</li>
+      <li><code class="language-plaintext highlighter-rouge">predecessor</code>: 현재까지 최단 경로에서 바로 직전의 노드</li>
+      <li><code class="language-plaintext highlighter-rouge">complete</code>: 노드까지의 최단 경로를 찾았다고 표시하기 위한 변수</li>
+    </ol>
+  </li>
+  <li>Relaxation
+    <ul>
+      <li>엣지 (A, B)를 relax하다: A에서 B를 방문하면서, B의 distance, predecessor를 바꾸는 것
+        <ul>
+          <li>B의 distance &gt; A의 distance + 엣지의 가중치
+            <ul>
+              <li>B의 distance = A의 distance + 엣지의 가중치</li>
+              <li>B의 predecessor = A</li>
+            </ul>
+          </li>
+          <li>B의 distance &lt;= A의 distance + 엣지의 가중치
+            <ul>
+              <li>그대로 둔다.</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>최단 거리 예상값을 줄여주는 과정이 노드의 긴장감을 풀어주는 개념과 비슷하다는 것에서 사용</li>
+    </ul>
+  </li>
+  <li>알고리즘
+    <ol>
+      <li>모든 노드의 distance를 무한대로, predecessor를 <code class="language-plaintext highlighter-rouge">None</code>으로, complete는 <code class="language-plaintext highlighter-rouge">False</code>로</li>
+      <li>시작점의 distance를 0으로, predecessor를 <code class="language-plaintext highlighter-rouge">None</code>으로</li>
+      <li>모든 노드가 complete일 때 까지
+        <ol>
+          <li>complete하지 않은 노드 중 distance가 가장 작은 노드 선택</li>
+          <li>이 노드에 인접한 노드 중 complete하지 않은 노드를 돌면서
+            <ol>
+              <li>각 엣지를 relax</li>
+            </ol>
+          </li>
+          <li>현재 노드를 complete 처리</li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li>Backtracking
+    <ul>
+      <li>최단 거리: 노드의 distance</li>
+      <li>최단 경로: predecessor를 통하여 경로 추가</li>
+    </ul>
+  </li>
+  <li>Dijkstra로 찾은 경로가 최단 경로인 이유
+    <ul>
+      <li>최단 경로의 부분 경로는 모두 최단 경로이다. ⇒ 부분 최단 경로를 이은 경로는 최단 경로이다.(최적 부분 구조)</li>
+      <li>Dijkstra에서 방문하지 않은 노드들 중 distance가 가장 작은 노드를 고를 때, 이 노드의 distance는 이미 시작점으로부터 최단 거리를 보유
+        <ol>
+          <li>Dijkstra 알고리즘은 반복문을 돌면서 최단 경로를 이미 찾은 노드를 하나씩 찾아줌: 처음에는 시작 노드의 최단 경로를 확정지었고, 이후 다음 선택된 노드를 최단 경로로 확정지어줌</li>
+          <li>최단 경로를 이미 찾은 노드들의 엣지들을 모두 relax해줌: 최단 경로는 다른 노드들의 최단 경로 + 현재 노드이므로, 이미 확정난 최단 경로들로 다른 노드들까지의 최단 거리 예상치(distance)를 계산</li>
+          <li>매 단게에서 이 distance가 가장 작은 노드는 최단 거리를 이미 찾았다고 확신: 최적 부분 구조로 인해 이미 선택된 노드는 다른 경로를 통한 최단 거리보다 작기 때문에 반복문이 한 번 실행될 때 마다 distance가 가장 작은 노드가 최단 거리 노드라고 확신</li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+</ul>]]></content><author><name>Domiki</name></author><category term="Coding" /><category term="Computer Science" /><category term="Data Structure" /><summary type="html"><![CDATA[그래프란?]]></summary></entry><entry><title type="html">좋은 알고리즘이란?</title><link href="http://localhost:4000/coding/computer%20science/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%981/" rel="alternate" type="text/html" title="좋은 알고리즘이란?" /><published>2023-03-16T00:00:00+09:00</published><updated>2023-03-17T00:20:00+09:00</updated><id>http://localhost:4000/coding/computer%20science/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%981</id><content type="html" xml:base="http://localhost:4000/coding/computer%20science/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%981/"><![CDATA[<h2 id="알고리즘이란">알고리즘이란?</h2>
 
 <ul>
   <li>컴퓨터 알고리즘: 컴퓨터가 어떤 문제를 해결하기 위해서 컴퓨터가 이해할 수 있는 방식으로 정리되어 있는 해결 방법</li>
@@ -3206,430 +3632,4 @@ but, 이전 값과 현재 값만 저장하면 공간 최적화($O(1)$), 모든 �
       <li>파이썬의 <code class="language-plaintext highlighter-rouge">set</code>, <code class="language-plaintext highlighter-rouge">dict</code>는 데이터 사이에 순서 관계를 약속하지 않는 추상 자료형이므로 <strong>해시 테이블</strong> 사용</li>
     </ul>
   </li>
-</ul>]]></content><author><name>Domiki</name></author><category term="Coding" /><category term="Computer Science" /><category term="Data Structure" /><summary type="html"><![CDATA[트리란?]]></summary></entry><entry><title type="html">그래프</title><link href="http://localhost:4000/coding/computer%20science/data%20structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B03/" rel="alternate" type="text/html" title="그래프" /><published>2023-03-16T00:00:00+09:00</published><updated>2023-03-17T02:12:00+09:00</updated><id>http://localhost:4000/coding/computer%20science/data%20structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B03</id><content type="html" xml:base="http://localhost:4000/coding/computer%20science/data%20structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B03/"><![CDATA[<h2 id="그래프란">그래프란?</h2>
-
-<ul>
-  <li>그래프: 연결 데이터를 저장할 수 있는 자료 구조
-    <ul>
-      <li>연결 관계를 표현
-        <ul>
-          <li>e.g. 위치 데이터, 사회 연결망, 통신, 생물(유전자와 단백질 상호 관계) …</li>
-          <li>c.f. 선형적 자료구조(배열, 링크드 리스트), 계층적 자료구조(트리)</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>그래프 기본
-    <ul>
-      <li>그래프 노드: 하나의 데이터 단위를 나타내는 객체</li>
-      <li>그래프 엣지: 두 노드의 직접적인 연결 관계 데이터. (노드1, 노드2) 또는 (노드2, 노드1)
-        <ul>
-          <li>인접하다: 두 노드 사이에 엣지가 있다.</li>
-          <li>방향 그래프(directed graph): 엣지들이 방향을 가짐. (e.g. 인스타그램 팔로우)
-            <ul>
-              <li>노드1에서 노드2로 가는 화살표를 생각할 때, 노드 1을 떠나서 노드2로 들어가는 엣지라 표현. (노드1, 노드2)로 표현</li>
-            </ul>
-          </li>
-          <li>가중치 그래프(undirected graph): 엣지들이 연결 관계뿐만 아니라 어떤 정보를 나타내는 수치를 가짐</li>
-        </ul>
-      </li>
-      <li>차수: 하나의 노드에 연결된 엣지들의 수
-        <ul>
-          <li>무방향 그래프: 하나의 노드에 연결된 엣지들의 수</li>
-          <li>방향 그래프: 노드를 떠나는 엣지들의 수를 출력 차수, 노드로 들어오는 엣지의 수를 입력 차수로 구분</li>
-        </ul>
-      </li>
-      <li>경로
-        <ul>
-          <li>한 노드에서 다른 노드까지 가는 길</li>
-          <li>거리
-            <ul>
-              <li>비가중치 그래프: 한 경로에 있는 엣지의 수</li>
-              <li>가중치 그래프: 한 경로에 있는 엣지들의 가중치 합</li>
-            </ul>
-          </li>
-          <li>최단 경로(Shortest Path): 두 노드 사이의 경로 중 거리가 가장 짧은 경로</li>
-          <li>사이클: 한 노드에서 시작해서 같은 노드로 돌아오는 경로</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>인접 행렬(adjacency matrix)
-    <ul>
-      <li>
-        <p>노드들의 연결 관계(엣지)를 나타내는 2차원 리스트</p>
-
-        <p><img src="/assets/images/자료구조/img8.png" alt="그래프 인접 행렬" />
-<img src="/assets/images/자료구조/img9.png" alt="가중치 그래프 인접 행렬" />
-<img src="/assets/images/자료구조/img10.png" alt="방향 그래프 인접 행렬" /></p>
-      </li>
-      <li>
-        <p>인접 행렬 만들기</p>
-        <ul>
-          <li>각 노드를 리스트에 저장해 고유 정수 인덱스를 준다.</li>
-          <li>노드 수 X 노드 수 크기의 행렬을 만든다.</li>
-          <li>노드들의 엣지 유무 및 가중치에 따라 행렬의 요소를 채운다.</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>인접 리스트
-    <ul>
-      <li>각 노드의 엣지를 리스트에 저장하는 방법</li>
-      <li>
-        <p>그래프 노드가 연결된 노드들에 대한 레퍼런스를 리스트로 저장</p>
-
-        <p><img src="/assets/images/자료구조/img11.png" alt="인접 리스트 정의" /></p>
-
-        <table>
-          <thead>
-            <tr>
-              <th style="text-align: center">무방향 그래프</th>
-              <th style="text-align: center">방향 그래프</th>
-              <th style="text-align: center">가중치 그래프</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td style="text-align: center"><code class="language-plaintext highlighter-rouge">A.adjacent=[B]</code><br /><code class="language-plaintext highlighter-rouge">B.adjacent=[A]</code></td>
-              <td style="text-align: center"><code class="language-plaintext highlighter-rouge">A.adjacent=[B]</code><br /><code class="language-plaintext highlighter-rouge">B.adjacent=[]</code></td>
-              <td style="text-align: center"><code class="language-plaintext highlighter-rouge">A.adjacent=[(B, 4)]</code><br /><code class="language-plaintext highlighter-rouge">B.adjacent=[(A, 4)]</code></td>
-            </tr>
-          </tbody>
-        </table>
-      </li>
-    </ul>
-  </li>
-  <li>인접 행렬 vs 인접 리스트
-    <ul>
-      <li>복잡도 표현 기호
-        <ul>
-          <li>$V$: 그래프 안에 있는 모든 노드(Vertex)들의 집합</li>
-          <li>$E$: 그래프 안에 있는 모든 엣지(Edge)들의 집합
-            <ul>
-              <li>최악의 경우 $V^2$에 비례</li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-    </ul>
-
-    <table>
-  <tr bgcolor="#e9dcbe" style="text-align: center; border-bottom: 2px solid #afa58f">
-    <th> </th>
-    <th> </th>
-    <th class="text-center"> 인접 행렬 </th>
-    <th class="text-center"> 인접 리스트 </th>
-  </tr>
-  <tr align="center">
-    <td> 공간 복잡도 </td>
-    <td> </td>
-    <td> <span style="color: red">$O(V^2)$</span> <br /> $V \times V$행렬 </td>
-    <td> <span style="color: red"> $O(V+E)$ (최악 $O(V^2)$)</span> <br /> 인접 리스트 저장 $O(V)$, 엣지 저장 $O(E)$ </td>
-  </tr>
-  <tr align="center">
-    <td rowspan="2"> 시간 복잡도 </td>
-    <td> 두 노드 연결 확인 소요시간 </td>
-    <td> <span style="color: red">$O(1)$</span> </td>
-    <td> <span style="color: red">$O(V)$</span> </td>
-  </tr>
-  <tr align="center">
-    <td> 노드에 연결된 모든 노드를 알아내는 데 걸리는 시간 </td>
-    <td> <span style="color: red">$O(V)$</span><br /> 연결관계를 확인하려면 항상 길이가 $V$인 리스트에서 0과 1인지 파악해야 함 </td>
-    <td> <span style="color: red">$O(V)$</span><br /> 각 노드가 자신과 인접한 노드들에 대한 레퍼런스만 가지고 있으므로 인접행렬을 사용하는 것 보다 더 빨리 실행됨.<br /><i>알고리즘 구현 할 때 인접 리스트가 시간적으로 더 효율적</i> </td>
-  </tr>
-</table>
-  </li>
-</ul>
-
-<h2 id="그래프-탐색">그래프 탐색</h2>
-
-<h3 id="그래프-탐색이란">그래프 탐색이란?</h3>
-<ul>
-  <li>하나의 시작점 노드에서 연결된 노드들을 모두 찾는 것</li>
-  <li>하나의 노드에서 연결된 모든 노드를 다 돌기 때문에 그래프 순회라고도 함</li>
-  <li>활용
-    <ol>
-      <li>주어진 두 노드가 연결되었는지 유무 확인(BFS, DFS)</li>
-      <li>두 노드 사이의 최단 경로를 구할 수 있음(BFS(비가중치 그래프), Dijkstra)</li>
-    </ol>
-  </li>
-</ul>
-
-<h3 id="bfsbreadth-first-search">BFS(Breadth First Search)</h3>
-<ul>
-  <li>
-    <p>그래프를 너비 우선적으로 탐색</p>
-
-    <p><img src="/assets/images/자료구조/img12.png" alt="BFS" /></p>
-  </li>
-  <li>자료형으로 큐 사용</li>
-  <li>알고리즘
-    <ol>
-      <li>시작 노드를 방문 표시 후 큐에 삽입</li>
-      <li>큐에 아무 노드가 없을 때 까지
-        <ol>
-          <li>큐 가장 앞 노드를 꺼낸다.</li>
-          <li>꺼낸 노드에 인접한 노드들을 모두 보면서
-            <ol>
-              <li>처음 방문한 노드면
-                <ol>
-                  <li>방문한 노드 표시를 해준다.</li>
-                  <li>큐에 넣어준다.</li>
-                </ol>
-              </li>
-            </ol>
-          </li>
-        </ol>
-      </li>
-    </ol>
-
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">bfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">start_node</span><span class="p">):</span>
-  <span class="s">"""bfs 함수"""</span>
-  <span class="n">queue</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span> <span class="c1"># 빈 큐 생성
-</span>
-  <span class="c1"># 모든 노드를 방문하지 않은 노드로 표시
-</span>  <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">.</span><span class="n">values</span><span class="p">():</span>
-    <span class="n">node</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="bp">False</span>
-    
-  <span class="c1"># 시작점 노드를 방문 표시한 후 큐에 넣어준다.
-</span>  <span class="n">start_node</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="bp">True</span>
-  <span class="n">queue</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">start_node</span><span class="p">)</span>
-
-  <span class="k">while</span> <span class="n">queue</span><span class="p">:</span>  <span class="c1"># 큐에 노드가 있는 동안
-</span>     <span class="n">current</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="n">popleft</span><span class="p">()</span>  <span class="c1"># 큐의 가장 앞 데이터를 갖고 온다.
-</span>     <span class="k">for</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="n">current</span><span class="p">.</span><span class="n">adjacent</span><span class="p">:</span>  <span class="c1"># 인접한 노드를 돌면서
-</span>      <span class="k">if</span> <span class="ow">not</span> <span class="n">neighbor</span><span class="p">.</span><span class="n">visited</span><span class="p">:</span>  <span class="c1"># 방문하지 않은 노드면
-</span>        <span class="n">neighbor</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="bp">True</span> <span class="c1"># 방문 표시를 하고
-</span>        <span class="n">queue</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">neighbor</span><span class="p">)</span>  <span class="c1"># 큐에 넣는다.
-</span></code></pre></div>    </div>
-  </li>
-  <li>시간 복잡도
-    <ul>
-      <li>전처리(모든 노드를 방문하지 않는 노드로 표시): $O(V)$</li>
-      <li>큐에서 노드를 넣고 빼기: 큐에는 노드가 딱 한 번 들어갔다 나오므로 $O(V)$</li>
-      <li>큐에서 뺀 노드의 인접한 노드들을 도는 데 걸리는 시간: 모든 노드들의 인접 리스트를 딱 한 번만 돌게 되므로 엣지 수에 비례: $O(E)$</li>
-    </ul>
-
-    <p>⇒ $O(V+E)$</p>
-  </li>
-</ul>
-
-<h3 id="dfsdepth-first-search">DFS(Depth First Search)</h3>
-<ul>
-  <li>
-    <p>그래프를 깊이 우선적으로 탐색</p>
-
-    <p><img src="/assets/images/자료구조/img13.png" alt="DFS" /></p>
-  </li>
-  <li>자료형으로 스택 사용</li>
-  <li>알고리즘
-    <ol>
-      <li>시작 노드를 스택삽입 표시 후 스택에 삽입</li>
-      <li>스택에 아무 노드가 없을 때 까지
-        <ol>
-          <li>스택의 가장 위 노드를 꺼낸다.</li>
-          <li>노드를 방문 표시한다.</li>
-          <li>꺼낸 노드에 인접한 노드들을 모두 보면서
-            <ol>
-              <li>처음 방문하거나 스택에 없는 노드면
-                <ol>
-                  <li>스택삽입 표시를 해준다.</li>
-                  <li>스택에 넣어준다.</li>
-                </ol>
-              </li>
-            </ol>
-          </li>
-        </ol>
-      </li>
-    </ol>
-
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">start_node</span><span class="p">):</span>
-  <span class="s">"""dfs 함수"""</span>
-  <span class="n">stack</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span> <span class="c1"># 빈 스택 생성
-</span>
-  <span class="c1"># 모든 노드를 처음 보는 노드로 초기화
-</span>  <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">.</span><span class="n">values</span><span class="p">():</span>
-    <span class="n">node</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="mi">0</span>
-
-  <span class="n">start_node</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># 시작 노드를 스택에 넣는다는 표시(옅은 회색)을 하고
-</span>  <span class="n">stack</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">start_node</span><span class="p">)</span>  <span class="c1"># 스택에 넣는다.
-</span>
-  <span class="k">while</span> <span class="n">stack</span><span class="p">:</span>  <span class="c1"># 스택에 노드가 남아 있을 때 까지
-</span>    <span class="n">current</span> <span class="o">=</span> <span class="n">stack</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span> <span class="c1"># 스택 가장 위(뒤) 데이터를 갖고 온다.
-</span>    <span class="n">current</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># 현재 노드를 방문 표시한다.
-</span>    <span class="k">for</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="n">current</span><span class="p">.</span><span class="n">adjacent</span><span class="p">:</span>
-      <span class="k">if</span> <span class="n">neighbor</span><span class="p">.</span><span class="n">visited</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># 처음 보는 노드들만
-</span>        <span class="n">neighbor</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># 스택에 넣는다는 표시를 하고
-</span>        <span class="n">stack</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">neighbor</span><span class="p">)</span>  <span class="c1"># 스택에 넣는다.
-</span>    
-<span class="s">'''
-  visited를 True, False가 아닌 0, 1, 2로 세분화 하는 이유
-  =&gt; stack에 넣는 과정에서 방문 과정(visited = True)을 수행하면 A -&gt; B -&gt; C 의 방문으로 표시가 된다.
-     이는 DFS의 과정이 아니기 때문에(A -&gt; B -&gt; D -&gt; ...) pop을 수행한 이후 방문 표시를 해준다.
-     단순 출력을 위해서라면 True, False로 교체하고 current.visited = 2 부분을 print()로 바꾸면 된다.
-'''</span>
-
-<span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">start_node</span><span class="p">):</span>
-  <span class="n">stack</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span>
-
-  <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">.</span><span class="n">values</span><span class="p">():</span>
-    <span class="n">node</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="bp">False</span>
-    
-  <span class="n">start_node</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="bp">True</span>
-  <span class="n">stack</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">start_node</span><span class="p">)</span>
-
-  <span class="k">while</span> <span class="n">stack</span><span class="p">:</span>
-     <span class="n">current</span> <span class="o">=</span> <span class="n">stack</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span>
-     <span class="k">print</span><span class="p">(</span><span class="n">current</span><span class="p">)</span>
-     <span class="k">for</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="n">current</span><span class="p">.</span><span class="n">adjacent</span><span class="p">:</span>
-      <span class="k">if</span> <span class="ow">not</span> <span class="n">neighbor</span><span class="p">.</span><span class="n">visited</span><span class="p">:</span>
-        <span class="n">neighbor</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="bp">True</span>
-        <span class="n">stack</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">neighbor</span><span class="p">)</span>
-</code></pre></div>    </div>
-  </li>
-  <li>시간 복잡도
-    <ul>
-      <li>전처리(모든 노드를 방문하지 않은 노드로 표시): $O(V)$</li>
-      <li>스택에서 노드를 넣고 빼기: 스택에는 노드가 딱 한 번 들어갔다 나오므로 $O(V)$</li>
-      <li>스택에서 뺀 노드의 인접한 노드들을 도는데 걸리는 시간: 모든 노드들의 인접 리스트를 딱 한 번만 돌게 되므로 엣지 수에 비례: $O(E)$</li>
-    </ul>
-  </li>
-</ul>
-
-<h2 id="최단-경로-알고리즘">최단 경로 알고리즘</h2>
-
-<h3 id="bfs">BFS</h3>
-<ul>
-  <li>predecessor(BFS를 할 때 특정 노드에 오기 직전의 노드)를 멤버 변수에 추가</li>
-  <li>알고리즘
-    <ol>
-      <li>시작 노드를 방문 표시 후 큐에 삽입</li>
-      <li>큐에 아무 노드가 없을 때 까지
-        <ol>
-          <li>큐의 가장 앞 노드를 꺼낸다.</li>
-          <li>꺼낸 노드에 인접한 노드들을 모두 보면서
-            <ol>
-              <li>처음 방문한 노드면
-                <ol>
-                  <li>방문한 노드 표시를 해준다.</li>
-                  <li><em>predecessor 변수를 큐에서 꺼낸 노드로 설정</em></li>
-                  <li>큐에 넣어준다.</li>
-                </ol>
-              </li>
-            </ol>
-          </li>
-        </ol>
-      </li>
-    </ol>
-  </li>
-  <li>Backtracking
-    <ol>
-      <li>현재 노드를 경로에 추가한다.</li>
-      <li>현재 노드의 predecessor로 가면서 경로에 추가한다.</li>
-      <li>predecessor가 없을 때 까지 위 단계 반복.</li>
-      <li>경로를 뒤집는다.</li>
-    </ol>
-  </li>
-  <li>predecessor는 해당 노드를 가장 빨리 발견하는 이전 노드를 저장함 → BFS 경로가 최단경로</li>
-</ul>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">bfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">start_node</span><span class="p">):</span>
-  <span class="s">"""최단 경로용 bfs 함수"""</span>
-  <span class="n">queue</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span> <span class="c1"># 빈 큐 생성
-</span>
-  <span class="c1"># 모든 노드를 방문하지 않은 노드로 표시, 모든 predecessor는 None으로 초기화
-</span>  <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">.</span><span class="n">values</span><span class="p">():</span>
-    <span class="n">node</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="bp">False</span>
-    <span class="n">node</span><span class="p">.</span><span class="n">predecessor</span> <span class="o">=</span> <span class="bp">None</span>
-
-  <span class="c1"># 시작점 노드를 방문 표시한 후 큐에 넣어준다.
-</span>  <span class="n">node</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="bp">True</span>
-  <span class="n">queue</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">start_node</span><span class="p">)</span>
-
-  <span class="k">while</span> <span class="n">queue</span><span class="p">:</span>  <span class="c1"># 큐에 노드가 있을 때 까지
-</span>    <span class="n">current</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="n">popleft</span><span class="p">()</span> <span class="c1"># 큐의 가장 앞 데이터를 갖고 온다.
-</span>    <span class="k">for</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="n">current</span><span class="p">.</span><span class="n">adjacent</span><span class="p">:</span> <span class="c1"># 인접한 노드를 돌면서
-</span>      <span class="k">if</span> <span class="ow">not</span> <span class="n">neighbor</span><span class="p">.</span><span class="n">visited</span><span class="p">:</span>  <span class="c1"># 방문하지 않은 노드면
-</span>        <span class="n">neighbor</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="bp">True</span> <span class="c1"># 방문 표시를 하고
-</span>        <span class="n">neighbor</span><span class="p">.</span><span class="n">predecessor</span> <span class="o">=</span> <span class="n">current</span>  <span class="c1"># 이 노드가 어디서 왔는지 표시
-</span>        <span class="n">queue</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">neighbor</span><span class="p">)</span>  <span class="c1"># 큐에 넣는다.
-</span>
-<span class="k">def</span> <span class="nf">back_track</span><span class="p">(</span><span class="n">destination_node</span><span class="p">):</span>
-  <span class="s">"""최단 경로를 찾기 위한 back tracking 함수"""</span>
-  <span class="n">res_str</span> <span class="o">=</span> <span class="s">""</span>  <span class="c1"># 리턴할 문자 결과열
-</span>  <span class="n">temp</span> <span class="o">=</span> <span class="n">destination_node</span> <span class="c1"># 도착 노드에서 시작 노드까지 찾아가는 데 사용할 변수
-</span>
-  <span class="c1"># 시작 노드로 갈 때까지
-</span>  <span class="k">while</span> <span class="n">temp</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
-    <span class="n">res_str</span> <span class="o">=</span> <span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">temp</span><span class="p">.</span><span class="n">value</span><span class="si">}</span><span class="s"> </span><span class="si">{</span><span class="n">res_str</span><span class="si">}</span><span class="s">"</span> <span class="c1"># 결과 문자열에 방문한 노드 값을 더하고
-</span>    <span class="n">temp</span> <span class="o">=</span> <span class="n">temp</span><span class="p">.</span><span class="n">predecessor</span> <span class="c1"># temp를 다음 노드로 바꿔준다.
-</span>  
-  <span class="k">return</span> <span class="n">res_str</span>
-</code></pre></div></div>
-
-<h3 id="dijkstra">Dijkstra</h3>
-<ul>
-  <li>변수
-    <ol>
-      <li><code class="language-plaintext highlighter-rouge">distance</code>: 특정 노드까지의 “최단 거리 예상치”(현재까지 아는 정보로 계산한 최단 거리)</li>
-      <li><code class="language-plaintext highlighter-rouge">predecessor</code>: 현재까지 최단 경로에서 바로 직전의 노드</li>
-      <li><code class="language-plaintext highlighter-rouge">complete</code>: 노드까지의 최단 경로를 찾았다고 표시하기 위한 변수</li>
-    </ol>
-  </li>
-  <li>Relaxation
-    <ul>
-      <li>엣지 (A, B)를 relax하다: A에서 B를 방문하면서, B의 distance, predecessor를 바꾸는 것
-        <ul>
-          <li>B의 distance &gt; A의 distance + 엣지의 가중치
-            <ul>
-              <li>B의 distance = A의 distance + 엣지의 가중치</li>
-              <li>B의 predecessor = A</li>
-            </ul>
-          </li>
-          <li>B의 distance &lt;= A의 distance + 엣지의 가중치
-            <ul>
-              <li>그대로 둔다.</li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li>최단 거리 예상값을 줄여주는 과정이 노드의 긴장감을 풀어주는 개념과 비슷하다는 것에서 사용</li>
-    </ul>
-  </li>
-  <li>알고리즘
-    <ol>
-      <li>모든 노드의 distance를 무한대로, predecessor를 <code class="language-plaintext highlighter-rouge">None</code>으로, complete는 <code class="language-plaintext highlighter-rouge">False</code>로</li>
-      <li>시작점의 distance를 0으로, predecessor를 <code class="language-plaintext highlighter-rouge">None</code>으로</li>
-      <li>모든 노드가 complete일 때 까지
-        <ol>
-          <li>complete하지 않은 노드 중 distance가 가장 작은 노드 선택</li>
-          <li>이 노드에 인접한 노드 중 complete하지 않은 노드를 돌면서
-            <ol>
-              <li>각 엣지를 relax</li>
-            </ol>
-          </li>
-          <li>현재 노드를 complete 처리</li>
-        </ol>
-      </li>
-    </ol>
-  </li>
-  <li>Backtracking
-    <ul>
-      <li>최단 거리: 노드의 distance</li>
-      <li>최단 경로: predecessor를 통하여 경로 추가</li>
-    </ul>
-  </li>
-  <li>Dijkstra로 찾은 경로가 최단 경로인 이유
-    <ul>
-      <li>최단 경로의 부분 경로는 모두 최단 경로이다. ⇒ 부분 최단 경로를 이은 경로는 최단 경로이다.(최적 부분 구조)</li>
-      <li>Dijkstra에서 방문하지 않은 노드들 중 distance가 가장 작은 노드를 고를 때, 이 노드의 distance는 이미 시작점으로부터 최단 거리를 보유
-        <ol>
-          <li>Dijkstra 알고리즘은 반복문을 돌면서 최단 경로를 이미 찾은 노드를 하나씩 찾아줌: 처음에는 시작 노드의 최단 경로를 확정지었고, 이후 다음 선택된 노드를 최단 경로로 확정지어줌</li>
-          <li>최단 경로를 이미 찾은 노드들의 엣지들을 모두 relax해줌: 최단 경로는 다른 노드들의 최단 경로 + 현재 노드이므로, 이미 확정난 최단 경로들로 다른 노드들까지의 최단 거리 예상치(distance)를 계산</li>
-          <li>매 단게에서 이 distance가 가장 작은 노드는 최단 거리를 이미 찾았다고 확신: 최적 부분 구조로 인해 이미 선택된 노드는 다른 경로를 통한 최단 거리보다 작기 때문에 반복문이 한 번 실행될 때 마다 distance가 가장 작은 노드가 최단 거리 노드라고 확신</li>
-        </ol>
-      </li>
-    </ul>
-  </li>
-</ul>]]></content><author><name>Domiki</name></author><category term="Coding" /><category term="Computer Science" /><category term="Data Structure" /><summary type="html"><![CDATA[그래프란?]]></summary></entry></feed>
+</ul>]]></content><author><name>Domiki</name></author><category term="Coding" /><category term="Computer Science" /><category term="Data Structure" /><summary type="html"><![CDATA[트리란?]]></summary></entry></feed>
