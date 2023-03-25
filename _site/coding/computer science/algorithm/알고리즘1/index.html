@@ -1,0 +1,921 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>좋은 알고리즘이란? - Domiki’s Computer Lecture Note</title>
+<meta name="description" content="알고리즘이란?">
+
+
+  <meta name="author" content="Domiki">
+  
+  <meta property="article:author" content="Domiki">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="Domiki's Computer Lecture Note">
+<meta property="og:title" content="좋은 알고리즘이란?">
+<meta property="og:url" content="http://localhost:4000/coding/computer%20science/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%981/">
+
+
+  <meta property="og:description" content="알고리즘이란?">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-03-16T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2023-03-17T00:20:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/coding/computer%20science/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%981/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Domiki",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Domiki's Computer Lecture Note Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+<!-- Mathjax Support -->
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+
+    <!-- 22.08.21 GY for mathjax-->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      TeX: {
+        equationNumbers: {
+          autoNumber: "AMS"
+        }
+      },
+      tex2jax: {
+        inlineMath: [ ['$', '$'] ],
+        displayMath: [ ['$$', '$$'] ],
+        processEscapes: true,
+      }
+    });
+    MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
+      alert("Math Processing Error: "+message[1]);
+    });
+    MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
+      alert("Math Processing Error: "+message[1]);
+    });
+    </script>
+    <script type="text/javascript" async
+      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Domiki
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/">Main</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/coding">Coding</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/profile.jpg" alt="Domiki" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Domiki</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Coding, coffee, picture, and starlight.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:ado505@snu.ac.kr" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://www.instagram.com/ando_domiki/?hl=ko" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">Instagram</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <a href="/categories/coding"><span class="nav__sub-title">모아보기</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">알고리즘</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/coding/computer%20science/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%981/">좋은 알고리즘이란?</a></li>
+          
+            <li><a href="/coding/computer%20science/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%982/">재귀함수</a></li>
+          
+            <li><a href="/coding/computer%20science/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%983/">알고리즘 패러다임</a></li>
+          
+            <li><a href="/coding/computer%20science/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%984/">문제 해결 능력 기르기</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">자료구조</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/coding/computer%20science/data%20structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B01/">기본 자료 구조</a></li>
+          
+            <li><a href="/coding/computer%20science/data%20structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B02/">트리</a></li>
+          
+            <li><a href="/coding/computer%20science/data%20structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B03/">그래프</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="좋은 알고리즘이란?">
+    <meta itemprop="description" content="알고리즘이란?">
+    <meta itemprop="datePublished" content="2023-03-16T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2023-03-17T00:20:00+09:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/coding/computer%20science/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%981/" class="u-url" itemprop="url">좋은 알고리즘이란?
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 좋은 알고리즘이란?</h4></header>
+              <ul class="toc__menu"><li><a href="#알고리즘이란">알고리즘이란?</a></li><li><a href="#하나의-문제-여러-가지-알고리즘">하나의 문제, 여러 가지 알고리즘</a><ul><li><a href="#탐색">탐색</a></li><li><a href="#정렬sorting">정렬(Sorting)</a></li></ul></li><li><a href="#알고리즘-평가법">알고리즘 평가법</a><ul><li><a href="#시간-복잡도time-complexity">시간 복잡도(Time Complexity)</a></li><li><a href="#공간-복잡도space-complexity">공간 복잡도(Space Complexity)</a></li><li><a href="#유용한-파이썬-함수-시간복잡도-정리">유용한 파이썬 함수 시간복잡도 정리</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h2 id="알고리즘이란">알고리즘이란?</h2>
+
+<ul>
+  <li>컴퓨터 알고리즘: 컴퓨터가 어떤 문제를 해결하기 위해서 컴퓨터가 이해할 수 있는 방식으로 정리되어 있는 해결 방법</li>
+</ul>
+
+<h2 id="하나의-문제-여러-가지-알고리즘">하나의 문제, 여러 가지 알고리즘</h2>
+
+<h3 id="탐색">탐색</h3>
+<ul>
+  <li>저장된 정보들 중에서 원하는 값을 찾는 것</li>
+</ul>
+
+<ol>
+  <li>선형 탐색 알고리즘(linear search algorithm)
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">def</span> <span class="nf">linear_search</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">some_list</span><span class="p">):</span>
+   <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">some_list</span><span class="p">)):</span>
+     <span class="k">if</span> <span class="n">some_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">element</span><span class="p">:</span>
+       <span class="k">return</span> <span class="n">i</span>
+   <span class="k">return</span> <span class="bp">None</span>
+</code></pre></div>    </div>
+  </li>
+  <li>이진 탐색 알고리즘(binary search algorithm)
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">def</span> <span class="nf">binary_search</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">some_list</span><span class="p">):</span>
+   <span class="n">start_index</span> <span class="o">=</span> <span class="mi">0</span>
+   <span class="n">end_index</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">some_list</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+
+   <span class="k">while</span> <span class="n">start_index</span> <span class="o">&lt;=</span> <span class="n">end_index</span><span class="p">:</span>
+     <span class="n">midpoint</span> <span class="o">=</span> <span class="p">(</span><span class="n">start_index</span> <span class="o">+</span> <span class="n">end_index</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+     <span class="k">if</span> <span class="n">some_list</span><span class="p">[</span><span class="n">midpoint</span><span class="p">]</span> <span class="o">==</span> <span class="n">element</span><span class="p">:</span>
+       <span class="k">return</span> <span class="n">midpoint</span>
+     <span class="k">elif</span> <span class="n">some_list</span><span class="p">[</span><span class="n">midpoint</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">element</span><span class="p">:</span>
+       <span class="n">end_index</span> <span class="o">=</span> <span class="n">midpoint</span> <span class="o">-</span> <span class="mi">1</span>
+     <span class="k">else</span><span class="p">:</span>
+       <span class="n">start_index</span> <span class="o">=</span> <span class="n">midpoint</span> <span class="o">+</span> <span class="mi">1</span>
+   <span class="k">return</span> <span class="bp">None</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="정렬sorting">정렬(Sorting)</h3>
+<ul>
+  <li>리스트의 원소들을 특정 순서로 정리하는 것</li>
+</ul>
+
+<ol>
+  <li>선택 정렬(Selection Sort): 각 위치에 어떤 값이 들어갈지 찾는다.</li>
+  <li>삽입 정렬(Insertion Sort): 각 값이 어떤 위치에 들어갈지 찾는다.</li>
+</ol>
+
+<ul>
+  <li>정렬 문제: 절대적인 좋은 답 없음
+    <ul>
+      <li>거의 정렬된 리스트: 삽입 정렬(Insertion Sort). 가장 빠름</li>
+      <li>무작위 순서의 리스트: 힙 정렬(Heapsort)</li>
+      <li>반대로 정렬된 리스트: 삽입 정렬(Insertion Sort). 가장 느림</li>
+      <li>선택 정렬(Selection Sort), 합병 정렬(Merge Sort): 상황에 영향을 받지 않고 일정한 시간이 소요</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="알고리즘-평가법">알고리즘 평가법</h2>
+
+<h3 id="시간-복잡도time-complexity">시간 복잡도(Time Complexity)</h3>
+<ul>
+  <li>점근 표기법(Big-O)
+    <ol>
+      <li>
+        <p>선형 탐색과 이진 탐색</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th style="text-align: center"> </th>
+              <th style="text-align: center">선형 탐색</th>
+              <th style="text-align: center">이진 탐색</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align: center">최고의 경우</td>
+              <td style="text-align: center">$O(1)$</td>
+              <td style="text-align: center">$O(1)$</td>
+            </tr>
+            <tr>
+              <td style="text-align: center">최악의 경우</td>
+              <td style="text-align: center">$O(n)$</td>
+              <td style="text-align: center">$O(\lg n)$</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <p><code class="language-plaintext highlighter-rouge">list</code> Operations</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th style="text-align: center">Operation</th>
+              <th style="text-align: center">Code</th>
+              <th style="text-align: center">Average Case</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align: center">인덱싱</td>
+              <td style="text-align: center"><code class="language-plaintext highlighter-rouge">list[index]</code></td>
+              <td style="text-align: center">$O(1)$</td>
+            </tr>
+            <tr>
+              <td style="text-align: center">정렬</td>
+              <td style="text-align: center"><code class="language-plaintext highlighter-rouge">list.sort()</code><br /><code class="language-plaintext highlighter-rouge">sorted(list)</code></td>
+              <td style="text-align: center">$O(n\lg n)$</td>
+            </tr>
+            <tr>
+              <td style="text-align: center">뒤집기</td>
+              <td style="text-align: center"><code class="language-plaintext highlighter-rouge">list.reverse()</code></td>
+              <td style="text-align: center">$O(n)$</td>
+            </tr>
+            <tr>
+              <td style="text-align: center">탐색</td>
+              <td style="text-align: center"><code class="language-plaintext highlighter-rouge">element in list</code></td>
+              <td style="text-align: center">$O(n)$</td>
+            </tr>
+            <tr>
+              <td style="text-align: center">끝에 요소 추가</td>
+              <td style="text-align: center"><code class="language-plaintext highlighter-rouge">list.append(element)</code></td>
+              <td style="text-align: center">$O(1)$</td>
+            </tr>
+            <tr>
+              <td style="text-align: center">중간에 요소 추가</td>
+              <td style="text-align: center"><code class="language-plaintext highlighter-rouge">list.insert(index, element)</code></td>
+              <td style="text-align: center">$O(n)$</td>
+            </tr>
+            <tr>
+              <td style="text-align: center">삭제</td>
+              <td style="text-align: center"><code class="language-plaintext highlighter-rouge">del list[index]</code></td>
+              <td style="text-align: center">$O(n)$</td>
+            </tr>
+            <tr>
+              <td style="text-align: center">최솟값, 최댓값 찾기</td>
+              <td style="text-align: center"><code class="language-plaintext highlighter-rouge">min(list)</code><br /><code class="language-plaintext highlighter-rouge">max(list)</code></td>
+              <td style="text-align: center">$O(n)$</td>
+            </tr>
+            <tr>
+              <td style="text-align: center">길이 구하기</td>
+              <td style="text-align: center"><code class="language-plaintext highlighter-rouge">len(list)</code></td>
+              <td style="text-align: center">$O(1)$</td>
+            </tr>
+            <tr>
+              <td style="text-align: center">슬라이싱</td>
+              <td style="text-align: center"><code class="language-plaintext highlighter-rouge">list[a:b]</code></td>
+              <td style="text-align: center">$O(b-a)$</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <p><code class="language-plaintext highlighter-rouge">dict</code> Operations</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th style="text-align: center">Operation</th>
+              <th style="text-align: center">Code</th>
+              <th style="text-align: center">Average Case</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align: center">값 찾기</td>
+              <td style="text-align: center"><code class="language-plaintext highlighter-rouge">dict[key]</code></td>
+              <td style="text-align: center">$O(1)$</td>
+            </tr>
+            <tr>
+              <td style="text-align: center">값 넣어주기/찾아주기</td>
+              <td style="text-align: center"><code class="language-plaintext highlighter-rouge">dict[key] = value</code></td>
+              <td style="text-align: center">$O(1)$</td>
+            </tr>
+            <tr>
+              <td style="text-align: center">값 삭제</td>
+              <td style="text-align: center"><code class="language-plaintext highlighter-rouge">del dict[key]</code></td>
+              <td style="text-align: center">$O(1)$</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+    </ol>
+
+    <ul>
+      <li>$O(1)$: input의 크기가 소요 시간에 영향 X</li>
+      <li>$O(n)$: 반복문 횟수가 input의 크기에 비례</li>
+      <li>$O(n^2)$: 반복문 내부에 반복문. 둘 다 input의 크기에 비례</li>
+      <li>$O(n^3)$: input의 크기에 비례하는 반복문이 3번 중첩</li>
+      <li>$O(\lg n)$: $i$가 두 배씩 증가, 반씩 감소</li>
+      <li>$O(n\lg n)$: $O(n)$과 $O(\lg n)$이 겹쳐진 것</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="공간-복잡도space-complexity">공간 복잡도(Space Complexity)</h3>
+<ul>
+  <li>input 크기에 비례해서 알고리즘이 사용하는 메모리 공간</li>
+  <li>Big-O 표기법 사용 가능</li>
+</ul>
+
+<h3 id="유용한-파이썬-함수-시간복잡도-정리">유용한 파이썬 함수 시간복잡도 정리</h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">type</code>: parameter의 data type이 return. $O(1)$</li>
+  <li><code class="language-plaintext highlighter-rouge">max</code>, <code class="language-plaintext highlighter-rouge">min</code>: 가장 큰 값 혹은 작은 값. $O(n)$</li>
+  <li><code class="language-plaintext highlighter-rouge">str</code>: 숫자를 문자열로. 시간 복잡도는 자릿수에 비례($O(\lg n)$)</li>
+  <li><code class="language-plaintext highlighter-rouge">append</code>: $O(1)$</li>
+  <li><code class="language-plaintext highlighter-rouge">insert</code>, <code class="language-plaintext highlighter-rouge">del</code>, <code class="language-plaintext highlighter-rouge">index</code>, <code class="language-plaintext highlighter-rouge">reverse</code>: $O(n)$</li>
+  <li><code class="language-plaintext highlighter-rouge">sort</code>, <code class="language-plaintext highlighter-rouge">sorted</code>: sort는 리스트 자체를 정렬, sorted는 정렬된 새로운 리스트를 return. $O(n\lg n)$</li>
+  <li><code class="language-plaintext highlighter-rouge">list[a:b]</code>: 리스트의 일부를 받아올 수 있음. $O(b-a)$</li>
+  <li><code class="language-plaintext highlighter-rouge">len</code>: 리스트, 사전, 문자열 등의 길이를 return. $O(1)$</li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#algorithm" class="page__taxonomy-item p-category" rel="tag">Algorithm</a><span class="sep">, </span>
+    
+      <a href="/categories/#coding" class="page__taxonomy-item p-category" rel="tag">Coding</a><span class="sep">, </span>
+    
+      <a href="/categories/#computer-science" class="page__taxonomy-item p-category" rel="tag">Computer Science</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-03-16">March 16, 2023</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%EC%A2%8B%EC%9D%80+%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B4%EB%9E%80%3F%20http%3A%2F%2Flocalhost%3A4000%2Fcoding%2Fcomputer%2520science%2Falgorithm%2F%25EC%2595%258C%25EA%25B3%25A0%25EB%25A6%25AC%25EC%25A6%25981%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fcoding%2Fcomputer%2520science%2Falgorithm%2F%25EC%2595%258C%25EA%25B3%25A0%25EB%25A6%25AC%25EC%25A6%25981%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fcoding%2Fcomputer%2520science%2Falgorithm%2F%25EC%2595%258C%25EA%25B3%25A0%25EB%25A6%25AC%25EC%25A6%25981%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="#" class="pagination--pager disabled">이전</a>
+    
+    
+      <a href="/coding/computer%20science/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%982/" class="pagination--pager" title="재귀함수
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/coding/computer%20science/data%20structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B03/" rel="permalink">그래프
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          7 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">그래프란?
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/coding/computer%20science/data%20structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B02/" rel="permalink">트리
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          8 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">트리란?
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/coding/computer%20science/data%20structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B01/" rel="permalink">기본 자료 구조들
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          18 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">자료 구조란?
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/coding/computer%20science/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%984/" rel="permalink">문제 해결 능력 기르기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          6 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">투자 귀재 규식이 II
+규식이는 친구들 사이에서 투자의 귀재로 알려져 있습니다. 페이수북과 인수타그램에 자신의 성과를 과시하기 때문인데요. 사실 규식이가 그 정도의 실력자는 아닙니다. 성과가 좋을 때에만 SNS에 공유해서 그렇게 비춰질 뿐이죠. 계속해서 멋진 모습을 보여주기 위해,...</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/Domiki" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Domiki. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

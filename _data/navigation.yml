@@ -2,6 +2,10 @@
 main:
   - title: "Main"
     url: /
+  - title: "Category"
+    url: /categories/
+  - title: "Coding"
+    url: /categories/coding
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"
@@ -10,3 +14,26 @@ main:
   #   url: /collection-archive/
   # - title: "Sitemap"
   #   url: /sitemap/
+
+# sidebar menu links
+coding:
+  - title: "모아보기"
+    url: "categories/coding"
+  - title: "알고리즘"
+    children:
+      - title: "좋은 알고리즘이란?"
+        url: coding/computer science/algorithm/알고리즘1/
+      - title: "재귀함수"
+        url: coding/computer science/algorithm/알고리즘2/
+      - title: "알고리즘 패러다임"
+        url: coding/computer science/algorithm/알고리즘3/
+      - title: "문제 해결 능력 기르기"
+        url: coding/computer science/algorithm/알고리즘4/
+  - title: "자료구조"
+    children:
+      - title: "기본 자료 구조"
+        url: coding/computer science/data structure/자료구조1/
+      - title: "트리"
+        url: coding/computer science/data structure/자료구조2/
+      - title: "그래프"
+        url: coding/computer science/data structure/자료구조3/

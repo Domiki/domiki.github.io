@@ -1,0 +1,1130 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>그래프 - Domiki’s Computer Lecture Note</title>
+<meta name="description" content="그래프란?">
+
+
+  <meta name="author" content="Domiki">
+  
+  <meta property="article:author" content="Domiki">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="Domiki's Computer Lecture Note">
+<meta property="og:title" content="그래프">
+<meta property="og:url" content="http://localhost:4000/coding/computer%20science/data%20structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B03/">
+
+
+  <meta property="og:description" content="그래프란?">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-03-16T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2023-03-17T02:12:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/coding/computer%20science/data%20structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B03/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Domiki",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Domiki's Computer Lecture Note Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+<!-- Mathjax Support -->
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+
+    <!-- 22.08.21 GY for mathjax-->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      TeX: {
+        equationNumbers: {
+          autoNumber: "AMS"
+        }
+      },
+      tex2jax: {
+        inlineMath: [ ['$', '$'] ],
+        displayMath: [ ['$$', '$$'] ],
+        processEscapes: true,
+      }
+    });
+    MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
+      alert("Math Processing Error: "+message[1]);
+    });
+    MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
+      alert("Math Processing Error: "+message[1]);
+    });
+    </script>
+    <script type="text/javascript" async
+      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Domiki
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/">Main</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/coding">Coding</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/profile.jpg" alt="Domiki" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Domiki</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Coding, coffee, picture, and starlight.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:ado505@snu.ac.kr" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://www.instagram.com/ando_domiki/?hl=ko" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">Instagram</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <a href="/categories/coding"><span class="nav__sub-title">모아보기</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">알고리즘</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/coding/computer%20science/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%981/">좋은 알고리즘이란?</a></li>
+          
+            <li><a href="/coding/computer%20science/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%982/">재귀함수</a></li>
+          
+            <li><a href="/coding/computer%20science/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%983/">알고리즘 패러다임</a></li>
+          
+            <li><a href="/coding/computer%20science/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%984/">문제 해결 능력 기르기</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">자료구조</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/coding/computer%20science/data%20structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B01/">기본 자료 구조</a></li>
+          
+            <li><a href="/coding/computer%20science/data%20structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B02/">트리</a></li>
+          
+            <li><a href="/coding/computer%20science/data%20structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B03/">그래프</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="그래프">
+    <meta itemprop="description" content="그래프란?">
+    <meta itemprop="datePublished" content="2023-03-16T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2023-03-17T02:12:00+09:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/coding/computer%20science/data%20structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B03/" class="u-url" itemprop="url">그래프
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          6 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 그래프</h4></header>
+              <ul class="toc__menu"><li><a href="#그래프란">그래프란?</a></li><li><a href="#그래프-탐색">그래프 탐색</a><ul><li><a href="#그래프-탐색이란">그래프 탐색이란?</a></li><li><a href="#bfsbreadth-first-search">BFS(Breadth First Search)</a></li><li><a href="#dfsdepth-first-search">DFS(Depth First Search)</a></li></ul></li><li><a href="#최단-경로-알고리즘">최단 경로 알고리즘</a><ul><li><a href="#bfs">BFS</a></li><li><a href="#dijkstra">Dijkstra</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h2 id="그래프란">그래프란?</h2>
+
+<ul>
+  <li>그래프: 연결 데이터를 저장할 수 있는 자료 구조
+    <ul>
+      <li>연결 관계를 표현
+        <ul>
+          <li>e.g. 위치 데이터, 사회 연결망, 통신, 생물(유전자와 단백질 상호 관계) …</li>
+          <li>c.f. 선형적 자료구조(배열, 링크드 리스트), 계층적 자료구조(트리)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>그래프 기본
+    <ul>
+      <li>그래프 노드: 하나의 데이터 단위를 나타내는 객체</li>
+      <li>그래프 엣지: 두 노드의 직접적인 연결 관계 데이터. (노드1, 노드2) 또는 (노드2, 노드1)
+        <ul>
+          <li>인접하다: 두 노드 사이에 엣지가 있다.</li>
+          <li>방향 그래프(directed graph): 엣지들이 방향을 가짐. (e.g. 인스타그램 팔로우)
+            <ul>
+              <li>노드1에서 노드2로 가는 화살표를 생각할 때, 노드 1을 떠나서 노드2로 들어가는 엣지라 표현. (노드1, 노드2)로 표현</li>
+            </ul>
+          </li>
+          <li>가중치 그래프(undirected graph): 엣지들이 연결 관계뿐만 아니라 어떤 정보를 나타내는 수치를 가짐</li>
+        </ul>
+      </li>
+      <li>차수: 하나의 노드에 연결된 엣지들의 수
+        <ul>
+          <li>무방향 그래프: 하나의 노드에 연결된 엣지들의 수</li>
+          <li>방향 그래프: 노드를 떠나는 엣지들의 수를 출력 차수, 노드로 들어오는 엣지의 수를 입력 차수로 구분</li>
+        </ul>
+      </li>
+      <li>경로
+        <ul>
+          <li>한 노드에서 다른 노드까지 가는 길</li>
+          <li>거리
+            <ul>
+              <li>비가중치 그래프: 한 경로에 있는 엣지의 수</li>
+              <li>가중치 그래프: 한 경로에 있는 엣지들의 가중치 합</li>
+            </ul>
+          </li>
+          <li>최단 경로(Shortest Path): 두 노드 사이의 경로 중 거리가 가장 짧은 경로</li>
+          <li>사이클: 한 노드에서 시작해서 같은 노드로 돌아오는 경로</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>인접 행렬(adjacency matrix)
+    <ul>
+      <li>
+        <p>노드들의 연결 관계(엣지)를 나타내는 2차원 리스트</p>
+
+        <p><img src="/assets/images/자료구조/img8.png" alt="그래프 인접 행렬" />
+<img src="/assets/images/자료구조/img9.png" alt="가중치 그래프 인접 행렬" />
+<img src="/assets/images/자료구조/img10.png" alt="방향 그래프 인접 행렬" /></p>
+      </li>
+      <li>
+        <p>인접 행렬 만들기</p>
+        <ul>
+          <li>각 노드를 리스트에 저장해 고유 정수 인덱스를 준다.</li>
+          <li>노드 수 X 노드 수 크기의 행렬을 만든다.</li>
+          <li>노드들의 엣지 유무 및 가중치에 따라 행렬의 요소를 채운다.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>인접 리스트
+    <ul>
+      <li>각 노드의 엣지를 리스트에 저장하는 방법</li>
+      <li>
+        <p>그래프 노드가 연결된 노드들에 대한 레퍼런스를 리스트로 저장</p>
+
+        <p><img src="/assets/images/자료구조/img11.png" alt="인접 리스트 정의" /></p>
+
+        <table>
+          <thead>
+            <tr>
+              <th style="text-align: center">무방향 그래프</th>
+              <th style="text-align: center">방향 그래프</th>
+              <th style="text-align: center">가중치 그래프</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align: center"><code class="language-plaintext highlighter-rouge">A.adjacent=[B]</code><br /><code class="language-plaintext highlighter-rouge">B.adjacent=[A]</code></td>
+              <td style="text-align: center"><code class="language-plaintext highlighter-rouge">A.adjacent=[B]</code><br /><code class="language-plaintext highlighter-rouge">B.adjacent=[]</code></td>
+              <td style="text-align: center"><code class="language-plaintext highlighter-rouge">A.adjacent=[(B, 4)]</code><br /><code class="language-plaintext highlighter-rouge">B.adjacent=[(A, 4)]</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+    </ul>
+  </li>
+  <li>인접 행렬 vs 인접 리스트
+    <ul>
+      <li>복잡도 표현 기호
+        <ul>
+          <li>$V$: 그래프 안에 있는 모든 노드(Vertex)들의 집합</li>
+          <li>$E$: 그래프 안에 있는 모든 엣지(Edge)들의 집합
+            <ul>
+              <li>최악의 경우 $V^2$에 비례</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <table>
+  <tr bgcolor="#e9dcbe" style="text-align: center; border-bottom: 2px solid #afa58f">
+    <th> </th>
+    <th> </th>
+    <th class="text-center"> 인접 행렬 </th>
+    <th class="text-center"> 인접 리스트 </th>
+  </tr>
+  <tr align="center">
+    <td> 공간 복잡도 </td>
+    <td> </td>
+    <td> <span style="color: red">$O(V^2)$</span> <br /> $V \times V$행렬 </td>
+    <td> <span style="color: red"> $O(V+E)$ (최악 $O(V^2)$)</span> <br /> 인접 리스트 저장 $O(V)$, 엣지 저장 $O(E)$ </td>
+  </tr>
+  <tr align="center">
+    <td rowspan="2"> 시간 복잡도 </td>
+    <td> 두 노드 연결 확인 소요시간 </td>
+    <td> <span style="color: red">$O(1)$</span> </td>
+    <td> <span style="color: red">$O(V)$</span> </td>
+  </tr>
+  <tr align="center">
+    <td> 노드에 연결된 모든 노드를 알아내는 데 걸리는 시간 </td>
+    <td> <span style="color: red">$O(V)$</span><br /> 연결관계를 확인하려면 항상 길이가 $V$인 리스트에서 0과 1인지 파악해야 함 </td>
+    <td> <span style="color: red">$O(V)$</span><br /> 각 노드가 자신과 인접한 노드들에 대한 레퍼런스만 가지고 있으므로 인접행렬을 사용하는 것 보다 더 빨리 실행됨.<br /><i>알고리즘 구현 할 때 인접 리스트가 시간적으로 더 효율적</i> </td>
+  </tr>
+</table>
+  </li>
+</ul>
+
+<h2 id="그래프-탐색">그래프 탐색</h2>
+
+<h3 id="그래프-탐색이란">그래프 탐색이란?</h3>
+<ul>
+  <li>하나의 시작점 노드에서 연결된 노드들을 모두 찾는 것</li>
+  <li>하나의 노드에서 연결된 모든 노드를 다 돌기 때문에 그래프 순회라고도 함</li>
+  <li>활용
+    <ol>
+      <li>주어진 두 노드가 연결되었는지 유무 확인(BFS, DFS)</li>
+      <li>두 노드 사이의 최단 경로를 구할 수 있음(BFS(비가중치 그래프), Dijkstra)</li>
+    </ol>
+  </li>
+</ul>
+
+<h3 id="bfsbreadth-first-search">BFS(Breadth First Search)</h3>
+<ul>
+  <li>
+    <p>그래프를 너비 우선적으로 탐색</p>
+
+    <p><img src="/assets/images/자료구조/img12.png" alt="BFS" /></p>
+  </li>
+  <li>자료형으로 큐 사용</li>
+  <li>알고리즘
+    <ol>
+      <li>시작 노드를 방문 표시 후 큐에 삽입</li>
+      <li>큐에 아무 노드가 없을 때 까지
+        <ol>
+          <li>큐 가장 앞 노드를 꺼낸다.</li>
+          <li>꺼낸 노드에 인접한 노드들을 모두 보면서
+            <ol>
+              <li>처음 방문한 노드면
+                <ol>
+                  <li>방문한 노드 표시를 해준다.</li>
+                  <li>큐에 넣어준다.</li>
+                </ol>
+              </li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+    </ol>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">bfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">start_node</span><span class="p">):</span>
+  <span class="s">"""bfs 함수"""</span>
+  <span class="n">queue</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span> <span class="c1"># 빈 큐 생성
+</span>
+  <span class="c1"># 모든 노드를 방문하지 않은 노드로 표시
+</span>  <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">.</span><span class="n">values</span><span class="p">():</span>
+    <span class="n">node</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="bp">False</span>
+    
+  <span class="c1"># 시작점 노드를 방문 표시한 후 큐에 넣어준다.
+</span>  <span class="n">start_node</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="bp">True</span>
+  <span class="n">queue</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">start_node</span><span class="p">)</span>
+
+  <span class="k">while</span> <span class="n">queue</span><span class="p">:</span>  <span class="c1"># 큐에 노드가 있는 동안
+</span>     <span class="n">current</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="n">popleft</span><span class="p">()</span>  <span class="c1"># 큐의 가장 앞 데이터를 갖고 온다.
+</span>     <span class="k">for</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="n">current</span><span class="p">.</span><span class="n">adjacent</span><span class="p">:</span>  <span class="c1"># 인접한 노드를 돌면서
+</span>      <span class="k">if</span> <span class="ow">not</span> <span class="n">neighbor</span><span class="p">.</span><span class="n">visited</span><span class="p">:</span>  <span class="c1"># 방문하지 않은 노드면
+</span>        <span class="n">neighbor</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="bp">True</span> <span class="c1"># 방문 표시를 하고
+</span>        <span class="n">queue</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">neighbor</span><span class="p">)</span>  <span class="c1"># 큐에 넣는다.
+</span></code></pre></div>    </div>
+  </li>
+  <li>시간 복잡도
+    <ul>
+      <li>전처리(모든 노드를 방문하지 않는 노드로 표시): $O(V)$</li>
+      <li>큐에서 노드를 넣고 빼기: 큐에는 노드가 딱 한 번 들어갔다 나오므로 $O(V)$</li>
+      <li>큐에서 뺀 노드의 인접한 노드들을 도는 데 걸리는 시간: 모든 노드들의 인접 리스트를 딱 한 번만 돌게 되므로 엣지 수에 비례: $O(E)$</li>
+    </ul>
+
+    <p>⇒ $O(V+E)$</p>
+  </li>
+</ul>
+
+<h3 id="dfsdepth-first-search">DFS(Depth First Search)</h3>
+<ul>
+  <li>
+    <p>그래프를 깊이 우선적으로 탐색</p>
+
+    <p><img src="/assets/images/자료구조/img13.png" alt="DFS" /></p>
+  </li>
+  <li>자료형으로 스택 사용</li>
+  <li>알고리즘
+    <ol>
+      <li>시작 노드를 스택삽입 표시 후 스택에 삽입</li>
+      <li>스택에 아무 노드가 없을 때 까지
+        <ol>
+          <li>스택의 가장 위 노드를 꺼낸다.</li>
+          <li>노드를 방문 표시한다.</li>
+          <li>꺼낸 노드에 인접한 노드들을 모두 보면서
+            <ol>
+              <li>처음 방문하거나 스택에 없는 노드면
+                <ol>
+                  <li>스택삽입 표시를 해준다.</li>
+                  <li>스택에 넣어준다.</li>
+                </ol>
+              </li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+    </ol>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">start_node</span><span class="p">):</span>
+  <span class="s">"""dfs 함수"""</span>
+  <span class="n">stack</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span> <span class="c1"># 빈 스택 생성
+</span>
+  <span class="c1"># 모든 노드를 처음 보는 노드로 초기화
+</span>  <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">.</span><span class="n">values</span><span class="p">():</span>
+    <span class="n">node</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="mi">0</span>
+
+  <span class="n">start_node</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># 시작 노드를 스택에 넣는다는 표시(옅은 회색)을 하고
+</span>  <span class="n">stack</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">start_node</span><span class="p">)</span>  <span class="c1"># 스택에 넣는다.
+</span>
+  <span class="k">while</span> <span class="n">stack</span><span class="p">:</span>  <span class="c1"># 스택에 노드가 남아 있을 때 까지
+</span>    <span class="n">current</span> <span class="o">=</span> <span class="n">stack</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span> <span class="c1"># 스택 가장 위(뒤) 데이터를 갖고 온다.
+</span>    <span class="n">current</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># 현재 노드를 방문 표시한다.
+</span>    <span class="k">for</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="n">current</span><span class="p">.</span><span class="n">adjacent</span><span class="p">:</span>
+      <span class="k">if</span> <span class="n">neighbor</span><span class="p">.</span><span class="n">visited</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># 처음 보는 노드들만
+</span>        <span class="n">neighbor</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># 스택에 넣는다는 표시를 하고
+</span>        <span class="n">stack</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">neighbor</span><span class="p">)</span>  <span class="c1"># 스택에 넣는다.
+</span>    
+<span class="s">'''
+  visited를 True, False가 아닌 0, 1, 2로 세분화 하는 이유
+  =&gt; stack에 넣는 과정에서 방문 과정(visited = True)을 수행하면 A -&gt; B -&gt; C 의 방문으로 표시가 된다.
+     이는 DFS의 과정이 아니기 때문에(A -&gt; B -&gt; D -&gt; ...) pop을 수행한 이후 방문 표시를 해준다.
+     단순 출력을 위해서라면 True, False로 교체하고 current.visited = 2 부분을 print()로 바꾸면 된다.
+'''</span>
+
+<span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">start_node</span><span class="p">):</span>
+  <span class="n">stack</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span>
+
+  <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">.</span><span class="n">values</span><span class="p">():</span>
+    <span class="n">node</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="bp">False</span>
+    
+  <span class="n">start_node</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="bp">True</span>
+  <span class="n">stack</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">start_node</span><span class="p">)</span>
+
+  <span class="k">while</span> <span class="n">stack</span><span class="p">:</span>
+     <span class="n">current</span> <span class="o">=</span> <span class="n">stack</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span>
+     <span class="k">print</span><span class="p">(</span><span class="n">current</span><span class="p">)</span>
+     <span class="k">for</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="n">current</span><span class="p">.</span><span class="n">adjacent</span><span class="p">:</span>
+      <span class="k">if</span> <span class="ow">not</span> <span class="n">neighbor</span><span class="p">.</span><span class="n">visited</span><span class="p">:</span>
+        <span class="n">neighbor</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="n">stack</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">neighbor</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li>시간 복잡도
+    <ul>
+      <li>전처리(모든 노드를 방문하지 않은 노드로 표시): $O(V)$</li>
+      <li>스택에서 노드를 넣고 빼기: 스택에는 노드가 딱 한 번 들어갔다 나오므로 $O(V)$</li>
+      <li>스택에서 뺀 노드의 인접한 노드들을 도는데 걸리는 시간: 모든 노드들의 인접 리스트를 딱 한 번만 돌게 되므로 엣지 수에 비례: $O(E)$</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="최단-경로-알고리즘">최단 경로 알고리즘</h2>
+
+<h3 id="bfs">BFS</h3>
+<ul>
+  <li>predecessor(BFS를 할 때 특정 노드에 오기 직전의 노드)를 멤버 변수에 추가</li>
+  <li>알고리즘
+    <ol>
+      <li>시작 노드를 방문 표시 후 큐에 삽입</li>
+      <li>큐에 아무 노드가 없을 때 까지
+        <ol>
+          <li>큐의 가장 앞 노드를 꺼낸다.</li>
+          <li>꺼낸 노드에 인접한 노드들을 모두 보면서
+            <ol>
+              <li>처음 방문한 노드면
+                <ol>
+                  <li>방문한 노드 표시를 해준다.</li>
+                  <li><em>predecessor 변수를 큐에서 꺼낸 노드로 설정</em></li>
+                  <li>큐에 넣어준다.</li>
+                </ol>
+              </li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li>Backtracking
+    <ol>
+      <li>현재 노드를 경로에 추가한다.</li>
+      <li>현재 노드의 predecessor로 가면서 경로에 추가한다.</li>
+      <li>predecessor가 없을 때 까지 위 단계 반복.</li>
+      <li>경로를 뒤집는다.</li>
+    </ol>
+  </li>
+  <li>predecessor는 해당 노드를 가장 빨리 발견하는 이전 노드를 저장함 → BFS 경로가 최단경로</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">bfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">start_node</span><span class="p">):</span>
+  <span class="s">"""최단 경로용 bfs 함수"""</span>
+  <span class="n">queue</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span> <span class="c1"># 빈 큐 생성
+</span>
+  <span class="c1"># 모든 노드를 방문하지 않은 노드로 표시, 모든 predecessor는 None으로 초기화
+</span>  <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">.</span><span class="n">values</span><span class="p">():</span>
+    <span class="n">node</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="n">node</span><span class="p">.</span><span class="n">predecessor</span> <span class="o">=</span> <span class="bp">None</span>
+
+  <span class="c1"># 시작점 노드를 방문 표시한 후 큐에 넣어준다.
+</span>  <span class="n">node</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="bp">True</span>
+  <span class="n">queue</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">start_node</span><span class="p">)</span>
+
+  <span class="k">while</span> <span class="n">queue</span><span class="p">:</span>  <span class="c1"># 큐에 노드가 있을 때 까지
+</span>    <span class="n">current</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="n">popleft</span><span class="p">()</span> <span class="c1"># 큐의 가장 앞 데이터를 갖고 온다.
+</span>    <span class="k">for</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="n">current</span><span class="p">.</span><span class="n">adjacent</span><span class="p">:</span> <span class="c1"># 인접한 노드를 돌면서
+</span>      <span class="k">if</span> <span class="ow">not</span> <span class="n">neighbor</span><span class="p">.</span><span class="n">visited</span><span class="p">:</span>  <span class="c1"># 방문하지 않은 노드면
+</span>        <span class="n">neighbor</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="bp">True</span> <span class="c1"># 방문 표시를 하고
+</span>        <span class="n">neighbor</span><span class="p">.</span><span class="n">predecessor</span> <span class="o">=</span> <span class="n">current</span>  <span class="c1"># 이 노드가 어디서 왔는지 표시
+</span>        <span class="n">queue</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">neighbor</span><span class="p">)</span>  <span class="c1"># 큐에 넣는다.
+</span>
+<span class="k">def</span> <span class="nf">back_track</span><span class="p">(</span><span class="n">destination_node</span><span class="p">):</span>
+  <span class="s">"""최단 경로를 찾기 위한 back tracking 함수"""</span>
+  <span class="n">res_str</span> <span class="o">=</span> <span class="s">""</span>  <span class="c1"># 리턴할 문자 결과열
+</span>  <span class="n">temp</span> <span class="o">=</span> <span class="n">destination_node</span> <span class="c1"># 도착 노드에서 시작 노드까지 찾아가는 데 사용할 변수
+</span>
+  <span class="c1"># 시작 노드로 갈 때까지
+</span>  <span class="k">while</span> <span class="n">temp</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="n">res_str</span> <span class="o">=</span> <span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">temp</span><span class="p">.</span><span class="n">value</span><span class="si">}</span><span class="s"> </span><span class="si">{</span><span class="n">res_str</span><span class="si">}</span><span class="s">"</span> <span class="c1"># 결과 문자열에 방문한 노드 값을 더하고
+</span>    <span class="n">temp</span> <span class="o">=</span> <span class="n">temp</span><span class="p">.</span><span class="n">predecessor</span> <span class="c1"># temp를 다음 노드로 바꿔준다.
+</span>  
+  <span class="k">return</span> <span class="n">res_str</span>
+</code></pre></div></div>
+
+<h3 id="dijkstra">Dijkstra</h3>
+<ul>
+  <li>변수
+    <ol>
+      <li><code class="language-plaintext highlighter-rouge">distance</code>: 특정 노드까지의 “최단 거리 예상치”(현재까지 아는 정보로 계산한 최단 거리)</li>
+      <li><code class="language-plaintext highlighter-rouge">predecessor</code>: 현재까지 최단 경로에서 바로 직전의 노드</li>
+      <li><code class="language-plaintext highlighter-rouge">complete</code>: 노드까지의 최단 경로를 찾았다고 표시하기 위한 변수</li>
+    </ol>
+  </li>
+  <li>Relaxation
+    <ul>
+      <li>엣지 (A, B)를 relax하다: A에서 B를 방문하면서, B의 distance, predecessor를 바꾸는 것
+        <ul>
+          <li>B의 distance &gt; A의 distance + 엣지의 가중치
+            <ul>
+              <li>B의 distance = A의 distance + 엣지의 가중치</li>
+              <li>B의 predecessor = A</li>
+            </ul>
+          </li>
+          <li>B의 distance &lt;= A의 distance + 엣지의 가중치
+            <ul>
+              <li>그대로 둔다.</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>최단 거리 예상값을 줄여주는 과정이 노드의 긴장감을 풀어주는 개념과 비슷하다는 것에서 사용</li>
+    </ul>
+  </li>
+  <li>알고리즘
+    <ol>
+      <li>모든 노드의 distance를 무한대로, predecessor를 <code class="language-plaintext highlighter-rouge">None</code>으로, complete는 <code class="language-plaintext highlighter-rouge">False</code>로</li>
+      <li>시작점의 distance를 0으로, predecessor를 <code class="language-plaintext highlighter-rouge">None</code>으로</li>
+      <li>모든 노드가 complete일 때 까지
+        <ol>
+          <li>complete하지 않은 노드 중 distance가 가장 작은 노드 선택</li>
+          <li>이 노드에 인접한 노드 중 complete하지 않은 노드를 돌면서
+            <ol>
+              <li>각 엣지를 relax</li>
+            </ol>
+          </li>
+          <li>현재 노드를 complete 처리</li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li>Backtracking
+    <ul>
+      <li>최단 거리: 노드의 distance</li>
+      <li>최단 경로: predecessor를 통하여 경로 추가</li>
+    </ul>
+  </li>
+  <li>Dijkstra로 찾은 경로가 최단 경로인 이유
+    <ul>
+      <li>최단 경로의 부분 경로는 모두 최단 경로이다. ⇒ 부분 최단 경로를 이은 경로는 최단 경로이다.(최적 부분 구조)</li>
+      <li>Dijkstra에서 방문하지 않은 노드들 중 distance가 가장 작은 노드를 고를 때, 이 노드의 distance는 이미 시작점으로부터 최단 거리를 보유
+        <ol>
+          <li>Dijkstra 알고리즘은 반복문을 돌면서 최단 경로를 이미 찾은 노드를 하나씩 찾아줌: 처음에는 시작 노드의 최단 경로를 확정지었고, 이후 다음 선택된 노드를 최단 경로로 확정지어줌</li>
+          <li>최단 경로를 이미 찾은 노드들의 엣지들을 모두 relax해줌: 최단 경로는 다른 노드들의 최단 경로 + 현재 노드이므로, 이미 확정난 최단 경로들로 다른 노드들까지의 최단 거리 예상치(distance)를 계산</li>
+          <li>매 단게에서 이 distance가 가장 작은 노드는 최단 거리를 이미 찾았다고 확신: 최적 부분 구조로 인해 이미 선택된 노드는 다른 경로를 통한 최단 거리보다 작기 때문에 반복문이 한 번 실행될 때 마다 distance가 가장 작은 노드가 최단 거리 노드라고 확신</li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#coding" class="page__taxonomy-item p-category" rel="tag">Coding</a><span class="sep">, </span>
+    
+      <a href="/categories/#computer-science" class="page__taxonomy-item p-category" rel="tag">Computer Science</a><span class="sep">, </span>
+    
+      <a href="/categories/#data-structure" class="page__taxonomy-item p-category" rel="tag">Data Structure</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-03-16">March 16, 2023</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%EA%B7%B8%EB%9E%98%ED%94%84%20http%3A%2F%2Flocalhost%3A4000%2Fcoding%2Fcomputer%2520science%2Fdata%2520structure%2F%25EC%259E%2590%25EB%25A3%258C%25EA%25B5%25AC%25EC%25A1%25B03%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fcoding%2Fcomputer%2520science%2Fdata%2520structure%2F%25EC%259E%2590%25EB%25A3%258C%25EA%25B5%25AC%25EC%25A1%25B03%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fcoding%2Fcomputer%2520science%2Fdata%2520structure%2F%25EC%259E%2590%25EB%25A3%258C%25EA%25B5%25AC%25EC%25A1%25B03%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/coding/computer%20science/data%20structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B02/" class="pagination--pager" title="트리
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/coding/computer%20science/data%20structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B02/" rel="permalink">트리
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          10 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">트리란?
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/coding/computer%20science/data%20structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B01/" rel="permalink">기본 자료 구조들
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          18 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">자료 구조란?
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/coding/computer%20science/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%984/" rel="permalink">문제 해결 능력 기르기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          9 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">투자 귀재 규식이 II
+규식이는 친구들 사이에서 투자의 귀재로 알려져 있습니다. 페이수북과 인수타그램에 자신의 성과를 과시하기 때문인데요. 사실 규식이가 그 정도의 실력자는 아닙니다. 성과가 좋을 때에만 SNS에 공유해서 그렇게 비춰질 뿐이죠. 계속해서 멋진 모습을 보여주기 위해,...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/coding/computer%20science/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%983/" rel="permalink">알고리즘 패러다임
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Brute Force
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/Domiki" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Domiki. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
