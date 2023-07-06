@@ -37,3 +37,7 @@ coding:
         url: coding/computer science/data structure/자료구조2/
       - title: "그래프"
         url: coding/computer science/data structure/자료구조3/
+  - title: "자바스크립트"
+    children:
+      - title: "자바스크립트 기초"
+        url: coding/language/javascript/자바스크립트-기초/

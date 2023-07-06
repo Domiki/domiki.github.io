@@ -40,4 +40,10 @@ var store = [{
         "tags": [],
         "url": "/coding/computer%20science/data%20structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B03/",
         "teaser": null
+      },{
+        "title": "JavaScript 기초",
+        "excerpt":"자바스크립트 기초 HTML 파일의 body 부분에 &lt;script src=\"index.js\"&gt;&lt;/script&gt;를 추가함으로써 자바스크립트 파일을 사용할 수 있다. 코멘트: 여러 줄 /* */, 한 줄 // 1. 숫자형(Number) 선언 let i = 1; let j = 1.5; let k = -3; 연산 console.log(1 + 8); // 9 console.log(6 - 7); // -1 console.log(2 *...","categories": ["Coding","Language","JavaScript"],
+        "tags": [],
+        "url": "/coding/language/javascript/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B8%B0%EC%B4%88/",
+        "teaser": null
       }]

@@ -1,0 +1,1359 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>JavaScript 기초 - Domiki’s Computer Lecture Note</title>
+<meta name="description" content="자바스크립트 기초">
+
+
+  <meta name="author" content="Domiki">
+  
+  <meta property="article:author" content="Domiki">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="Domiki's Computer Lecture Note">
+<meta property="og:title" content="JavaScript 기초">
+<meta property="og:url" content="http://localhost:4000/coding/language/javascript/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B8%B0%EC%B4%88/">
+
+
+  <meta property="og:description" content="자바스크립트 기초">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-07-06T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2023-07-07T10:34:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/coding/language/javascript/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B8%B0%EC%B4%88/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Domiki",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Domiki's Computer Lecture Note Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+<!-- Mathjax Support -->
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+
+    <!-- 22.08.21 GY for mathjax-->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      TeX: {
+        equationNumbers: {
+          autoNumber: "AMS"
+        }
+      },
+      tex2jax: {
+        inlineMath: [ ['$', '$'] ],
+        displayMath: [ ['$$', '$$'] ],
+        processEscapes: true,
+      }
+    });
+    MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
+      alert("Math Processing Error: "+message[1]);
+    });
+    MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
+      alert("Math Processing Error: "+message[1]);
+    });
+    </script>
+    <script type="text/javascript" async
+      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Domiki
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/">Main</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/coding">Coding</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/profile.jpg" alt="Domiki" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Domiki</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Coding, coffee, picture, and starlight.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:ado505@snu.ac.kr" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://www.instagram.com/ando_domiki/?hl=ko" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">Instagram</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <a href="/categories/coding"><span class="nav__sub-title">모아보기</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">알고리즘</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/coding/computer%20science/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%981/">좋은 알고리즘이란?</a></li>
+          
+            <li><a href="/coding/computer%20science/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%982/">재귀함수</a></li>
+          
+            <li><a href="/coding/computer%20science/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%983/">알고리즘 패러다임</a></li>
+          
+            <li><a href="/coding/computer%20science/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%984/">문제 해결 능력 기르기</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">자료구조</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/coding/computer%20science/data%20structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B01/">기본 자료 구조</a></li>
+          
+            <li><a href="/coding/computer%20science/data%20structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B02/">트리</a></li>
+          
+            <li><a href="/coding/computer%20science/data%20structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B03/">그래프</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">자바스크립트</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/coding/language/javascript/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B8%B0%EC%B4%88/">자바스크립트 기초</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="JavaScript 기초">
+    <meta itemprop="description" content="자바스크립트 기초">
+    <meta itemprop="datePublished" content="2023-07-06T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2023-07-07T10:34:00+09:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/coding/language/javascript/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B8%B0%EC%B4%88/" class="u-url" itemprop="url">JavaScript 기초
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          6 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> JavaScript 기초</h4></header>
+              <ul class="toc__menu"><li><a href="#자바스크립트-기초">자바스크립트 기초</a><ul><li><a href="#1-숫자형number">1. 숫자형(Number)</a></li><li><a href="#2-문자열string">2. 문자열(String)</a></li><li><a href="#3-불린형boolean">3. 불린형(Boolean)</a></li><li><a href="#형-변환">형 변환</a></li></ul></li><li><a href="#제어문">제어문</a><ul><li><a href="#1-조건문">1. 조건문</a></li><li><a href="#2-반복문">2. 반복문</a></li><li><a href="#3-switch-문">3. switch 문</a></li><li><a href="#4-break-문-continue-문">4. break 문, continue 문</a></li><li><a href="#변수의-scope">변수의 scope</a></li></ul></li><li><a href="#심화-자료형">심화 자료형</a><ul><li><a href="#배열">배열</a></li><li><a href="#객체">객체</a></li><li><a href="#숫자형-문자열-메소드">숫자형, 문자열 메소드</a></li><li><a href="#const">const</a></li><li><a href="#math-date-내장-객체">Math, Date 내장 객체</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h2 id="자바스크립트-기초">자바스크립트 기초</h2>
+
+<ul>
+  <li>HTML 파일의 <code class="language-plaintext highlighter-rouge">body</code> 부분에 <code class="language-plaintext highlighter-rouge">&lt;script src="index.js"&gt;&lt;/script&gt;</code>를 추가함으로써 자바스크립트 파일을 사용할 수 있다.</li>
+  <li>코멘트: 여러 줄 <code class="language-plaintext highlighter-rouge">/* */</code>, 한 줄 <code class="language-plaintext highlighter-rouge">//</code></li>
+</ul>
+
+<h3 id="1-숫자형number"><strong>1. 숫자형(Number)</strong></h3>
+
+<ul>
+  <li>선언
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="mf">1.5</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">k</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>연산
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">8</span><span class="p">);</span> <span class="c1">// 9</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">6</span> <span class="o">-</span> <span class="mi">7</span><span class="p">);</span> <span class="c1">// -1</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// 4</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">4</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// 2</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">3</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// 1.5</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">7</span> <span class="o">%</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">// 1</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">// 8</span>
+<span class="cm">/* 버림 나눗셈 연산은 없다. */</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>할당 연산자</p>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="nx">i</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span> <span class="c1">// 5</span>
+
+<span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span><span class="p">;</span>
+<span class="nx">j</span> <span class="o">*=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">j</span><span class="p">);</span> <span class="c1">// -15</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>증가, 감소 연산자</p>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+
+<span class="nx">i</span><span class="o">++</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span> <span class="c1">// 6</span>
+
+<span class="nx">i</span><span class="o">--</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span> <span class="c1">// 5</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="2-문자열string"><strong>2. 문자열(String)</strong></h3>
+
+<ul>
+  <li>선언
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">str1</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Hello World!</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// 큰따옴표</span>
+<span class="kd">let</span> <span class="nx">str2</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Hello World!</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// 작은따옴표</span>
+<span class="kd">let</span> <span class="nx">str3</span> <span class="o">=</span> <span class="s2">`Hello World!`</span><span class="p">;</span> <span class="c1">// 백틱(Backtick)</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>문자열 붙이기(concatenation)</p>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* 문자열 붙이기 */</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello </span><span class="dl">"</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">World!</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// Hello World!</span>
+
+<span class="cm">/* 문자열 변수 붙이기 */</span>
+<span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Hello </span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">y</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">World!</span><span class="dl">"</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span><span class="p">);</span> <span class="c1">// Hello World!</span>
+
+<span class="cm">/* 문자열에서도 더하기 할당 연산자 사용 가능 */</span>
+<span class="nx">x</span> <span class="o">+=</span> <span class="nx">y</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> <span class="c1">// 'Hello World!</span>
+
+<span class="cm">/* 문자열이 아닌 다른 자료형도 문자열로 변환 */</span>
+<span class="kd">let</span> <span class="nx">str1</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">햄버거의 가격은 </span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">num</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">str2</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">원입니다.</span><span class="dl">"</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">str1</span> <span class="o">+</span> <span class="nx">num</span> <span class="o">+</span> <span class="nx">str2</span><span class="p">);</span> <span class="c1">// 햄버거의 가격은 10000원입니다.</span>
+
+<span class="cm">/* 문자열 반복하기(Python에서 *연산자와 동일) */</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">*</span><span class="dl">"</span><span class="p">.</span><span class="nx">repeat</span><span class="p">(</span><span class="mi">4</span><span class="p">));</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>문자열 포매팅(formatting)</p>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">value</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">formatString1</span> <span class="o">=</span> <span class="s2">`햄버거의 가격은 </span><span class="p">${</span><span class="nx">value</span><span class="p">}</span><span class="s2">원입니다.`</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">formatString1</span><span class="p">);</span> <span class="c1">// 햄버거의 가격은 10000원입니다.</span>
+
+<span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">formatString2</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="nx">i</span><span class="p">}</span><span class="s2"> 더하기 </span><span class="p">${</span><span class="nx">j</span><span class="p">}</span><span class="s2">은 </span><span class="p">${</span><span class="nx">i</span> <span class="o">+</span> <span class="nx">j</span><span class="p">}</span><span class="s2">입니다.`</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">formatString2</span><span class="p">);</span> <span class="c1">// 10 더하기 20은 30입니다.</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>특수 문자열</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: center"> </th>
+          <th style="text-align: center"> </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: center"><code class="language-plaintext highlighter-rouge">\n</code></td>
+          <td style="text-align: center">줄바꿈</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><code class="language-plaintext highlighter-rouge">\t</code></td>
+          <td style="text-align: center">탭</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><code class="language-plaintext highlighter-rouge">\'</code></td>
+          <td style="text-align: center">작은따옴표</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><code class="language-plaintext highlighter-rouge">\"</code></td>
+          <td style="text-align: center">큰따옴표</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><code class="language-plaintext highlighter-rouge">\\</code></td>
+          <td style="text-align: center">백슬래시</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<h3 id="3-불린형boolean"><strong>3. 불린형(Boolean)</strong></h3>
+
+<ul>
+  <li>선언
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">y</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>비교 연산자</p>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">2</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">2</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">3</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">3</span> <span class="o">&lt;=</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">// true</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">3</span> <span class="o">===</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">3</span> <span class="o">!==</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello</span><span class="dl">"</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">Hello</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello</span><span class="dl">"</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">Hell</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// false</span>
+</code></pre></div>    </div>
+
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">==</code> 연산자는 자동으로 형 변환(type conversion)을 해준다.</li>
+    </ul>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">3</span><span class="dl">"</span> <span class="o">==</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">3</span><span class="dl">"</span> <span class="o">===</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">// false</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>조합 연산자</p>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* and */</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="o">&amp;&amp;</span> <span class="mi">3</span> <span class="o">===</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">2</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="mi">3</span> <span class="o">===</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">// false</span>
+
+<span class="cm">/* or */</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="o">||</span> <span class="mi">3</span> <span class="o">===</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">2</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="o">||</span> <span class="mi">3</span> <span class="o">===</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">// true</span>
+
+<span class="cm">/* not */</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">));</span> <span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="mi">2</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">));</span> <span class="c1">// true</span>
+</code></pre></div>    </div>
+
+    <ul>
+      <li>비교가 불가능할 경우(ex&gt; <code class="language-plaintext highlighter-rouge">NaN</code> 비교) <code class="language-plaintext highlighter-rouge">false</code> 출력</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="형-변환">형 변환</h3>
+
+<ul>
+  <li>
+    <p>형 변환</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: center"> </th>
+          <th style="text-align: center">문법</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: center">숫자로 변환</td>
+          <td style="text-align: center"><code class="language-plaintext highlighter-rouge">Number()</code></td>
+        </tr>
+        <tr>
+          <td style="text-align: center">문자열로 변환</td>
+          <td style="text-align: center"><code class="language-plaintext highlighter-rouge">String()</code></td>
+        </tr>
+        <tr>
+          <td style="text-align: center">불린으로 변환</td>
+          <td style="text-align: center"><code class="language-plaintext highlighter-rouge">Boolean()</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>자료형 확인: <code class="language-plaintext highlighter-rouge">typeof</code>
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="mi">10</span><span class="p">);</span> <span class="c1">// number</span>
+</code></pre></div>    </div>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">typeof</code>의 연산 순서는 사칙연산보다 높다.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Truthy와 Falsy</p>
+
+    <ul>
+      <li>Truthy: 불린형으로 변환했을 때 <code class="language-plaintext highlighter-rouge">true</code>가 되는 값</li>
+      <li>Falsy: 불린형으로 변환했을 때 <code class="language-plaintext highlighter-rouge">false</code>가 되는 값</li>
+    </ul>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: center">Truthy</th>
+          <th style="text-align: center">Falsy</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: center"><code class="language-plaintext highlighter-rouge">true</code></td>
+          <td style="text-align: center"><code class="language-plaintext highlighter-rouge">false</code></td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><code class="language-plaintext highlighter-rouge">0</code>을 제외한 모든 숫자<br />(음수, 소수 포함)</td>
+          <td style="text-align: center"><code class="language-plaintext highlighter-rouge">0</code></td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><code class="language-plaintext highlighter-rouge">''</code>을 제외한 모든 문자열<br />(공백으로만 이루어져 있는 문자열 포함)</td>
+          <td style="text-align: center"><code class="language-plaintext highlighter-rouge">''</code></td>
+        </tr>
+        <tr>
+          <td style="text-align: center"> </td>
+          <td style="text-align: center"><code class="language-plaintext highlighter-rouge">null</code>, <code class="language-plaintext highlighter-rouge">undefined</code>, <code class="language-plaintext highlighter-rouge">NaN</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">null</code>과 <code class="language-plaintext highlighter-rouge">undefined</code>
+    <ul>
+      <li>값이 없다.</li>
+      <li><code class="language-plaintext highlighter-rouge">null</code>: 의도적으로 포현할 때 사용하는 값. type은 <code class="language-plaintext highlighter-rouge">object</code></li>
+      <li><code class="language-plaintext highlighter-rouge">undefined</code>: 값이 없다는 것을 확인하는 값(변수 할당 X, 반환 없는 함수 등). type은 <code class="language-plaintext highlighter-rouge">undefined</code>
+        <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">null</span> <span class="o">==</span> <span class="kc">undefined</span><span class="p">);</span> <span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">null</span> <span class="o">===</span> <span class="kc">undefined</span><span class="p">);</span> <span class="c1">// false</span>
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="제어문">제어문</h2>
+
+<h3 id="1-조건문">1. 조건문</h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">if</code>, <code class="language-plaintext highlighter-rouge">else</code>, <code class="language-plaintext highlighter-rouge">else if</code></li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="cm">/* 조건 부분 */</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// ...</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">{</span>
+  <span class="c1">// ...</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="2-반복문">2. 반복문</h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">for</code>, <code class="language-plaintext highlighter-rouge">while</code></li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="cm">/* 초기화 부분 */</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">n</span><span class="cm">/* 조건 부분 */</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="cm">/* 추가동작 부분 */</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// ...</span>
+<span class="p">}</span>
+
+<span class="k">while</span> <span class="p">(</span><span class="cm">/* 조건 부분 */</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="3-switch-문">3. <code class="language-plaintext highlighter-rouge">switch</code> 문</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">select</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">A</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="cm">/* 과일 fruit에 따라 메시지를 출력해 줍니다. */</span>
+<span class="k">switch</span> <span class="p">(</span><span class="nx">fruit</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">case</span> <span class="dl">"</span><span class="s2">A</span><span class="dl">"</span><span class="p">:</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">A</span><span class="dl">"</span><span class="p">);</span>
+    <span class="k">break</span><span class="p">;</span>
+  <span class="k">case</span> <span class="dl">"</span><span class="s2">B</span><span class="dl">"</span><span class="p">:</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">B</span><span class="dl">"</span><span class="p">);</span>
+    <span class="k">break</span><span class="p">;</span>
+  <span class="k">case</span> <span class="dl">"</span><span class="s2">C</span><span class="dl">"</span><span class="p">:</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">C</span><span class="dl">"</span><span class="p">);</span>
+    <span class="k">break</span><span class="p">;</span>
+  <span class="nl">default</span><span class="p">:</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">else</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="4-break-문-continue-문">4. <code class="language-plaintext highlighter-rouge">break</code> 문, <code class="language-plaintext highlighter-rouge">continue</code> 문</h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">break</code>문: 반복문 및 <code class="language-plaintext highlighter-rouge">switch</code>문 종료</li>
+  <li><code class="language-plaintext highlighter-rouge">continue</code>문: 현재 반복문을 한 번 건너 뜀</li>
+</ul>
+
+<h3 id="변수의-scope">변수의 scope</h3>
+
+<ul>
+  <li>변수가 사용 가능한 범위</li>
+  <li>
+    <p>로컬 변수와 글로벌 변수</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: center"><code class="language-plaintext highlighter-rouge">Python</code></th>
+          <th style="text-align: center"><code class="language-plaintext highlighter-rouge">JavaScript</code></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: center">함수의 안팎</td>
+          <td style="text-align: center">블록(<code class="language-plaintext highlighter-rouge">{}</code>)의 안팎</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<h2 id="심화-자료형">심화 자료형</h2>
+
+<h3 id="배열">배열</h3>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Python</code>의 <code class="language-plaintext highlighter-rouge">list</code>와 동일</p>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">list</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">element0</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">element1</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">element2</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">element3</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">element4</span><span class="dl">"</span><span class="p">];</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>인덱싱</p>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">list</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">list</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">list</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">list</span><span class="p">[</span><span class="nx">list</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]);</span>
+<span class="c1">// 배열 범위를 벗어나면 undefined</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>슬라이싱</p>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">list</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">));</span> <span class="c1">// 1부터 3까지</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">list</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span> <span class="c1">// 3부터 끝까지</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">list</span><span class="p">.</span><span class="nx">slice</span><span class="p">());</span> <span class="c1">// 배열 전체</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>배열 요소 수정, 추가, 삭제</p>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* 요소 수정 */</span>
+<span class="nx">list</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">new_element2</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="cm">/* 요소 추가 */</span>
+<span class="kd">let</span> <span class="nx">newLength</span> <span class="o">=</span> <span class="nx">list</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="dl">"</span><span class="s2">element5</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newLength</span><span class="p">);</span> <span class="c1">// 6</span>
+
+<span class="cm">/* 요소 삭제 */</span>
+<span class="kd">let</span> <span class="nx">lastElement</span> <span class="o">=</span> <span class="nx">list</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">lastElement</span><span class="p">);</span> <span class="c1">// element5</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">.splice</code> 메소드</p>
+
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">.splice(start, deleteCount, item1, item2, ...)</code></li>
+      <li><code class="language-plaintext highlighter-rouge">start</code>에서 시작하여 <code class="language-plaintext highlighter-rouge">deleteCount</code>만큼 삭제하고, 삭제한 부분에 <code class="language-plaintext highlighter-rouge">item1</code>, <code class="language-plaintext highlighter-rouge">item2</code>, <code class="language-plaintext highlighter-rouge">...</code>를 추가</li>
+      <li><code class="language-plaintext highlighter-rouge">deleteCount</code>가 없으면 끝까지 삭제</li>
+      <li><code class="language-plaintext highlighter-rouge">deleteCount</code>가 0이면 삭제를 하지 않고 <code class="language-plaintext highlighter-rouge">start</code> 위치부터 <code class="language-plaintext highlighter-rouge">item</code> 추가</li>
+    </ul>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">list</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="dl">"</span><span class="s2">element6</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">list</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">list</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>반복문: <code class="language-plaintext highlighter-rouge">for...of</code></p>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">element</span> <span class="k">of</span> <span class="nx">list</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">element</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="객체">객체</h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Python</code>의 <code class="language-plaintext highlighter-rouge">dict</code>와 동일</li>
+  <li>
+    <p>key-value 쌍을 property(프로퍼티) 라고 한다.</p>
+
+    <ul>
+      <li>key: property name(프로퍼티 이름)
+        <ul>
+          <li>문자열 타입으로, 꼭 따옴표를 쓰지 않아도 문자열로 인식하므로 생략하는 경우가 많다.</li>
+          <li>그러나, 알파벳 문자, 언더바 기호, 달러 기호가 아닌 다른 문자로 시작하거나, 중간에 공백이나 하이픈 기호로 연결되어 있으면 따옴표를 써주어야 한다.</li>
+        </ul>
+      </li>
+      <li>value: property value(프로퍼티 값)
+        <ul>
+          <li>어떠한 자료형이어도 가능</li>
+        </ul>
+      </li>
+    </ul>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">object</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">stringValue</span><span class="p">:</span> <span class="dl">"</span><span class="s2">string</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">integerValue</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+  <span class="na">listValue</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">element0</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">element1</span><span class="dl">"</span><span class="p">],</span>
+  <span class="na">nullValue</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="na">objectValue</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">str</span><span class="p">:</span> <span class="dl">"</span><span class="s2">objectstring</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">num</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>접근</p>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">object</span><span class="p">[</span><span class="dl">"</span><span class="s2">stringValue</span><span class="dl">"</span><span class="p">]);</span> <span class="c1">// string</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">object</span><span class="p">.</span><span class="nx">stringValue</span><span class="p">);</span> <span class="c1">// string</span>
+
+<span class="kd">let</span> <span class="nx">propertyName</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">stringValue</span><span class="dl">"</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">object</span><span class="p">[</span><span class="nx">propertyName</span><span class="p">]);</span> <span class="c1">// string</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">object</span><span class="p">.</span><span class="nx">objectValue</span><span class="p">.</span><span class="nx">str</span><span class="p">);</span> <span class="c1">// objectstring</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">object</span><span class="p">[</span><span class="dl">"</span><span class="s2">objectValue</span><span class="dl">"</span><span class="p">].</span><span class="nx">str</span><span class="p">);</span> <span class="c1">// objectstring</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">object</span><span class="p">.</span><span class="nx">objectValue</span><span class="p">[</span><span class="dl">"</span><span class="s2">str</span><span class="dl">"</span><span class="p">]);</span> <span class="c1">// objectstring</span>
+
+<span class="cm">/* 존재하지 않는 프로퍼티에 접근 */</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">object</span><span class="p">.</span><span class="nx">undefinedValue</span><span class="p">);</span> <span class="c1">// undefined</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>탐색</p>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">integerValue</span><span class="dl">"</span> <span class="k">in</span> <span class="nx">object</span><span class="p">);</span> <span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">undefinedValue</span><span class="dl">"</span> <span class="k">in</span> <span class="nx">obejct</span><span class="p">);</span> <span class="c1">// false</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>요소 추가, 수정, 삭제</p>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* 요소 수정 */</span>
+<span class="nx">object</span><span class="p">.</span><span class="nx">stringValue</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">newString</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="cm">/* 요소 추가 */</span>
+<span class="nx">object</span><span class="p">.</span><span class="nx">newValue</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+
+<span class="cm">/* 요소 삭제 */</span>
+<span class="k">delete</span> <span class="nx">object</span><span class="p">.</span><span class="nx">newValue</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>반복문: <code class="language-plaintext highlighter-rouge">for...in</code></p>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">key</span> <span class="k">in</span> <span class="nx">object</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">key</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">object</span><span class="p">[</span><span class="nx">key</span><span class="p">]);</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>메소드</p>
+
+    <ul>
+      <li>프로퍼티 값은 함수가 될 수 있다. 이를 메소드(Method)라 한다.</li>
+    </ul>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">foo1</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Foo</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">foo2</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Foo </span><span class="p">${</span><span class="nx">value</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">functions</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">func1</span><span class="p">:</span> <span class="nx">foo1</span><span class="p">,</span>
+  <span class="na">func2</span><span class="p">:</span> <span class="nx">foo2</span><span class="p">,</span>
+  <span class="na">func3</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Foo </span><span class="p">${</span><span class="nx">value</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+
+<span class="nx">functions</span><span class="p">.</span><span class="nx">foo1</span><span class="p">();</span> <span class="c1">// Foo</span>
+<span class="nx">functions</span><span class="p">.</span><span class="nx">foo2</span><span class="p">(</span><span class="dl">"</span><span class="s2">Baa</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// Foo Baa</span>
+<span class="nx">functions</span><span class="p">.</span><span class="nx">foo3</span><span class="p">(</span><span class="dl">"</span><span class="s2">Baa</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// Foo Baa</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="숫자형-문자열-메소드">숫자형, 문자열 메소드</h3>
+<ul>
+  <li>자바스크립트는 객체가 아닌 다른 자료형도 객체처럼 구현이 되어있다. 따라서 숫자형 및 문자형 등에도 다양한 프로퍼티 및 메소드가 존재한다.</li>
+  <li><strong>숫자형 메소드</strong>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">.toFixed()</code>: 소수의 소숫점 아래 자릿수를 고정해준다.
+        <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* 숫자에 바로 사용 */</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mf">0.3</span><span class="p">.</span><span class="nx">toFixed</span><span class="p">(</span><span class="mi">2</span><span class="p">));</span> <span class="c1">// 0.30</span>
+
+<span class="cm">/* 숫자형 변수에 사용 */</span>
+<span class="kd">let</span> <span class="nx">num</span> <span class="o">=</span> <span class="mf">0.3591</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num</span><span class="p">.</span><span class="nx">toFixed</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span> <span class="c1">// 0.359</span>
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li><strong>문자열 메소드</strong>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">.length</code>: 문자열의 길이</li>
+      <li><code class="language-plaintext highlighter-rouge">.charAt()</code>, <code class="language-plaintext highlighter-rouge">[]</code>: 특정 위치(인덱스)에 있는 문자 접근</li>
+      <li><code class="language-plaintext highlighter-rouge">.slice()</code>: 두 인덱스 사이의 문자열을 잘라내 줌</li>
+      <li><code class="language-plaintext highlighter-rouge">.toUpperCase()</code>: 알파벳 문자를 모두 대문자로</li>
+      <li><code class="language-plaintext highlighter-rouge">.toLowerCase()</code>: 알파벳 문자를 모두 소문자로</li>
+      <li><code class="language-plaintext highlighter-rouge">.repeat()</code>: 문자열 반복</li>
+      <li><code class="language-plaintext highlighter-rouge">.trim()</code>: 문자열 시작과 끝 부분에 있는 모든 공백 문자를 제거</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="const"><code class="language-plaintext highlighter-rouge">const</code></h3>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">PI</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span> <span class="c1">// 상수는 이름을 대문자로 쓰는 것이 권장된다.</span>
+
+<span class="cm">/*
+ * 상수에 할당된 리스트 및 객체를 바꾸는 것은 오류가 발생한다.
+ * 그러나 상수 내부의 요소를 바꾸는 것은 오류가 발생하지 않는다.
+ * 따라서, 변수나 객체를 선언할 때는 계속 할당된 값을 바꾸는 상황이 아니라면 대체로 const를 선언한다.
+ */</span>
+<span class="kd">const</span> <span class="nx">list</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="dl">'</span><span class="s1">element0</span><span class="dl">'</span><span class="p">,</span>
+  <span class="dl">'</span><span class="s1">element1</span><span class="dl">'</span><span class="p">,</span>
+  <span class="dl">'</span><span class="s1">element2</span><span class="dl">'</span><span class="p">,</span>
+<span class="p">];</span>
+
+<span class="nx">list</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">newElement2</span><span class="dl">'</span> <span class="c1">// 에러 X</span>
+
+<span class="nx">list</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="dl">'</span><span class="s1">newElement0</span><span class="dl">'</span><span class="p">,</span>
+  <span class="dl">'</span><span class="s1">newElement1</span><span class="dl">'</span><span class="p">,</span>
+  <span class="dl">'</span><span class="s1">newElement2</span><span class="dl">'</span><span class="p">,</span>
+<span class="p">];</span> <span class="c1">// 에러 O</span>
+</code></pre></div></div>
+
+<h3 id="math-date-내장-객체"><code class="language-plaintext highlighter-rouge">Math</code>, <code class="language-plaintext highlighter-rouge">Date</code> 내장 객체</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Math</code>
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* PI 프로퍼티 */</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="p">);</span> <span class="c1">// 3.141592653598793</span>
+
+<span class="cm">/* floor() 내림 함수 */</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)):</span> <span class="c1">// 1</span>
+
+<span class="cm">/* ceil() 올림 함수 */</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">));</span> <span class="c1">// 2</span>
+</code></pre></div>    </div>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">Date</code>
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* 현재 날짜 생성 */</span>
+<span class="kd">const</span> <span class="nx">date</span><span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">date</span><span class="p">);</span>
+
+<span class="cm">/* 특정 날짜 생성 */</span>
+<span class="kd">const</span> <span class="nx">date1</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="dl">'</span><span class="s1">2023-07-07</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="cm">/* 문자열로 날짜 생성 YYYY-MM-DDThh:mm:ss */</span>
+<span class="kd">const</span> <span class="nx">date2</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="dl">'</span><span class="s1">2023-07-07T10:05:00</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="cm">/* 숫자로 날짜 생성 new Date(year, month, date)
+  주의: month는 월의 인덱스라서 1월은 0, 2월은 1, ..., 12월은 11이다. */</span>
+<span class="kd">const</span> <span class="nx">date3</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">);</span>
+
+<span class="cm">/* 숫자로 날짜 생성 new Date(year, month, date, hours, minutes, seconds)
+  주의: month는 월의 인덱스라서 1월은 0, 2월은 1, ..., 12월은 11이다. */</span>
+<span class="kd">const</span> <span class="nx">date4</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">05</span><span class="p">,</span> <span class="mi">00</span><span class="p">);</span>
+
+
+<span class="cm">/* 날짜 포매팅 */</span>
+<span class="kd">const</span> <span class="nx">date</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">05</span><span class="p">,</span> <span class="mi">00</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">getFullYear</span><span class="p">());</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">());</span> <span class="c1">// 주의: 0에서 시작</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">getDate</span><span class="p">());</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">getHours</span><span class="p">());</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">getMinutes</span><span class="p">());</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">getSeconds</span><span class="p">());</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">getMilliseconds</span><span class="p">());</span>
+
+<span class="cm">/* 날짜 연산 */</span>
+<span class="kd">const</span> <span class="nx">date1</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">00</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">date2</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">00</span><span class="p">,</span> <span class="mi">00</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">timeDifference</span> <span class="o">=</span> <span class="nx">date2</span> <span class="o">-</span> <span class="nx">date1</span><span class="p">;</span> <span class="c1">// 밀리초로 저장</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">timeDifference</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">timeDifference</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> 밀리초</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">timeDifference</span><span class="o">/</span><span class="mi">1000</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> 초</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">timeDifference</span><span class="o">/</span><span class="mi">1000</span><span class="o">/</span><span class="mi">60</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> 분</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">timeDifference</span><span class="o">/</span><span class="mi">1000</span><span class="o">/</span><span class="mi">60</span><span class="o">/</span><span class="mi">60</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> 시간</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#coding" class="page__taxonomy-item p-category" rel="tag">Coding</a><span class="sep">, </span>
+    
+      <a href="/categories/#javascript" class="page__taxonomy-item p-category" rel="tag">JavaScript</a><span class="sep">, </span>
+    
+      <a href="/categories/#language" class="page__taxonomy-item p-category" rel="tag">Language</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-07-07">July 7, 2023</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=JavaScript+%EA%B8%B0%EC%B4%88%20http%3A%2F%2Flocalhost%3A4000%2Fcoding%2Flanguage%2Fjavascript%2F%25EC%259E%2590%25EB%25B0%2594%25EC%258A%25A4%25ED%2581%25AC%25EB%25A6%25BD%25ED%258A%25B8-%25EA%25B8%25B0%25EC%25B4%2588%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fcoding%2Flanguage%2Fjavascript%2F%25EC%259E%2590%25EB%25B0%2594%25EC%258A%25A4%25ED%2581%25AC%25EB%25A6%25BD%25ED%258A%25B8-%25EA%25B8%25B0%25EC%25B4%2588%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fcoding%2Flanguage%2Fjavascript%2F%25EC%259E%2590%25EB%25B0%2594%25EC%258A%25A4%25ED%2581%25AC%25EB%25A6%25BD%25ED%258A%25B8-%25EA%25B8%25B0%25EC%25B4%2588%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/coding/computer%20science/data%20structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B03/" class="pagination--pager" title="그래프
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/coding/computer%20science/data%20structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B03/" rel="permalink">그래프
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          6 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">그래프란?
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/coding/computer%20science/data%20structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B02/" rel="permalink">트리
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          10 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">트리란?
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/coding/computer%20science/data%20structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B01/" rel="permalink">기본 자료 구조들
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          18 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">자료 구조란?
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/coding/computer%20science/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%984/" rel="permalink">문제 해결 능력 기르기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          9 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">투자 귀재 규식이 II
+규식이는 친구들 사이에서 투자의 귀재로 알려져 있습니다. 페이수북과 인수타그램에 자신의 성과를 과시하기 때문인데요. 사실 규식이가 그 정도의 실력자는 아닙니다. 성과가 좋을 때에만 SNS에 공유해서 그렇게 비춰질 뿐이죠. 계속해서 멋진 모습을 보여주기 위해,...</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/Domiki" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Domiki. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

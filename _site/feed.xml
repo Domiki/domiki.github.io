@@ -1,430 +1,645 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-25T22:42:41+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Domiki’s Computer Lecture Note</title><subtitle>Coding, coffee, picture, and starlight.</subtitle><author><name>Domiki</name></author><entry><title type="html">그래프</title><link href="http://localhost:4000/coding/computer%20science/data%20structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B03/" rel="alternate" type="text/html" title="그래프" /><published>2023-03-16T00:00:00+09:00</published><updated>2023-03-17T02:12:00+09:00</updated><id>http://localhost:4000/coding/computer%20science/data%20structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B03</id><content type="html" xml:base="http://localhost:4000/coding/computer%20science/data%20structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B03/"><![CDATA[<h2 id="그래프란">그래프란?</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-07-07T01:34:08+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Domiki’s Computer Lecture Note</title><subtitle>Coding, coffee, picture, and starlight.</subtitle><author><name>Domiki</name></author><entry><title type="html">JavaScript 기초</title><link href="http://localhost:4000/coding/language/javascript/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B8%B0%EC%B4%88/" rel="alternate" type="text/html" title="JavaScript 기초" /><published>2023-07-06T00:00:00+09:00</published><updated>2023-07-07T10:34:00+09:00</updated><id>http://localhost:4000/coding/language/javascript/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%20%EA%B8%B0%EC%B4%88</id><content type="html" xml:base="http://localhost:4000/coding/language/javascript/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B8%B0%EC%B4%88/"><![CDATA[<h2 id="자바스크립트-기초">자바스크립트 기초</h2>
 
 <ul>
-  <li>그래프: 연결 데이터를 저장할 수 있는 자료 구조
-    <ul>
-      <li>연결 관계를 표현
-        <ul>
-          <li>e.g. 위치 데이터, 사회 연결망, 통신, 생물(유전자와 단백질 상호 관계) …</li>
-          <li>c.f. 선형적 자료구조(배열, 링크드 리스트), 계층적 자료구조(트리)</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>그래프 기본
-    <ul>
-      <li>그래프 노드: 하나의 데이터 단위를 나타내는 객체</li>
-      <li>그래프 엣지: 두 노드의 직접적인 연결 관계 데이터. (노드1, 노드2) 또는 (노드2, 노드1)
-        <ul>
-          <li>인접하다: 두 노드 사이에 엣지가 있다.</li>
-          <li>방향 그래프(directed graph): 엣지들이 방향을 가짐. (e.g. 인스타그램 팔로우)
-            <ul>
-              <li>노드1에서 노드2로 가는 화살표를 생각할 때, 노드 1을 떠나서 노드2로 들어가는 엣지라 표현. (노드1, 노드2)로 표현</li>
-            </ul>
-          </li>
-          <li>가중치 그래프(undirected graph): 엣지들이 연결 관계뿐만 아니라 어떤 정보를 나타내는 수치를 가짐</li>
-        </ul>
-      </li>
-      <li>차수: 하나의 노드에 연결된 엣지들의 수
-        <ul>
-          <li>무방향 그래프: 하나의 노드에 연결된 엣지들의 수</li>
-          <li>방향 그래프: 노드를 떠나는 엣지들의 수를 출력 차수, 노드로 들어오는 엣지의 수를 입력 차수로 구분</li>
-        </ul>
-      </li>
-      <li>경로
-        <ul>
-          <li>한 노드에서 다른 노드까지 가는 길</li>
-          <li>거리
-            <ul>
-              <li>비가중치 그래프: 한 경로에 있는 엣지의 수</li>
-              <li>가중치 그래프: 한 경로에 있는 엣지들의 가중치 합</li>
-            </ul>
-          </li>
-          <li>최단 경로(Shortest Path): 두 노드 사이의 경로 중 거리가 가장 짧은 경로</li>
-          <li>사이클: 한 노드에서 시작해서 같은 노드로 돌아오는 경로</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>인접 행렬(adjacency matrix)
-    <ul>
-      <li>
-        <p>노드들의 연결 관계(엣지)를 나타내는 2차원 리스트</p>
+  <li>HTML 파일의 <code class="language-plaintext highlighter-rouge">body</code> 부분에 <code class="language-plaintext highlighter-rouge">&lt;script src="index.js"&gt;&lt;/script&gt;</code>를 추가함으로써 자바스크립트 파일을 사용할 수 있다.</li>
+  <li>코멘트: 여러 줄 <code class="language-plaintext highlighter-rouge">/* */</code>, 한 줄 <code class="language-plaintext highlighter-rouge">//</code></li>
+</ul>
 
-        <p><img src="/assets/images/자료구조/img8.png" alt="그래프 인접 행렬" />
-<img src="/assets/images/자료구조/img9.png" alt="가중치 그래프 인접 행렬" />
-<img src="/assets/images/자료구조/img10.png" alt="방향 그래프 인접 행렬" /></p>
-      </li>
-      <li>
-        <p>인접 행렬 만들기</p>
-        <ul>
-          <li>각 노드를 리스트에 저장해 고유 정수 인덱스를 준다.</li>
-          <li>노드 수 X 노드 수 크기의 행렬을 만든다.</li>
-          <li>노드들의 엣지 유무 및 가중치에 따라 행렬의 요소를 채운다.</li>
-        </ul>
-      </li>
+<h3 id="1-숫자형number"><strong>1. 숫자형(Number)</strong></h3>
+
+<ul>
+  <li>선언
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="mf">1.5</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">k</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>연산
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">8</span><span class="p">);</span> <span class="c1">// 9</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">6</span> <span class="o">-</span> <span class="mi">7</span><span class="p">);</span> <span class="c1">// -1</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// 4</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">4</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// 2</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">3</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// 1.5</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">7</span> <span class="o">%</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">// 1</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">// 8</span>
+<span class="cm">/* 버림 나눗셈 연산은 없다. */</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>할당 연산자</p>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="nx">i</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span> <span class="c1">// 5</span>
+
+<span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span><span class="p">;</span>
+<span class="nx">j</span> <span class="o">*=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">j</span><span class="p">);</span> <span class="c1">// -15</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>증가, 감소 연산자</p>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+
+<span class="nx">i</span><span class="o">++</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span> <span class="c1">// 6</span>
+
+<span class="nx">i</span><span class="o">--</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span> <span class="c1">// 5</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="2-문자열string"><strong>2. 문자열(String)</strong></h3>
+
+<ul>
+  <li>선언
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">str1</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Hello World!</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// 큰따옴표</span>
+<span class="kd">let</span> <span class="nx">str2</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Hello World!</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// 작은따옴표</span>
+<span class="kd">let</span> <span class="nx">str3</span> <span class="o">=</span> <span class="s2">`Hello World!`</span><span class="p">;</span> <span class="c1">// 백틱(Backtick)</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>문자열 붙이기(concatenation)</p>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* 문자열 붙이기 */</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello </span><span class="dl">"</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">World!</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// Hello World!</span>
+
+<span class="cm">/* 문자열 변수 붙이기 */</span>
+<span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Hello </span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">y</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">World!</span><span class="dl">"</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span><span class="p">);</span> <span class="c1">// Hello World!</span>
+
+<span class="cm">/* 문자열에서도 더하기 할당 연산자 사용 가능 */</span>
+<span class="nx">x</span> <span class="o">+=</span> <span class="nx">y</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> <span class="c1">// 'Hello World!</span>
+
+<span class="cm">/* 문자열이 아닌 다른 자료형도 문자열로 변환 */</span>
+<span class="kd">let</span> <span class="nx">str1</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">햄버거의 가격은 </span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">num</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">str2</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">원입니다.</span><span class="dl">"</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">str1</span> <span class="o">+</span> <span class="nx">num</span> <span class="o">+</span> <span class="nx">str2</span><span class="p">);</span> <span class="c1">// 햄버거의 가격은 10000원입니다.</span>
+
+<span class="cm">/* 문자열 반복하기(Python에서 *연산자와 동일) */</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">*</span><span class="dl">"</span><span class="p">.</span><span class="nx">repeat</span><span class="p">(</span><span class="mi">4</span><span class="p">));</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>문자열 포매팅(formatting)</p>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">value</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">formatString1</span> <span class="o">=</span> <span class="s2">`햄버거의 가격은 </span><span class="p">${</span><span class="nx">value</span><span class="p">}</span><span class="s2">원입니다.`</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">formatString1</span><span class="p">);</span> <span class="c1">// 햄버거의 가격은 10000원입니다.</span>
+
+<span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">formatString2</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="nx">i</span><span class="p">}</span><span class="s2"> 더하기 </span><span class="p">${</span><span class="nx">j</span><span class="p">}</span><span class="s2">은 </span><span class="p">${</span><span class="nx">i</span> <span class="o">+</span> <span class="nx">j</span><span class="p">}</span><span class="s2">입니다.`</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">formatString2</span><span class="p">);</span> <span class="c1">// 10 더하기 20은 30입니다.</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>특수 문자열</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: center"> </th>
+          <th style="text-align: center"> </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: center"><code class="language-plaintext highlighter-rouge">\n</code></td>
+          <td style="text-align: center">줄바꿈</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><code class="language-plaintext highlighter-rouge">\t</code></td>
+          <td style="text-align: center">탭</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><code class="language-plaintext highlighter-rouge">\'</code></td>
+          <td style="text-align: center">작은따옴표</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><code class="language-plaintext highlighter-rouge">\"</code></td>
+          <td style="text-align: center">큰따옴표</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><code class="language-plaintext highlighter-rouge">\\</code></td>
+          <td style="text-align: center">백슬래시</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<h3 id="3-불린형boolean"><strong>3. 불린형(Boolean)</strong></h3>
+
+<ul>
+  <li>선언
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">y</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>비교 연산자</p>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">2</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">2</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">3</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">3</span> <span class="o">&lt;=</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">// true</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">3</span> <span class="o">===</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">3</span> <span class="o">!==</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello</span><span class="dl">"</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">Hello</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello</span><span class="dl">"</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">Hell</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// false</span>
+</code></pre></div>    </div>
+
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">==</code> 연산자는 자동으로 형 변환(type conversion)을 해준다.</li>
+    </ul>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">3</span><span class="dl">"</span> <span class="o">==</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">3</span><span class="dl">"</span> <span class="o">===</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">// false</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>조합 연산자</p>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* and */</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="o">&amp;&amp;</span> <span class="mi">3</span> <span class="o">===</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">2</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="mi">3</span> <span class="o">===</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">// false</span>
+
+<span class="cm">/* or */</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="o">||</span> <span class="mi">3</span> <span class="o">===</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">2</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="o">||</span> <span class="mi">3</span> <span class="o">===</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">// true</span>
+
+<span class="cm">/* not */</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">));</span> <span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="mi">2</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">));</span> <span class="c1">// true</span>
+</code></pre></div>    </div>
+
+    <ul>
+      <li>비교가 불가능할 경우(ex&gt; <code class="language-plaintext highlighter-rouge">NaN</code> 비교) <code class="language-plaintext highlighter-rouge">false</code> 출력</li>
     </ul>
   </li>
-  <li>인접 리스트
+</ul>
+
+<h3 id="형-변환">형 변환</h3>
+
+<ul>
+  <li>
+    <p>형 변환</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: center"> </th>
+          <th style="text-align: center">문법</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: center">숫자로 변환</td>
+          <td style="text-align: center"><code class="language-plaintext highlighter-rouge">Number()</code></td>
+        </tr>
+        <tr>
+          <td style="text-align: center">문자열로 변환</td>
+          <td style="text-align: center"><code class="language-plaintext highlighter-rouge">String()</code></td>
+        </tr>
+        <tr>
+          <td style="text-align: center">불린으로 변환</td>
+          <td style="text-align: center"><code class="language-plaintext highlighter-rouge">Boolean()</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>자료형 확인: <code class="language-plaintext highlighter-rouge">typeof</code>
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="mi">10</span><span class="p">);</span> <span class="c1">// number</span>
+</code></pre></div>    </div>
     <ul>
-      <li>각 노드의 엣지를 리스트에 저장하는 방법</li>
-      <li>
-        <p>그래프 노드가 연결된 노드들에 대한 레퍼런스를 리스트로 저장</p>
-
-        <p><img src="/assets/images/자료구조/img11.png" alt="인접 리스트 정의" /></p>
-
-        <table>
-          <thead>
-            <tr>
-              <th style="text-align: center">무방향 그래프</th>
-              <th style="text-align: center">방향 그래프</th>
-              <th style="text-align: center">가중치 그래프</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td style="text-align: center"><code class="language-plaintext highlighter-rouge">A.adjacent=[B]</code><br /><code class="language-plaintext highlighter-rouge">B.adjacent=[A]</code></td>
-              <td style="text-align: center"><code class="language-plaintext highlighter-rouge">A.adjacent=[B]</code><br /><code class="language-plaintext highlighter-rouge">B.adjacent=[]</code></td>
-              <td style="text-align: center"><code class="language-plaintext highlighter-rouge">A.adjacent=[(B, 4)]</code><br /><code class="language-plaintext highlighter-rouge">B.adjacent=[(A, 4)]</code></td>
-            </tr>
-          </tbody>
-        </table>
-      </li>
+      <li><code class="language-plaintext highlighter-rouge">typeof</code>의 연산 순서는 사칙연산보다 높다.</li>
     </ul>
   </li>
-  <li>인접 행렬 vs 인접 리스트
+  <li>
+    <p>Truthy와 Falsy</p>
+
     <ul>
-      <li>복잡도 표현 기호
-        <ul>
-          <li>$V$: 그래프 안에 있는 모든 노드(Vertex)들의 집합</li>
-          <li>$E$: 그래프 안에 있는 모든 엣지(Edge)들의 집합
-            <ul>
-              <li>최악의 경우 $V^2$에 비례</li>
-            </ul>
-          </li>
-        </ul>
-      </li>
+      <li>Truthy: 불린형으로 변환했을 때 <code class="language-plaintext highlighter-rouge">true</code>가 되는 값</li>
+      <li>Falsy: 불린형으로 변환했을 때 <code class="language-plaintext highlighter-rouge">false</code>가 되는 값</li>
     </ul>
 
     <table>
-  <tr bgcolor="#e9dcbe" style="text-align: center; border-bottom: 2px solid #afa58f">
-    <th> </th>
-    <th> </th>
-    <th class="text-center"> 인접 행렬 </th>
-    <th class="text-center"> 인접 리스트 </th>
-  </tr>
-  <tr align="center">
-    <td> 공간 복잡도 </td>
-    <td> </td>
-    <td> <span style="color: red">$O(V^2)$</span> <br /> $V \times V$행렬 </td>
-    <td> <span style="color: red"> $O(V+E)$ (최악 $O(V^2)$)</span> <br /> 인접 리스트 저장 $O(V)$, 엣지 저장 $O(E)$ </td>
-  </tr>
-  <tr align="center">
-    <td rowspan="2"> 시간 복잡도 </td>
-    <td> 두 노드 연결 확인 소요시간 </td>
-    <td> <span style="color: red">$O(1)$</span> </td>
-    <td> <span style="color: red">$O(V)$</span> </td>
-  </tr>
-  <tr align="center">
-    <td> 노드에 연결된 모든 노드를 알아내는 데 걸리는 시간 </td>
-    <td> <span style="color: red">$O(V)$</span><br /> 연결관계를 확인하려면 항상 길이가 $V$인 리스트에서 0과 1인지 파악해야 함 </td>
-    <td> <span style="color: red">$O(V)$</span><br /> 각 노드가 자신과 인접한 노드들에 대한 레퍼런스만 가지고 있으므로 인접행렬을 사용하는 것 보다 더 빨리 실행됨.<br /><i>알고리즘 구현 할 때 인접 리스트가 시간적으로 더 효율적</i> </td>
-  </tr>
-</table>
+      <thead>
+        <tr>
+          <th style="text-align: center">Truthy</th>
+          <th style="text-align: center">Falsy</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: center"><code class="language-plaintext highlighter-rouge">true</code></td>
+          <td style="text-align: center"><code class="language-plaintext highlighter-rouge">false</code></td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><code class="language-plaintext highlighter-rouge">0</code>을 제외한 모든 숫자<br />(음수, 소수 포함)</td>
+          <td style="text-align: center"><code class="language-plaintext highlighter-rouge">0</code></td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><code class="language-plaintext highlighter-rouge">''</code>을 제외한 모든 문자열<br />(공백으로만 이루어져 있는 문자열 포함)</td>
+          <td style="text-align: center"><code class="language-plaintext highlighter-rouge">''</code></td>
+        </tr>
+        <tr>
+          <td style="text-align: center"> </td>
+          <td style="text-align: center"><code class="language-plaintext highlighter-rouge">null</code>, <code class="language-plaintext highlighter-rouge">undefined</code>, <code class="language-plaintext highlighter-rouge">NaN</code></td>
+        </tr>
+      </tbody>
+    </table>
   </li>
-</ul>
-
-<h2 id="그래프-탐색">그래프 탐색</h2>
-
-<h3 id="그래프-탐색이란">그래프 탐색이란?</h3>
-<ul>
-  <li>하나의 시작점 노드에서 연결된 노드들을 모두 찾는 것</li>
-  <li>하나의 노드에서 연결된 모든 노드를 다 돌기 때문에 그래프 순회라고도 함</li>
-  <li>활용
-    <ol>
-      <li>주어진 두 노드가 연결되었는지 유무 확인(BFS, DFS)</li>
-      <li>두 노드 사이의 최단 경로를 구할 수 있음(BFS(비가중치 그래프), Dijkstra)</li>
-    </ol>
-  </li>
-</ul>
-
-<h3 id="bfsbreadth-first-search">BFS(Breadth First Search)</h3>
-<ul>
-  <li>
-    <p>그래프를 너비 우선적으로 탐색</p>
-
-    <p><img src="/assets/images/자료구조/img12.png" alt="BFS" /></p>
-  </li>
-  <li>자료형으로 큐 사용</li>
-  <li>알고리즘
-    <ol>
-      <li>시작 노드를 방문 표시 후 큐에 삽입</li>
-      <li>큐에 아무 노드가 없을 때 까지
-        <ol>
-          <li>큐 가장 앞 노드를 꺼낸다.</li>
-          <li>꺼낸 노드에 인접한 노드들을 모두 보면서
-            <ol>
-              <li>처음 방문한 노드면
-                <ol>
-                  <li>방문한 노드 표시를 해준다.</li>
-                  <li>큐에 넣어준다.</li>
-                </ol>
-              </li>
-            </ol>
-          </li>
-        </ol>
-      </li>
-    </ol>
-
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">bfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">start_node</span><span class="p">):</span>
-  <span class="s">"""bfs 함수"""</span>
-  <span class="n">queue</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span> <span class="c1"># 빈 큐 생성
-</span>
-  <span class="c1"># 모든 노드를 방문하지 않은 노드로 표시
-</span>  <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">.</span><span class="n">values</span><span class="p">():</span>
-    <span class="n">node</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="bp">False</span>
-    
-  <span class="c1"># 시작점 노드를 방문 표시한 후 큐에 넣어준다.
-</span>  <span class="n">start_node</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="bp">True</span>
-  <span class="n">queue</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">start_node</span><span class="p">)</span>
-
-  <span class="k">while</span> <span class="n">queue</span><span class="p">:</span>  <span class="c1"># 큐에 노드가 있는 동안
-</span>     <span class="n">current</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="n">popleft</span><span class="p">()</span>  <span class="c1"># 큐의 가장 앞 데이터를 갖고 온다.
-</span>     <span class="k">for</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="n">current</span><span class="p">.</span><span class="n">adjacent</span><span class="p">:</span>  <span class="c1"># 인접한 노드를 돌면서
-</span>      <span class="k">if</span> <span class="ow">not</span> <span class="n">neighbor</span><span class="p">.</span><span class="n">visited</span><span class="p">:</span>  <span class="c1"># 방문하지 않은 노드면
-</span>        <span class="n">neighbor</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="bp">True</span> <span class="c1"># 방문 표시를 하고
-</span>        <span class="n">queue</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">neighbor</span><span class="p">)</span>  <span class="c1"># 큐에 넣는다.
-</span></code></pre></div>    </div>
-  </li>
-  <li>시간 복잡도
+  <li><code class="language-plaintext highlighter-rouge">null</code>과 <code class="language-plaintext highlighter-rouge">undefined</code>
     <ul>
-      <li>전처리(모든 노드를 방문하지 않는 노드로 표시): $O(V)$</li>
-      <li>큐에서 노드를 넣고 빼기: 큐에는 노드가 딱 한 번 들어갔다 나오므로 $O(V)$</li>
-      <li>큐에서 뺀 노드의 인접한 노드들을 도는 데 걸리는 시간: 모든 노드들의 인접 리스트를 딱 한 번만 돌게 되므로 엣지 수에 비례: $O(E)$</li>
-    </ul>
-
-    <p>⇒ $O(V+E)$</p>
-  </li>
-</ul>
-
-<h3 id="dfsdepth-first-search">DFS(Depth First Search)</h3>
-<ul>
-  <li>
-    <p>그래프를 깊이 우선적으로 탐색</p>
-
-    <p><img src="/assets/images/자료구조/img13.png" alt="DFS" /></p>
-  </li>
-  <li>자료형으로 스택 사용</li>
-  <li>알고리즘
-    <ol>
-      <li>시작 노드를 스택삽입 표시 후 스택에 삽입</li>
-      <li>스택에 아무 노드가 없을 때 까지
-        <ol>
-          <li>스택의 가장 위 노드를 꺼낸다.</li>
-          <li>노드를 방문 표시한다.</li>
-          <li>꺼낸 노드에 인접한 노드들을 모두 보면서
-            <ol>
-              <li>처음 방문하거나 스택에 없는 노드면
-                <ol>
-                  <li>스택삽입 표시를 해준다.</li>
-                  <li>스택에 넣어준다.</li>
-                </ol>
-              </li>
-            </ol>
-          </li>
-        </ol>
+      <li>값이 없다.</li>
+      <li><code class="language-plaintext highlighter-rouge">null</code>: 의도적으로 포현할 때 사용하는 값. type은 <code class="language-plaintext highlighter-rouge">object</code></li>
+      <li><code class="language-plaintext highlighter-rouge">undefined</code>: 값이 없다는 것을 확인하는 값(변수 할당 X, 반환 없는 함수 등). type은 <code class="language-plaintext highlighter-rouge">undefined</code>
+        <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">null</span> <span class="o">==</span> <span class="kc">undefined</span><span class="p">);</span> <span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">null</span> <span class="o">===</span> <span class="kc">undefined</span><span class="p">);</span> <span class="c1">// false</span>
+</code></pre></div>        </div>
       </li>
-    </ol>
-
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">start_node</span><span class="p">):</span>
-  <span class="s">"""dfs 함수"""</span>
-  <span class="n">stack</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span> <span class="c1"># 빈 스택 생성
-</span>
-  <span class="c1"># 모든 노드를 처음 보는 노드로 초기화
-</span>  <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">.</span><span class="n">values</span><span class="p">():</span>
-    <span class="n">node</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="mi">0</span>
-
-  <span class="n">start_node</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># 시작 노드를 스택에 넣는다는 표시(옅은 회색)을 하고
-</span>  <span class="n">stack</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">start_node</span><span class="p">)</span>  <span class="c1"># 스택에 넣는다.
-</span>
-  <span class="k">while</span> <span class="n">stack</span><span class="p">:</span>  <span class="c1"># 스택에 노드가 남아 있을 때 까지
-</span>    <span class="n">current</span> <span class="o">=</span> <span class="n">stack</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span> <span class="c1"># 스택 가장 위(뒤) 데이터를 갖고 온다.
-</span>    <span class="n">current</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># 현재 노드를 방문 표시한다.
-</span>    <span class="k">for</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="n">current</span><span class="p">.</span><span class="n">adjacent</span><span class="p">:</span>
-      <span class="k">if</span> <span class="n">neighbor</span><span class="p">.</span><span class="n">visited</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># 처음 보는 노드들만
-</span>        <span class="n">neighbor</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># 스택에 넣는다는 표시를 하고
-</span>        <span class="n">stack</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">neighbor</span><span class="p">)</span>  <span class="c1"># 스택에 넣는다.
-</span>    
-<span class="s">'''
-  visited를 True, False가 아닌 0, 1, 2로 세분화 하는 이유
-  =&gt; stack에 넣는 과정에서 방문 과정(visited = True)을 수행하면 A -&gt; B -&gt; C 의 방문으로 표시가 된다.
-     이는 DFS의 과정이 아니기 때문에(A -&gt; B -&gt; D -&gt; ...) pop을 수행한 이후 방문 표시를 해준다.
-     단순 출력을 위해서라면 True, False로 교체하고 current.visited = 2 부분을 print()로 바꾸면 된다.
-'''</span>
-
-<span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">start_node</span><span class="p">):</span>
-  <span class="n">stack</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span>
-
-  <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">.</span><span class="n">values</span><span class="p">():</span>
-    <span class="n">node</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="bp">False</span>
-    
-  <span class="n">start_node</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="bp">True</span>
-  <span class="n">stack</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">start_node</span><span class="p">)</span>
-
-  <span class="k">while</span> <span class="n">stack</span><span class="p">:</span>
-     <span class="n">current</span> <span class="o">=</span> <span class="n">stack</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span>
-     <span class="k">print</span><span class="p">(</span><span class="n">current</span><span class="p">)</span>
-     <span class="k">for</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="n">current</span><span class="p">.</span><span class="n">adjacent</span><span class="p">:</span>
-      <span class="k">if</span> <span class="ow">not</span> <span class="n">neighbor</span><span class="p">.</span><span class="n">visited</span><span class="p">:</span>
-        <span class="n">neighbor</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="bp">True</span>
-        <span class="n">stack</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">neighbor</span><span class="p">)</span>
-</code></pre></div>    </div>
-  </li>
-  <li>시간 복잡도
-    <ul>
-      <li>전처리(모든 노드를 방문하지 않은 노드로 표시): $O(V)$</li>
-      <li>스택에서 노드를 넣고 빼기: 스택에는 노드가 딱 한 번 들어갔다 나오므로 $O(V)$</li>
-      <li>스택에서 뺀 노드의 인접한 노드들을 도는데 걸리는 시간: 모든 노드들의 인접 리스트를 딱 한 번만 돌게 되므로 엣지 수에 비례: $O(E)$</li>
     </ul>
   </li>
 </ul>
 
-<h2 id="최단-경로-알고리즘">최단 경로 알고리즘</h2>
+<h2 id="제어문">제어문</h2>
 
-<h3 id="bfs">BFS</h3>
+<h3 id="1-조건문">1. 조건문</h3>
+
 <ul>
-  <li>predecessor(BFS를 할 때 특정 노드에 오기 직전의 노드)를 멤버 변수에 추가</li>
-  <li>알고리즘
-    <ol>
-      <li>시작 노드를 방문 표시 후 큐에 삽입</li>
-      <li>큐에 아무 노드가 없을 때 까지
-        <ol>
-          <li>큐의 가장 앞 노드를 꺼낸다.</li>
-          <li>꺼낸 노드에 인접한 노드들을 모두 보면서
-            <ol>
-              <li>처음 방문한 노드면
-                <ol>
-                  <li>방문한 노드 표시를 해준다.</li>
-                  <li><em>predecessor 변수를 큐에서 꺼낸 노드로 설정</em></li>
-                  <li>큐에 넣어준다.</li>
-                </ol>
-              </li>
-            </ol>
-          </li>
-        </ol>
-      </li>
-    </ol>
-  </li>
-  <li>Backtracking
-    <ol>
-      <li>현재 노드를 경로에 추가한다.</li>
-      <li>현재 노드의 predecessor로 가면서 경로에 추가한다.</li>
-      <li>predecessor가 없을 때 까지 위 단계 반복.</li>
-      <li>경로를 뒤집는다.</li>
-    </ol>
-  </li>
-  <li>predecessor는 해당 노드를 가장 빨리 발견하는 이전 노드를 저장함 → BFS 경로가 최단경로</li>
+  <li><code class="language-plaintext highlighter-rouge">if</code>, <code class="language-plaintext highlighter-rouge">else</code>, <code class="language-plaintext highlighter-rouge">else if</code></li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">bfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">start_node</span><span class="p">):</span>
-  <span class="s">"""최단 경로용 bfs 함수"""</span>
-  <span class="n">queue</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span> <span class="c1"># 빈 큐 생성
-</span>
-  <span class="c1"># 모든 노드를 방문하지 않은 노드로 표시, 모든 predecessor는 None으로 초기화
-</span>  <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">.</span><span class="n">values</span><span class="p">():</span>
-    <span class="n">node</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="bp">False</span>
-    <span class="n">node</span><span class="p">.</span><span class="n">predecessor</span> <span class="o">=</span> <span class="bp">None</span>
-
-  <span class="c1"># 시작점 노드를 방문 표시한 후 큐에 넣어준다.
-</span>  <span class="n">node</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="bp">True</span>
-  <span class="n">queue</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">start_node</span><span class="p">)</span>
-
-  <span class="k">while</span> <span class="n">queue</span><span class="p">:</span>  <span class="c1"># 큐에 노드가 있을 때 까지
-</span>    <span class="n">current</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="n">popleft</span><span class="p">()</span> <span class="c1"># 큐의 가장 앞 데이터를 갖고 온다.
-</span>    <span class="k">for</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="n">current</span><span class="p">.</span><span class="n">adjacent</span><span class="p">:</span> <span class="c1"># 인접한 노드를 돌면서
-</span>      <span class="k">if</span> <span class="ow">not</span> <span class="n">neighbor</span><span class="p">.</span><span class="n">visited</span><span class="p">:</span>  <span class="c1"># 방문하지 않은 노드면
-</span>        <span class="n">neighbor</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="bp">True</span> <span class="c1"># 방문 표시를 하고
-</span>        <span class="n">neighbor</span><span class="p">.</span><span class="n">predecessor</span> <span class="o">=</span> <span class="n">current</span>  <span class="c1"># 이 노드가 어디서 왔는지 표시
-</span>        <span class="n">queue</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">neighbor</span><span class="p">)</span>  <span class="c1"># 큐에 넣는다.
-</span>
-<span class="k">def</span> <span class="nf">back_track</span><span class="p">(</span><span class="n">destination_node</span><span class="p">):</span>
-  <span class="s">"""최단 경로를 찾기 위한 back tracking 함수"""</span>
-  <span class="n">res_str</span> <span class="o">=</span> <span class="s">""</span>  <span class="c1"># 리턴할 문자 결과열
-</span>  <span class="n">temp</span> <span class="o">=</span> <span class="n">destination_node</span> <span class="c1"># 도착 노드에서 시작 노드까지 찾아가는 데 사용할 변수
-</span>
-  <span class="c1"># 시작 노드로 갈 때까지
-</span>  <span class="k">while</span> <span class="n">temp</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
-    <span class="n">res_str</span> <span class="o">=</span> <span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">temp</span><span class="p">.</span><span class="n">value</span><span class="si">}</span><span class="s"> </span><span class="si">{</span><span class="n">res_str</span><span class="si">}</span><span class="s">"</span> <span class="c1"># 결과 문자열에 방문한 노드 값을 더하고
-</span>    <span class="n">temp</span> <span class="o">=</span> <span class="n">temp</span><span class="p">.</span><span class="n">predecessor</span> <span class="c1"># temp를 다음 노드로 바꿔준다.
-</span>  
-  <span class="k">return</span> <span class="n">res_str</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="cm">/* 조건 부분 */</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// ...</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">{</span>
+  <span class="c1">// ...</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="c1">// ...</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
-<h3 id="dijkstra">Dijkstra</h3>
+<h3 id="2-반복문">2. 반복문</h3>
+
 <ul>
-  <li>변수
-    <ol>
-      <li><code class="language-plaintext highlighter-rouge">distance</code>: 특정 노드까지의 “최단 거리 예상치”(현재까지 아는 정보로 계산한 최단 거리)</li>
-      <li><code class="language-plaintext highlighter-rouge">predecessor</code>: 현재까지 최단 경로에서 바로 직전의 노드</li>
-      <li><code class="language-plaintext highlighter-rouge">complete</code>: 노드까지의 최단 경로를 찾았다고 표시하기 위한 변수</li>
-    </ol>
+  <li><code class="language-plaintext highlighter-rouge">for</code>, <code class="language-plaintext highlighter-rouge">while</code></li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="cm">/* 초기화 부분 */</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">n</span><span class="cm">/* 조건 부분 */</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="cm">/* 추가동작 부분 */</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// ...</span>
+<span class="p">}</span>
+
+<span class="k">while</span> <span class="p">(</span><span class="cm">/* 조건 부분 */</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="3-switch-문">3. <code class="language-plaintext highlighter-rouge">switch</code> 문</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">select</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">A</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="cm">/* 과일 fruit에 따라 메시지를 출력해 줍니다. */</span>
+<span class="k">switch</span> <span class="p">(</span><span class="nx">fruit</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">case</span> <span class="dl">"</span><span class="s2">A</span><span class="dl">"</span><span class="p">:</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">A</span><span class="dl">"</span><span class="p">);</span>
+    <span class="k">break</span><span class="p">;</span>
+  <span class="k">case</span> <span class="dl">"</span><span class="s2">B</span><span class="dl">"</span><span class="p">:</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">B</span><span class="dl">"</span><span class="p">);</span>
+    <span class="k">break</span><span class="p">;</span>
+  <span class="k">case</span> <span class="dl">"</span><span class="s2">C</span><span class="dl">"</span><span class="p">:</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">C</span><span class="dl">"</span><span class="p">);</span>
+    <span class="k">break</span><span class="p">;</span>
+  <span class="nl">default</span><span class="p">:</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">else</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="4-break-문-continue-문">4. <code class="language-plaintext highlighter-rouge">break</code> 문, <code class="language-plaintext highlighter-rouge">continue</code> 문</h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">break</code>문: 반복문 및 <code class="language-plaintext highlighter-rouge">switch</code>문 종료</li>
+  <li><code class="language-plaintext highlighter-rouge">continue</code>문: 현재 반복문을 한 번 건너 뜀</li>
+</ul>
+
+<h3 id="변수의-scope">변수의 scope</h3>
+
+<ul>
+  <li>변수가 사용 가능한 범위</li>
+  <li>
+    <p>로컬 변수와 글로벌 변수</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: center"><code class="language-plaintext highlighter-rouge">Python</code></th>
+          <th style="text-align: center"><code class="language-plaintext highlighter-rouge">JavaScript</code></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: center">함수의 안팎</td>
+          <td style="text-align: center">블록(<code class="language-plaintext highlighter-rouge">{}</code>)의 안팎</td>
+        </tr>
+      </tbody>
+    </table>
   </li>
-  <li>Relaxation
+</ul>
+
+<h2 id="심화-자료형">심화 자료형</h2>
+
+<h3 id="배열">배열</h3>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Python</code>의 <code class="language-plaintext highlighter-rouge">list</code>와 동일</p>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">list</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">element0</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">element1</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">element2</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">element3</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">element4</span><span class="dl">"</span><span class="p">];</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>인덱싱</p>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">list</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">list</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">list</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">list</span><span class="p">[</span><span class="nx">list</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]);</span>
+<span class="c1">// 배열 범위를 벗어나면 undefined</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>슬라이싱</p>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">list</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">));</span> <span class="c1">// 1부터 3까지</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">list</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span> <span class="c1">// 3부터 끝까지</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">list</span><span class="p">.</span><span class="nx">slice</span><span class="p">());</span> <span class="c1">// 배열 전체</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>배열 요소 수정, 추가, 삭제</p>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* 요소 수정 */</span>
+<span class="nx">list</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">new_element2</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="cm">/* 요소 추가 */</span>
+<span class="kd">let</span> <span class="nx">newLength</span> <span class="o">=</span> <span class="nx">list</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="dl">"</span><span class="s2">element5</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newLength</span><span class="p">);</span> <span class="c1">// 6</span>
+
+<span class="cm">/* 요소 삭제 */</span>
+<span class="kd">let</span> <span class="nx">lastElement</span> <span class="o">=</span> <span class="nx">list</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">lastElement</span><span class="p">);</span> <span class="c1">// element5</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">.splice</code> 메소드</p>
+
     <ul>
-      <li>엣지 (A, B)를 relax하다: A에서 B를 방문하면서, B의 distance, predecessor를 바꾸는 것
+      <li><code class="language-plaintext highlighter-rouge">.splice(start, deleteCount, item1, item2, ...)</code></li>
+      <li><code class="language-plaintext highlighter-rouge">start</code>에서 시작하여 <code class="language-plaintext highlighter-rouge">deleteCount</code>만큼 삭제하고, 삭제한 부분에 <code class="language-plaintext highlighter-rouge">item1</code>, <code class="language-plaintext highlighter-rouge">item2</code>, <code class="language-plaintext highlighter-rouge">...</code>를 추가</li>
+      <li><code class="language-plaintext highlighter-rouge">deleteCount</code>가 없으면 끝까지 삭제</li>
+      <li><code class="language-plaintext highlighter-rouge">deleteCount</code>가 0이면 삭제를 하지 않고 <code class="language-plaintext highlighter-rouge">start</code> 위치부터 <code class="language-plaintext highlighter-rouge">item</code> 추가</li>
+    </ul>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">list</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="dl">"</span><span class="s2">element6</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">list</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">list</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>반복문: <code class="language-plaintext highlighter-rouge">for...of</code></p>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">element</span> <span class="k">of</span> <span class="nx">list</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">element</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="객체">객체</h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Python</code>의 <code class="language-plaintext highlighter-rouge">dict</code>와 동일</li>
+  <li>
+    <p>key-value 쌍을 property(프로퍼티) 라고 한다.</p>
+
+    <ul>
+      <li>key: property name(프로퍼티 이름)
         <ul>
-          <li>B의 distance &gt; A의 distance + 엣지의 가중치
-            <ul>
-              <li>B의 distance = A의 distance + 엣지의 가중치</li>
-              <li>B의 predecessor = A</li>
-            </ul>
-          </li>
-          <li>B의 distance &lt;= A의 distance + 엣지의 가중치
-            <ul>
-              <li>그대로 둔다.</li>
-            </ul>
-          </li>
+          <li>문자열 타입으로, 꼭 따옴표를 쓰지 않아도 문자열로 인식하므로 생략하는 경우가 많다.</li>
+          <li>그러나, 알파벳 문자, 언더바 기호, 달러 기호가 아닌 다른 문자로 시작하거나, 중간에 공백이나 하이픈 기호로 연결되어 있으면 따옴표를 써주어야 한다.</li>
         </ul>
       </li>
-      <li>최단 거리 예상값을 줄여주는 과정이 노드의 긴장감을 풀어주는 개념과 비슷하다는 것에서 사용</li>
-    </ul>
-  </li>
-  <li>알고리즘
-    <ol>
-      <li>모든 노드의 distance를 무한대로, predecessor를 <code class="language-plaintext highlighter-rouge">None</code>으로, complete는 <code class="language-plaintext highlighter-rouge">False</code>로</li>
-      <li>시작점의 distance를 0으로, predecessor를 <code class="language-plaintext highlighter-rouge">None</code>으로</li>
-      <li>모든 노드가 complete일 때 까지
-        <ol>
-          <li>complete하지 않은 노드 중 distance가 가장 작은 노드 선택</li>
-          <li>이 노드에 인접한 노드 중 complete하지 않은 노드를 돌면서
-            <ol>
-              <li>각 엣지를 relax</li>
-            </ol>
-          </li>
-          <li>현재 노드를 complete 처리</li>
-        </ol>
-      </li>
-    </ol>
-  </li>
-  <li>Backtracking
-    <ul>
-      <li>최단 거리: 노드의 distance</li>
-      <li>최단 경로: predecessor를 통하여 경로 추가</li>
-    </ul>
-  </li>
-  <li>Dijkstra로 찾은 경로가 최단 경로인 이유
-    <ul>
-      <li>최단 경로의 부분 경로는 모두 최단 경로이다. ⇒ 부분 최단 경로를 이은 경로는 최단 경로이다.(최적 부분 구조)</li>
-      <li>Dijkstra에서 방문하지 않은 노드들 중 distance가 가장 작은 노드를 고를 때, 이 노드의 distance는 이미 시작점으로부터 최단 거리를 보유
-        <ol>
-          <li>Dijkstra 알고리즘은 반복문을 돌면서 최단 경로를 이미 찾은 노드를 하나씩 찾아줌: 처음에는 시작 노드의 최단 경로를 확정지었고, 이후 다음 선택된 노드를 최단 경로로 확정지어줌</li>
-          <li>최단 경로를 이미 찾은 노드들의 엣지들을 모두 relax해줌: 최단 경로는 다른 노드들의 최단 경로 + 현재 노드이므로, 이미 확정난 최단 경로들로 다른 노드들까지의 최단 거리 예상치(distance)를 계산</li>
-          <li>매 단게에서 이 distance가 가장 작은 노드는 최단 거리를 이미 찾았다고 확신: 최적 부분 구조로 인해 이미 선택된 노드는 다른 경로를 통한 최단 거리보다 작기 때문에 반복문이 한 번 실행될 때 마다 distance가 가장 작은 노드가 최단 거리 노드라고 확신</li>
-        </ol>
+      <li>value: property value(프로퍼티 값)
+        <ul>
+          <li>어떠한 자료형이어도 가능</li>
+        </ul>
       </li>
     </ul>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">object</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">stringValue</span><span class="p">:</span> <span class="dl">"</span><span class="s2">string</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">integerValue</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+  <span class="na">listValue</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">element0</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">element1</span><span class="dl">"</span><span class="p">],</span>
+  <span class="na">nullValue</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="na">objectValue</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">str</span><span class="p">:</span> <span class="dl">"</span><span class="s2">objectstring</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">num</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+</code></pre></div>    </div>
   </li>
-</ul>]]></content><author><name>Domiki</name></author><category term="Coding" /><category term="Computer Science" /><category term="Data Structure" /><summary type="html"><![CDATA[그래프란?]]></summary></entry><entry><title type="html">좋은 알고리즘이란?</title><link href="http://localhost:4000/coding/computer%20science/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%981/" rel="alternate" type="text/html" title="좋은 알고리즘이란?" /><published>2023-03-16T00:00:00+09:00</published><updated>2023-03-17T00:20:00+09:00</updated><id>http://localhost:4000/coding/computer%20science/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%981</id><content type="html" xml:base="http://localhost:4000/coding/computer%20science/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%981/"><![CDATA[<h2 id="알고리즘이란">알고리즘이란?</h2>
+  <li>
+    <p>접근</p>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">object</span><span class="p">[</span><span class="dl">"</span><span class="s2">stringValue</span><span class="dl">"</span><span class="p">]);</span> <span class="c1">// string</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">object</span><span class="p">.</span><span class="nx">stringValue</span><span class="p">);</span> <span class="c1">// string</span>
+
+<span class="kd">let</span> <span class="nx">propertyName</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">stringValue</span><span class="dl">"</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">object</span><span class="p">[</span><span class="nx">propertyName</span><span class="p">]);</span> <span class="c1">// string</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">object</span><span class="p">.</span><span class="nx">objectValue</span><span class="p">.</span><span class="nx">str</span><span class="p">);</span> <span class="c1">// objectstring</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">object</span><span class="p">[</span><span class="dl">"</span><span class="s2">objectValue</span><span class="dl">"</span><span class="p">].</span><span class="nx">str</span><span class="p">);</span> <span class="c1">// objectstring</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">object</span><span class="p">.</span><span class="nx">objectValue</span><span class="p">[</span><span class="dl">"</span><span class="s2">str</span><span class="dl">"</span><span class="p">]);</span> <span class="c1">// objectstring</span>
+
+<span class="cm">/* 존재하지 않는 프로퍼티에 접근 */</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">object</span><span class="p">.</span><span class="nx">undefinedValue</span><span class="p">);</span> <span class="c1">// undefined</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>탐색</p>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">integerValue</span><span class="dl">"</span> <span class="k">in</span> <span class="nx">object</span><span class="p">);</span> <span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">undefinedValue</span><span class="dl">"</span> <span class="k">in</span> <span class="nx">obejct</span><span class="p">);</span> <span class="c1">// false</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>요소 추가, 수정, 삭제</p>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* 요소 수정 */</span>
+<span class="nx">object</span><span class="p">.</span><span class="nx">stringValue</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">newString</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="cm">/* 요소 추가 */</span>
+<span class="nx">object</span><span class="p">.</span><span class="nx">newValue</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+
+<span class="cm">/* 요소 삭제 */</span>
+<span class="k">delete</span> <span class="nx">object</span><span class="p">.</span><span class="nx">newValue</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>반복문: <code class="language-plaintext highlighter-rouge">for...in</code></p>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">key</span> <span class="k">in</span> <span class="nx">object</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">key</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">object</span><span class="p">[</span><span class="nx">key</span><span class="p">]);</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>메소드</p>
+
+    <ul>
+      <li>프로퍼티 값은 함수가 될 수 있다. 이를 메소드(Method)라 한다.</li>
+    </ul>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">foo1</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Foo</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">foo2</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Foo </span><span class="p">${</span><span class="nx">value</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">functions</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">func1</span><span class="p">:</span> <span class="nx">foo1</span><span class="p">,</span>
+  <span class="na">func2</span><span class="p">:</span> <span class="nx">foo2</span><span class="p">,</span>
+  <span class="na">func3</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Foo </span><span class="p">${</span><span class="nx">value</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+
+<span class="nx">functions</span><span class="p">.</span><span class="nx">foo1</span><span class="p">();</span> <span class="c1">// Foo</span>
+<span class="nx">functions</span><span class="p">.</span><span class="nx">foo2</span><span class="p">(</span><span class="dl">"</span><span class="s2">Baa</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// Foo Baa</span>
+<span class="nx">functions</span><span class="p">.</span><span class="nx">foo3</span><span class="p">(</span><span class="dl">"</span><span class="s2">Baa</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// Foo Baa</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="숫자형-문자열-메소드">숫자형, 문자열 메소드</h3>
+<ul>
+  <li>자바스크립트는 객체가 아닌 다른 자료형도 객체처럼 구현이 되어있다. 따라서 숫자형 및 문자형 등에도 다양한 프로퍼티 및 메소드가 존재한다.</li>
+  <li><strong>숫자형 메소드</strong>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">.toFixed()</code>: 소수의 소숫점 아래 자릿수를 고정해준다.
+        <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* 숫자에 바로 사용 */</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mf">0.3</span><span class="p">.</span><span class="nx">toFixed</span><span class="p">(</span><span class="mi">2</span><span class="p">));</span> <span class="c1">// 0.30</span>
+
+<span class="cm">/* 숫자형 변수에 사용 */</span>
+<span class="kd">let</span> <span class="nx">num</span> <span class="o">=</span> <span class="mf">0.3591</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num</span><span class="p">.</span><span class="nx">toFixed</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span> <span class="c1">// 0.359</span>
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li><strong>문자열 메소드</strong>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">.length</code>: 문자열의 길이</li>
+      <li><code class="language-plaintext highlighter-rouge">.charAt()</code>, <code class="language-plaintext highlighter-rouge">[]</code>: 특정 위치(인덱스)에 있는 문자 접근</li>
+      <li><code class="language-plaintext highlighter-rouge">.slice()</code>: 두 인덱스 사이의 문자열을 잘라내 줌</li>
+      <li><code class="language-plaintext highlighter-rouge">.toUpperCase()</code>: 알파벳 문자를 모두 대문자로</li>
+      <li><code class="language-plaintext highlighter-rouge">.toLowerCase()</code>: 알파벳 문자를 모두 소문자로</li>
+      <li><code class="language-plaintext highlighter-rouge">.repeat()</code>: 문자열 반복</li>
+      <li><code class="language-plaintext highlighter-rouge">.trim()</code>: 문자열 시작과 끝 부분에 있는 모든 공백 문자를 제거</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="const"><code class="language-plaintext highlighter-rouge">const</code></h3>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">PI</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span> <span class="c1">// 상수는 이름을 대문자로 쓰는 것이 권장된다.</span>
+
+<span class="cm">/*
+ * 상수에 할당된 리스트 및 객체를 바꾸는 것은 오류가 발생한다.
+ * 그러나 상수 내부의 요소를 바꾸는 것은 오류가 발생하지 않는다.
+ * 따라서, 변수나 객체를 선언할 때는 계속 할당된 값을 바꾸는 상황이 아니라면 대체로 const를 선언한다.
+ */</span>
+<span class="kd">const</span> <span class="nx">list</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="dl">'</span><span class="s1">element0</span><span class="dl">'</span><span class="p">,</span>
+  <span class="dl">'</span><span class="s1">element1</span><span class="dl">'</span><span class="p">,</span>
+  <span class="dl">'</span><span class="s1">element2</span><span class="dl">'</span><span class="p">,</span>
+<span class="p">];</span>
+
+<span class="nx">list</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">newElement2</span><span class="dl">'</span> <span class="c1">// 에러 X</span>
+
+<span class="nx">list</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="dl">'</span><span class="s1">newElement0</span><span class="dl">'</span><span class="p">,</span>
+  <span class="dl">'</span><span class="s1">newElement1</span><span class="dl">'</span><span class="p">,</span>
+  <span class="dl">'</span><span class="s1">newElement2</span><span class="dl">'</span><span class="p">,</span>
+<span class="p">];</span> <span class="c1">// 에러 O</span>
+</code></pre></div></div>
+
+<h3 id="math-date-내장-객체"><code class="language-plaintext highlighter-rouge">Math</code>, <code class="language-plaintext highlighter-rouge">Date</code> 내장 객체</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Math</code>
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* PI 프로퍼티 */</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="p">);</span> <span class="c1">// 3.141592653598793</span>
+
+<span class="cm">/* floor() 내림 함수 */</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)):</span> <span class="c1">// 1</span>
+
+<span class="cm">/* ceil() 올림 함수 */</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">));</span> <span class="c1">// 2</span>
+</code></pre></div>    </div>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">Date</code>
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* 현재 날짜 생성 */</span>
+<span class="kd">const</span> <span class="nx">date</span><span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">date</span><span class="p">);</span>
+
+<span class="cm">/* 특정 날짜 생성 */</span>
+<span class="kd">const</span> <span class="nx">date1</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="dl">'</span><span class="s1">2023-07-07</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="cm">/* 문자열로 날짜 생성 YYYY-MM-DDThh:mm:ss */</span>
+<span class="kd">const</span> <span class="nx">date2</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="dl">'</span><span class="s1">2023-07-07T10:05:00</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="cm">/* 숫자로 날짜 생성 new Date(year, month, date)
+  주의: month는 월의 인덱스라서 1월은 0, 2월은 1, ..., 12월은 11이다. */</span>
+<span class="kd">const</span> <span class="nx">date3</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">);</span>
+
+<span class="cm">/* 숫자로 날짜 생성 new Date(year, month, date, hours, minutes, seconds)
+  주의: month는 월의 인덱스라서 1월은 0, 2월은 1, ..., 12월은 11이다. */</span>
+<span class="kd">const</span> <span class="nx">date4</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">05</span><span class="p">,</span> <span class="mi">00</span><span class="p">);</span>
+
+
+<span class="cm">/* 날짜 포매팅 */</span>
+<span class="kd">const</span> <span class="nx">date</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">05</span><span class="p">,</span> <span class="mi">00</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">getFullYear</span><span class="p">());</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">());</span> <span class="c1">// 주의: 0에서 시작</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">getDate</span><span class="p">());</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">getHours</span><span class="p">());</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">getMinutes</span><span class="p">());</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">getSeconds</span><span class="p">());</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">getMilliseconds</span><span class="p">());</span>
+
+<span class="cm">/* 날짜 연산 */</span>
+<span class="kd">const</span> <span class="nx">date1</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">00</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">date2</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">00</span><span class="p">,</span> <span class="mi">00</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">timeDifference</span> <span class="o">=</span> <span class="nx">date2</span> <span class="o">-</span> <span class="nx">date1</span><span class="p">;</span> <span class="c1">// 밀리초로 저장</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">timeDifference</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">timeDifference</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> 밀리초</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">timeDifference</span><span class="o">/</span><span class="mi">1000</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> 초</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">timeDifference</span><span class="o">/</span><span class="mi">1000</span><span class="o">/</span><span class="mi">60</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> 분</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">timeDifference</span><span class="o">/</span><span class="mi">1000</span><span class="o">/</span><span class="mi">60</span><span class="o">/</span><span class="mi">60</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> 시간</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div>    </div>
+  </li>
+</ul>]]></content><author><name>Domiki</name></author><category term="Coding" /><category term="Language" /><category term="JavaScript" /><summary type="html"><![CDATA[자바스크립트 기초]]></summary></entry><entry><title type="html">좋은 알고리즘이란?</title><link href="http://localhost:4000/coding/computer%20science/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%981/" rel="alternate" type="text/html" title="좋은 알고리즘이란?" /><published>2023-03-16T00:00:00+09:00</published><updated>2023-03-17T00:20:00+09:00</updated><id>http://localhost:4000/coding/computer%20science/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%981</id><content type="html" xml:base="http://localhost:4000/coding/computer%20science/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%981/"><![CDATA[<h2 id="알고리즘이란">알고리즘이란?</h2>
 
 <ul>
   <li>컴퓨터 알고리즘: 컴퓨터가 어떤 문제를 해결하기 위해서 컴퓨터가 이해할 수 있는 방식으로 정리되어 있는 해결 방법</li>
@@ -3632,4 +3847,430 @@ but, 이전 값과 현재 값만 저장하면 공간 최적화($O(1)$), 모든 �
       <li>파이썬의 <code class="language-plaintext highlighter-rouge">set</code>, <code class="language-plaintext highlighter-rouge">dict</code>는 데이터 사이에 순서 관계를 약속하지 않는 추상 자료형이므로 <strong>해시 테이블</strong> 사용</li>
     </ul>
   </li>
-</ul>]]></content><author><name>Domiki</name></author><category term="Coding" /><category term="Computer Science" /><category term="Data Structure" /><summary type="html"><![CDATA[트리란?]]></summary></entry></feed>
+</ul>]]></content><author><name>Domiki</name></author><category term="Coding" /><category term="Computer Science" /><category term="Data Structure" /><summary type="html"><![CDATA[트리란?]]></summary></entry><entry><title type="html">그래프</title><link href="http://localhost:4000/coding/computer%20science/data%20structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B03/" rel="alternate" type="text/html" title="그래프" /><published>2023-03-16T00:00:00+09:00</published><updated>2023-03-17T02:12:00+09:00</updated><id>http://localhost:4000/coding/computer%20science/data%20structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B03</id><content type="html" xml:base="http://localhost:4000/coding/computer%20science/data%20structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B03/"><![CDATA[<h2 id="그래프란">그래프란?</h2>
+
+<ul>
+  <li>그래프: 연결 데이터를 저장할 수 있는 자료 구조
+    <ul>
+      <li>연결 관계를 표현
+        <ul>
+          <li>e.g. 위치 데이터, 사회 연결망, 통신, 생물(유전자와 단백질 상호 관계) …</li>
+          <li>c.f. 선형적 자료구조(배열, 링크드 리스트), 계층적 자료구조(트리)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>그래프 기본
+    <ul>
+      <li>그래프 노드: 하나의 데이터 단위를 나타내는 객체</li>
+      <li>그래프 엣지: 두 노드의 직접적인 연결 관계 데이터. (노드1, 노드2) 또는 (노드2, 노드1)
+        <ul>
+          <li>인접하다: 두 노드 사이에 엣지가 있다.</li>
+          <li>방향 그래프(directed graph): 엣지들이 방향을 가짐. (e.g. 인스타그램 팔로우)
+            <ul>
+              <li>노드1에서 노드2로 가는 화살표를 생각할 때, 노드 1을 떠나서 노드2로 들어가는 엣지라 표현. (노드1, 노드2)로 표현</li>
+            </ul>
+          </li>
+          <li>가중치 그래프(undirected graph): 엣지들이 연결 관계뿐만 아니라 어떤 정보를 나타내는 수치를 가짐</li>
+        </ul>
+      </li>
+      <li>차수: 하나의 노드에 연결된 엣지들의 수
+        <ul>
+          <li>무방향 그래프: 하나의 노드에 연결된 엣지들의 수</li>
+          <li>방향 그래프: 노드를 떠나는 엣지들의 수를 출력 차수, 노드로 들어오는 엣지의 수를 입력 차수로 구분</li>
+        </ul>
+      </li>
+      <li>경로
+        <ul>
+          <li>한 노드에서 다른 노드까지 가는 길</li>
+          <li>거리
+            <ul>
+              <li>비가중치 그래프: 한 경로에 있는 엣지의 수</li>
+              <li>가중치 그래프: 한 경로에 있는 엣지들의 가중치 합</li>
+            </ul>
+          </li>
+          <li>최단 경로(Shortest Path): 두 노드 사이의 경로 중 거리가 가장 짧은 경로</li>
+          <li>사이클: 한 노드에서 시작해서 같은 노드로 돌아오는 경로</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>인접 행렬(adjacency matrix)
+    <ul>
+      <li>
+        <p>노드들의 연결 관계(엣지)를 나타내는 2차원 리스트</p>
+
+        <p><img src="/assets/images/자료구조/img8.png" alt="그래프 인접 행렬" />
+<img src="/assets/images/자료구조/img9.png" alt="가중치 그래프 인접 행렬" />
+<img src="/assets/images/자료구조/img10.png" alt="방향 그래프 인접 행렬" /></p>
+      </li>
+      <li>
+        <p>인접 행렬 만들기</p>
+        <ul>
+          <li>각 노드를 리스트에 저장해 고유 정수 인덱스를 준다.</li>
+          <li>노드 수 X 노드 수 크기의 행렬을 만든다.</li>
+          <li>노드들의 엣지 유무 및 가중치에 따라 행렬의 요소를 채운다.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>인접 리스트
+    <ul>
+      <li>각 노드의 엣지를 리스트에 저장하는 방법</li>
+      <li>
+        <p>그래프 노드가 연결된 노드들에 대한 레퍼런스를 리스트로 저장</p>
+
+        <p><img src="/assets/images/자료구조/img11.png" alt="인접 리스트 정의" /></p>
+
+        <table>
+          <thead>
+            <tr>
+              <th style="text-align: center">무방향 그래프</th>
+              <th style="text-align: center">방향 그래프</th>
+              <th style="text-align: center">가중치 그래프</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align: center"><code class="language-plaintext highlighter-rouge">A.adjacent=[B]</code><br /><code class="language-plaintext highlighter-rouge">B.adjacent=[A]</code></td>
+              <td style="text-align: center"><code class="language-plaintext highlighter-rouge">A.adjacent=[B]</code><br /><code class="language-plaintext highlighter-rouge">B.adjacent=[]</code></td>
+              <td style="text-align: center"><code class="language-plaintext highlighter-rouge">A.adjacent=[(B, 4)]</code><br /><code class="language-plaintext highlighter-rouge">B.adjacent=[(A, 4)]</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+    </ul>
+  </li>
+  <li>인접 행렬 vs 인접 리스트
+    <ul>
+      <li>복잡도 표현 기호
+        <ul>
+          <li>$V$: 그래프 안에 있는 모든 노드(Vertex)들의 집합</li>
+          <li>$E$: 그래프 안에 있는 모든 엣지(Edge)들의 집합
+            <ul>
+              <li>최악의 경우 $V^2$에 비례</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <table>
+  <tr bgcolor="#e9dcbe" style="text-align: center; border-bottom: 2px solid #afa58f">
+    <th> </th>
+    <th> </th>
+    <th class="text-center"> 인접 행렬 </th>
+    <th class="text-center"> 인접 리스트 </th>
+  </tr>
+  <tr align="center">
+    <td> 공간 복잡도 </td>
+    <td> </td>
+    <td> <span style="color: red">$O(V^2)$</span> <br /> $V \times V$행렬 </td>
+    <td> <span style="color: red"> $O(V+E)$ (최악 $O(V^2)$)</span> <br /> 인접 리스트 저장 $O(V)$, 엣지 저장 $O(E)$ </td>
+  </tr>
+  <tr align="center">
+    <td rowspan="2"> 시간 복잡도 </td>
+    <td> 두 노드 연결 확인 소요시간 </td>
+    <td> <span style="color: red">$O(1)$</span> </td>
+    <td> <span style="color: red">$O(V)$</span> </td>
+  </tr>
+  <tr align="center">
+    <td> 노드에 연결된 모든 노드를 알아내는 데 걸리는 시간 </td>
+    <td> <span style="color: red">$O(V)$</span><br /> 연결관계를 확인하려면 항상 길이가 $V$인 리스트에서 0과 1인지 파악해야 함 </td>
+    <td> <span style="color: red">$O(V)$</span><br /> 각 노드가 자신과 인접한 노드들에 대한 레퍼런스만 가지고 있으므로 인접행렬을 사용하는 것 보다 더 빨리 실행됨.<br /><i>알고리즘 구현 할 때 인접 리스트가 시간적으로 더 효율적</i> </td>
+  </tr>
+</table>
+  </li>
+</ul>
+
+<h2 id="그래프-탐색">그래프 탐색</h2>
+
+<h3 id="그래프-탐색이란">그래프 탐색이란?</h3>
+<ul>
+  <li>하나의 시작점 노드에서 연결된 노드들을 모두 찾는 것</li>
+  <li>하나의 노드에서 연결된 모든 노드를 다 돌기 때문에 그래프 순회라고도 함</li>
+  <li>활용
+    <ol>
+      <li>주어진 두 노드가 연결되었는지 유무 확인(BFS, DFS)</li>
+      <li>두 노드 사이의 최단 경로를 구할 수 있음(BFS(비가중치 그래프), Dijkstra)</li>
+    </ol>
+  </li>
+</ul>
+
+<h3 id="bfsbreadth-first-search">BFS(Breadth First Search)</h3>
+<ul>
+  <li>
+    <p>그래프를 너비 우선적으로 탐색</p>
+
+    <p><img src="/assets/images/자료구조/img12.png" alt="BFS" /></p>
+  </li>
+  <li>자료형으로 큐 사용</li>
+  <li>알고리즘
+    <ol>
+      <li>시작 노드를 방문 표시 후 큐에 삽입</li>
+      <li>큐에 아무 노드가 없을 때 까지
+        <ol>
+          <li>큐 가장 앞 노드를 꺼낸다.</li>
+          <li>꺼낸 노드에 인접한 노드들을 모두 보면서
+            <ol>
+              <li>처음 방문한 노드면
+                <ol>
+                  <li>방문한 노드 표시를 해준다.</li>
+                  <li>큐에 넣어준다.</li>
+                </ol>
+              </li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+    </ol>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">bfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">start_node</span><span class="p">):</span>
+  <span class="s">"""bfs 함수"""</span>
+  <span class="n">queue</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span> <span class="c1"># 빈 큐 생성
+</span>
+  <span class="c1"># 모든 노드를 방문하지 않은 노드로 표시
+</span>  <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">.</span><span class="n">values</span><span class="p">():</span>
+    <span class="n">node</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="bp">False</span>
+    
+  <span class="c1"># 시작점 노드를 방문 표시한 후 큐에 넣어준다.
+</span>  <span class="n">start_node</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="bp">True</span>
+  <span class="n">queue</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">start_node</span><span class="p">)</span>
+
+  <span class="k">while</span> <span class="n">queue</span><span class="p">:</span>  <span class="c1"># 큐에 노드가 있는 동안
+</span>     <span class="n">current</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="n">popleft</span><span class="p">()</span>  <span class="c1"># 큐의 가장 앞 데이터를 갖고 온다.
+</span>     <span class="k">for</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="n">current</span><span class="p">.</span><span class="n">adjacent</span><span class="p">:</span>  <span class="c1"># 인접한 노드를 돌면서
+</span>      <span class="k">if</span> <span class="ow">not</span> <span class="n">neighbor</span><span class="p">.</span><span class="n">visited</span><span class="p">:</span>  <span class="c1"># 방문하지 않은 노드면
+</span>        <span class="n">neighbor</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="bp">True</span> <span class="c1"># 방문 표시를 하고
+</span>        <span class="n">queue</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">neighbor</span><span class="p">)</span>  <span class="c1"># 큐에 넣는다.
+</span></code></pre></div>    </div>
+  </li>
+  <li>시간 복잡도
+    <ul>
+      <li>전처리(모든 노드를 방문하지 않는 노드로 표시): $O(V)$</li>
+      <li>큐에서 노드를 넣고 빼기: 큐에는 노드가 딱 한 번 들어갔다 나오므로 $O(V)$</li>
+      <li>큐에서 뺀 노드의 인접한 노드들을 도는 데 걸리는 시간: 모든 노드들의 인접 리스트를 딱 한 번만 돌게 되므로 엣지 수에 비례: $O(E)$</li>
+    </ul>
+
+    <p>⇒ $O(V+E)$</p>
+  </li>
+</ul>
+
+<h3 id="dfsdepth-first-search">DFS(Depth First Search)</h3>
+<ul>
+  <li>
+    <p>그래프를 깊이 우선적으로 탐색</p>
+
+    <p><img src="/assets/images/자료구조/img13.png" alt="DFS" /></p>
+  </li>
+  <li>자료형으로 스택 사용</li>
+  <li>알고리즘
+    <ol>
+      <li>시작 노드를 스택삽입 표시 후 스택에 삽입</li>
+      <li>스택에 아무 노드가 없을 때 까지
+        <ol>
+          <li>스택의 가장 위 노드를 꺼낸다.</li>
+          <li>노드를 방문 표시한다.</li>
+          <li>꺼낸 노드에 인접한 노드들을 모두 보면서
+            <ol>
+              <li>처음 방문하거나 스택에 없는 노드면
+                <ol>
+                  <li>스택삽입 표시를 해준다.</li>
+                  <li>스택에 넣어준다.</li>
+                </ol>
+              </li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+    </ol>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">start_node</span><span class="p">):</span>
+  <span class="s">"""dfs 함수"""</span>
+  <span class="n">stack</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span> <span class="c1"># 빈 스택 생성
+</span>
+  <span class="c1"># 모든 노드를 처음 보는 노드로 초기화
+</span>  <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">.</span><span class="n">values</span><span class="p">():</span>
+    <span class="n">node</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="mi">0</span>
+
+  <span class="n">start_node</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># 시작 노드를 스택에 넣는다는 표시(옅은 회색)을 하고
+</span>  <span class="n">stack</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">start_node</span><span class="p">)</span>  <span class="c1"># 스택에 넣는다.
+</span>
+  <span class="k">while</span> <span class="n">stack</span><span class="p">:</span>  <span class="c1"># 스택에 노드가 남아 있을 때 까지
+</span>    <span class="n">current</span> <span class="o">=</span> <span class="n">stack</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span> <span class="c1"># 스택 가장 위(뒤) 데이터를 갖고 온다.
+</span>    <span class="n">current</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># 현재 노드를 방문 표시한다.
+</span>    <span class="k">for</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="n">current</span><span class="p">.</span><span class="n">adjacent</span><span class="p">:</span>
+      <span class="k">if</span> <span class="n">neighbor</span><span class="p">.</span><span class="n">visited</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># 처음 보는 노드들만
+</span>        <span class="n">neighbor</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># 스택에 넣는다는 표시를 하고
+</span>        <span class="n">stack</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">neighbor</span><span class="p">)</span>  <span class="c1"># 스택에 넣는다.
+</span>    
+<span class="s">'''
+  visited를 True, False가 아닌 0, 1, 2로 세분화 하는 이유
+  =&gt; stack에 넣는 과정에서 방문 과정(visited = True)을 수행하면 A -&gt; B -&gt; C 의 방문으로 표시가 된다.
+     이는 DFS의 과정이 아니기 때문에(A -&gt; B -&gt; D -&gt; ...) pop을 수행한 이후 방문 표시를 해준다.
+     단순 출력을 위해서라면 True, False로 교체하고 current.visited = 2 부분을 print()로 바꾸면 된다.
+'''</span>
+
+<span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">start_node</span><span class="p">):</span>
+  <span class="n">stack</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span>
+
+  <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">.</span><span class="n">values</span><span class="p">():</span>
+    <span class="n">node</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="bp">False</span>
+    
+  <span class="n">start_node</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="bp">True</span>
+  <span class="n">stack</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">start_node</span><span class="p">)</span>
+
+  <span class="k">while</span> <span class="n">stack</span><span class="p">:</span>
+     <span class="n">current</span> <span class="o">=</span> <span class="n">stack</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span>
+     <span class="k">print</span><span class="p">(</span><span class="n">current</span><span class="p">)</span>
+     <span class="k">for</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="n">current</span><span class="p">.</span><span class="n">adjacent</span><span class="p">:</span>
+      <span class="k">if</span> <span class="ow">not</span> <span class="n">neighbor</span><span class="p">.</span><span class="n">visited</span><span class="p">:</span>
+        <span class="n">neighbor</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="n">stack</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">neighbor</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li>시간 복잡도
+    <ul>
+      <li>전처리(모든 노드를 방문하지 않은 노드로 표시): $O(V)$</li>
+      <li>스택에서 노드를 넣고 빼기: 스택에는 노드가 딱 한 번 들어갔다 나오므로 $O(V)$</li>
+      <li>스택에서 뺀 노드의 인접한 노드들을 도는데 걸리는 시간: 모든 노드들의 인접 리스트를 딱 한 번만 돌게 되므로 엣지 수에 비례: $O(E)$</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="최단-경로-알고리즘">최단 경로 알고리즘</h2>
+
+<h3 id="bfs">BFS</h3>
+<ul>
+  <li>predecessor(BFS를 할 때 특정 노드에 오기 직전의 노드)를 멤버 변수에 추가</li>
+  <li>알고리즘
+    <ol>
+      <li>시작 노드를 방문 표시 후 큐에 삽입</li>
+      <li>큐에 아무 노드가 없을 때 까지
+        <ol>
+          <li>큐의 가장 앞 노드를 꺼낸다.</li>
+          <li>꺼낸 노드에 인접한 노드들을 모두 보면서
+            <ol>
+              <li>처음 방문한 노드면
+                <ol>
+                  <li>방문한 노드 표시를 해준다.</li>
+                  <li><em>predecessor 변수를 큐에서 꺼낸 노드로 설정</em></li>
+                  <li>큐에 넣어준다.</li>
+                </ol>
+              </li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li>Backtracking
+    <ol>
+      <li>현재 노드를 경로에 추가한다.</li>
+      <li>현재 노드의 predecessor로 가면서 경로에 추가한다.</li>
+      <li>predecessor가 없을 때 까지 위 단계 반복.</li>
+      <li>경로를 뒤집는다.</li>
+    </ol>
+  </li>
+  <li>predecessor는 해당 노드를 가장 빨리 발견하는 이전 노드를 저장함 → BFS 경로가 최단경로</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">bfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">start_node</span><span class="p">):</span>
+  <span class="s">"""최단 경로용 bfs 함수"""</span>
+  <span class="n">queue</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span> <span class="c1"># 빈 큐 생성
+</span>
+  <span class="c1"># 모든 노드를 방문하지 않은 노드로 표시, 모든 predecessor는 None으로 초기화
+</span>  <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">.</span><span class="n">values</span><span class="p">():</span>
+    <span class="n">node</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="n">node</span><span class="p">.</span><span class="n">predecessor</span> <span class="o">=</span> <span class="bp">None</span>
+
+  <span class="c1"># 시작점 노드를 방문 표시한 후 큐에 넣어준다.
+</span>  <span class="n">node</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="bp">True</span>
+  <span class="n">queue</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">start_node</span><span class="p">)</span>
+
+  <span class="k">while</span> <span class="n">queue</span><span class="p">:</span>  <span class="c1"># 큐에 노드가 있을 때 까지
+</span>    <span class="n">current</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="n">popleft</span><span class="p">()</span> <span class="c1"># 큐의 가장 앞 데이터를 갖고 온다.
+</span>    <span class="k">for</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="n">current</span><span class="p">.</span><span class="n">adjacent</span><span class="p">:</span> <span class="c1"># 인접한 노드를 돌면서
+</span>      <span class="k">if</span> <span class="ow">not</span> <span class="n">neighbor</span><span class="p">.</span><span class="n">visited</span><span class="p">:</span>  <span class="c1"># 방문하지 않은 노드면
+</span>        <span class="n">neighbor</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="bp">True</span> <span class="c1"># 방문 표시를 하고
+</span>        <span class="n">neighbor</span><span class="p">.</span><span class="n">predecessor</span> <span class="o">=</span> <span class="n">current</span>  <span class="c1"># 이 노드가 어디서 왔는지 표시
+</span>        <span class="n">queue</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">neighbor</span><span class="p">)</span>  <span class="c1"># 큐에 넣는다.
+</span>
+<span class="k">def</span> <span class="nf">back_track</span><span class="p">(</span><span class="n">destination_node</span><span class="p">):</span>
+  <span class="s">"""최단 경로를 찾기 위한 back tracking 함수"""</span>
+  <span class="n">res_str</span> <span class="o">=</span> <span class="s">""</span>  <span class="c1"># 리턴할 문자 결과열
+</span>  <span class="n">temp</span> <span class="o">=</span> <span class="n">destination_node</span> <span class="c1"># 도착 노드에서 시작 노드까지 찾아가는 데 사용할 변수
+</span>
+  <span class="c1"># 시작 노드로 갈 때까지
+</span>  <span class="k">while</span> <span class="n">temp</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="n">res_str</span> <span class="o">=</span> <span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">temp</span><span class="p">.</span><span class="n">value</span><span class="si">}</span><span class="s"> </span><span class="si">{</span><span class="n">res_str</span><span class="si">}</span><span class="s">"</span> <span class="c1"># 결과 문자열에 방문한 노드 값을 더하고
+</span>    <span class="n">temp</span> <span class="o">=</span> <span class="n">temp</span><span class="p">.</span><span class="n">predecessor</span> <span class="c1"># temp를 다음 노드로 바꿔준다.
+</span>  
+  <span class="k">return</span> <span class="n">res_str</span>
+</code></pre></div></div>
+
+<h3 id="dijkstra">Dijkstra</h3>
+<ul>
+  <li>변수
+    <ol>
+      <li><code class="language-plaintext highlighter-rouge">distance</code>: 특정 노드까지의 “최단 거리 예상치”(현재까지 아는 정보로 계산한 최단 거리)</li>
+      <li><code class="language-plaintext highlighter-rouge">predecessor</code>: 현재까지 최단 경로에서 바로 직전의 노드</li>
+      <li><code class="language-plaintext highlighter-rouge">complete</code>: 노드까지의 최단 경로를 찾았다고 표시하기 위한 변수</li>
+    </ol>
+  </li>
+  <li>Relaxation
+    <ul>
+      <li>엣지 (A, B)를 relax하다: A에서 B를 방문하면서, B의 distance, predecessor를 바꾸는 것
+        <ul>
+          <li>B의 distance &gt; A의 distance + 엣지의 가중치
+            <ul>
+              <li>B의 distance = A의 distance + 엣지의 가중치</li>
+              <li>B의 predecessor = A</li>
+            </ul>
+          </li>
+          <li>B의 distance &lt;= A의 distance + 엣지의 가중치
+            <ul>
+              <li>그대로 둔다.</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>최단 거리 예상값을 줄여주는 과정이 노드의 긴장감을 풀어주는 개념과 비슷하다는 것에서 사용</li>
+    </ul>
+  </li>
+  <li>알고리즘
+    <ol>
+      <li>모든 노드의 distance를 무한대로, predecessor를 <code class="language-plaintext highlighter-rouge">None</code>으로, complete는 <code class="language-plaintext highlighter-rouge">False</code>로</li>
+      <li>시작점의 distance를 0으로, predecessor를 <code class="language-plaintext highlighter-rouge">None</code>으로</li>
+      <li>모든 노드가 complete일 때 까지
+        <ol>
+          <li>complete하지 않은 노드 중 distance가 가장 작은 노드 선택</li>
+          <li>이 노드에 인접한 노드 중 complete하지 않은 노드를 돌면서
+            <ol>
+              <li>각 엣지를 relax</li>
+            </ol>
+          </li>
+          <li>현재 노드를 complete 처리</li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li>Backtracking
+    <ul>
+      <li>최단 거리: 노드의 distance</li>
+      <li>최단 경로: predecessor를 통하여 경로 추가</li>
+    </ul>
+  </li>
+  <li>Dijkstra로 찾은 경로가 최단 경로인 이유
+    <ul>
+      <li>최단 경로의 부분 경로는 모두 최단 경로이다. ⇒ 부분 최단 경로를 이은 경로는 최단 경로이다.(최적 부분 구조)</li>
+      <li>Dijkstra에서 방문하지 않은 노드들 중 distance가 가장 작은 노드를 고를 때, 이 노드의 distance는 이미 시작점으로부터 최단 거리를 보유
+        <ol>
+          <li>Dijkstra 알고리즘은 반복문을 돌면서 최단 경로를 이미 찾은 노드를 하나씩 찾아줌: 처음에는 시작 노드의 최단 경로를 확정지었고, 이후 다음 선택된 노드를 최단 경로로 확정지어줌</li>
+          <li>최단 경로를 이미 찾은 노드들의 엣지들을 모두 relax해줌: 최단 경로는 다른 노드들의 최단 경로 + 현재 노드이므로, 이미 확정난 최단 경로들로 다른 노드들까지의 최단 거리 예상치(distance)를 계산</li>
+          <li>매 단게에서 이 distance가 가장 작은 노드는 최단 거리를 이미 찾았다고 확신: 최적 부분 구조로 인해 이미 선택된 노드는 다른 경로를 통한 최단 거리보다 작기 때문에 반복문이 한 번 실행될 때 마다 distance가 가장 작은 노드가 최단 거리 노드라고 확신</li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+</ul>]]></content><author><name>Domiki</name></author><category term="Coding" /><category term="Computer Science" /><category term="Data Structure" /><summary type="html"><![CDATA[그래프란?]]></summary></entry></feed>
