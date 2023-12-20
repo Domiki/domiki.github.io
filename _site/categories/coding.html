@@ -7,7 +7,7 @@
 -->
 <html lang="ko" class="no-js">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
 
 <!-- begin _includes/seo.html --><title>Coding Category - Domiki’s Computer Lecture Note</title>
 <meta name="description" content="Coding, coffee, picture, and starlight.">
@@ -64,62 +64,65 @@
 
 
 <!-- end _includes/seo.html -->
-
-
-
-  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Domiki's Computer Lecture Note Feed">
+ 
+<link
+  href="/feed.xml"
+  type="application/atom+xml"
+  rel="alternate"
+  title="Domiki's Computer Lecture Note Feed"
+/>
 
 
 <!-- https://t.co/dKP3o1e -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <script>
-  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  document.documentElement.className =
+    document.documentElement.className.replace(/\bno-js\b/g, "") + " js ";
 </script>
 
 <!-- For all browsers -->
-<link rel="stylesheet" href="/assets/css/main.css">
-<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+<link rel="stylesheet" href="/assets/css/main.css" />
+<link
+  rel="preload"
+  href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"
+  as="style"
+  onload="this.onload=null;this.rel='stylesheet'"
+/>
+<noscript
+  ><link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"
+/></noscript>
 
 
 
 <!-- Mathjax Support -->
-<script type="text/javascript" async
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+<script
+  type="text/javascript"
+  async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"
+></script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
 </script>
+
     <!-- start custom head snippets -->
 
 <!-- insert favicons. use https://realfavicongenerator.net/ -->
 
 <!-- end custom head snippets -->
 
-
-    <!-- 22.08.21 GY for mathjax-->
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      TeX: {
-        equationNumbers: {
-          autoNumber: "AMS"
-        }
-      },
-      tex2jax: {
-        inlineMath: [ ['$', '$'] ],
-        displayMath: [ ['$$', '$$'] ],
-        processEscapes: true,
-      }
-    });
-    MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
-      alert("Math Processing Error: "+message[1]);
-    });
-    MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
-      alert("Math Processing Error: "+message[1]);
-    });
-    </script>
-    <script type="text/javascript" async
-      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-    </script>
-    
   </head>
 
   <body class="layout--archive">
@@ -308,6 +311,20 @@
     
       <li>
         
+          <span class="nav__sub-title">언어</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/coding/language/javascript/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B8%B0%EC%B4%88/">자바스크립트 기초</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
           <span class="nav__sub-title">알고리즘</span>
         
 
@@ -346,13 +363,21 @@
     
       <li>
         
-          <span class="nav__sub-title">자바스크립트</span>
+          <span class="nav__sub-title">데이터 사이언스</span>
         
 
         
         <ul>
           
-            <li><a href="/coding/language/javascript/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B8%B0%EC%B4%88/">자바스크립트 기초</a></li>
+            <li><a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A41/">데이터 사이언스 기본</a></li>
+          
+            <li><a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A42/">DataFrame 다루기</a></li>
+          
+            <li><a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A43/">데이터 분석과 시각화</a></li>
+          
+            <li><a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A44/">데이터 퀄리티 높이기</a></li>
+          
+            <li><a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A45/">데이터 만들기</a></li>
           
         </ul>
         
@@ -371,7 +396,23 @@
     
       <h1 id="page-title" class="page__title">Coding Category</h1>
     
-    <h2 id="알고리즘">알고리즘</h2>
+    <h2 id="언어">언어</h2>
+
+<hr />
+
+<div class="list__item">
+    <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+      <h6 style="margin-top: 0.5em">
+        
+          <a href="/coding/language/javascript/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B8%B0%EC%B4%88/" rel="permalink">JavaScript 기초
+</a>
+        
+      </h6>
+    </article>
+  </div>
+
+<h2 id="알고리즘">알고리즘</h2>
+
 <hr />
 
 <div class="list__item">
@@ -419,6 +460,7 @@
   </div>
 
 <h2 id="자료구조">자료구조</h2>
+
 <hr />
 
 <div class="list__item">
@@ -453,6 +495,66 @@
       </h6>
     </article>
   </div>
+
+<h2 id="데이터-사이언스">데이터 사이언스</h2>
+
+<hr />
+
+<div class="list__item">
+    <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+      <h6 style="margin-top: 0.5em">
+        
+          <a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A41/" rel="permalink">데이터 사이언스 기본
+</a>
+        
+      </h6>
+    </article>
+  </div>
+
+<div class="list__item">
+    <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+      <h6 style="margin-top: 0.5em">
+        
+          <a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A42/" rel="permalink">DataFrame 다루기
+</a>
+        
+      </h6>
+    </article>
+  </div>
+
+<div class="list__item">
+    <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+      <h6 style="margin-top: 0.5em">
+        
+          <a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A43/" rel="permalink">데이터 분석과 시각화
+</a>
+        
+      </h6>
+    </article>
+  </div>
+
+<div class="list__item">
+    <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+      <h6 style="margin-top: 0.5em">
+        
+          <a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A44/" rel="permalink">데이터 퀄리티 높이기
+</a>
+        
+      </h6>
+    </article>
+  </div>
+
+<div class="list__item">
+    <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+      <h6 style="margin-top: 0.5em">
+        
+          <a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A45/" rel="permalink">데이터 만들기
+</a>
+        
+      </h6>
+    </article>
+  </div>
+
 
   </div>
 </div>

@@ -7,7 +7,7 @@
 -->
 <html lang="ko" class="no-js">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
 
 <!-- begin _includes/seo.html --><title>그래프 - Domiki’s Computer Lecture Note</title>
 <meta name="description" content="그래프란?">
@@ -70,62 +70,65 @@
 
 
 <!-- end _includes/seo.html -->
-
-
-
-  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Domiki's Computer Lecture Note Feed">
+ 
+<link
+  href="/feed.xml"
+  type="application/atom+xml"
+  rel="alternate"
+  title="Domiki's Computer Lecture Note Feed"
+/>
 
 
 <!-- https://t.co/dKP3o1e -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <script>
-  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  document.documentElement.className =
+    document.documentElement.className.replace(/\bno-js\b/g, "") + " js ";
 </script>
 
 <!-- For all browsers -->
-<link rel="stylesheet" href="/assets/css/main.css">
-<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+<link rel="stylesheet" href="/assets/css/main.css" />
+<link
+  rel="preload"
+  href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"
+  as="style"
+  onload="this.onload=null;this.rel='stylesheet'"
+/>
+<noscript
+  ><link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"
+/></noscript>
 
 
 
 <!-- Mathjax Support -->
-<script type="text/javascript" async
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+<script
+  type="text/javascript"
+  async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"
+></script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
 </script>
+
     <!-- start custom head snippets -->
 
 <!-- insert favicons. use https://realfavicongenerator.net/ -->
 
 <!-- end custom head snippets -->
 
-
-    <!-- 22.08.21 GY for mathjax-->
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      TeX: {
-        equationNumbers: {
-          autoNumber: "AMS"
-        }
-      },
-      tex2jax: {
-        inlineMath: [ ['$', '$'] ],
-        displayMath: [ ['$$', '$$'] ],
-        processEscapes: true,
-      }
-    });
-    MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
-      alert("Math Processing Error: "+message[1]);
-    });
-    MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
-      alert("Math Processing Error: "+message[1]);
-    });
-    </script>
-    <script type="text/javascript" async
-      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-    </script>
-    
   </head>
 
   <body class="layout--single">
@@ -316,6 +319,20 @@
     
       <li>
         
+          <span class="nav__sub-title">언어</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/coding/language/javascript/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B8%B0%EC%B4%88/">자바스크립트 기초</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
           <span class="nav__sub-title">알고리즘</span>
         
 
@@ -354,13 +371,21 @@
     
       <li>
         
-          <span class="nav__sub-title">자바스크립트</span>
+          <span class="nav__sub-title">데이터 사이언스</span>
         
 
         
         <ul>
           
-            <li><a href="/coding/language/javascript/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B8%B0%EC%B4%88/">자바스크립트 기초</a></li>
+            <li><a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A41/">데이터 사이언스 기본</a></li>
+          
+            <li><a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A42/">DataFrame 다루기</a></li>
+          
+            <li><a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A43/">데이터 분석과 시각화</a></li>
+          
+            <li><a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A44/">데이터 퀄리티 높이기</a></li>
+          
+            <li><a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A45/">데이터 만들기</a></li>
           
         </ul>
         
@@ -470,7 +495,9 @@
       </li>
     </ul>
   </li>
-  <li>인접 행렬(adjacency matrix)
+  <li>
+    <p>인접 행렬(adjacency matrix)</p>
+
     <ul>
       <li>
         <p>노드들의 연결 관계(엣지)를 나타내는 2차원 리스트</p>
@@ -489,7 +516,9 @@
       </li>
     </ul>
   </li>
-  <li>인접 리스트
+  <li>
+    <p>인접 리스트</p>
+
     <ul>
       <li>각 노드의 엣지를 리스트에 저장하는 방법</li>
       <li>
@@ -516,7 +545,9 @@
       </li>
     </ul>
   </li>
-  <li>인접 행렬 vs 인접 리스트
+  <li>
+    <p>인접 행렬 vs 인접 리스트</p>
+
     <ul>
       <li>복잡도 표현 기호
         <ul>
@@ -561,6 +592,7 @@
 <h2 id="그래프-탐색">그래프 탐색</h2>
 
 <h3 id="그래프-탐색이란">그래프 탐색이란?</h3>
+
 <ul>
   <li>하나의 시작점 노드에서 연결된 노드들을 모두 찾는 것</li>
   <li>하나의 노드에서 연결된 모든 노드를 다 돌기 때문에 그래프 순회라고도 함</li>
@@ -573,6 +605,7 @@
 </ul>
 
 <h3 id="bfsbreadth-first-search">BFS(Breadth First Search)</h3>
+
 <ul>
   <li>
     <p>그래프를 너비 우선적으로 탐색</p>
@@ -580,7 +613,9 @@
     <p><img src="/assets/images/자료구조/img12.png" alt="BFS" /></p>
   </li>
   <li>자료형으로 큐 사용</li>
-  <li>알고리즘
+  <li>
+    <p>알고리즘</p>
+
     <ol>
       <li>시작 노드를 방문 표시 후 큐에 삽입</li>
       <li>큐에 아무 노드가 없을 때 까지
@@ -607,7 +642,7 @@
   <span class="c1"># 모든 노드를 방문하지 않은 노드로 표시
 </span>  <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">.</span><span class="n">values</span><span class="p">():</span>
     <span class="n">node</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="bp">False</span>
-    
+
   <span class="c1"># 시작점 노드를 방문 표시한 후 큐에 넣어준다.
 </span>  <span class="n">start_node</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="bp">True</span>
   <span class="n">queue</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">start_node</span><span class="p">)</span>
@@ -620,7 +655,9 @@
 </span>        <span class="n">queue</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">neighbor</span><span class="p">)</span>  <span class="c1"># 큐에 넣는다.
 </span></code></pre></div>    </div>
   </li>
-  <li>시간 복잡도
+  <li>
+    <p>시간 복잡도</p>
+
     <ul>
       <li>전처리(모든 노드를 방문하지 않는 노드로 표시): $O(V)$</li>
       <li>큐에서 노드를 넣고 빼기: 큐에는 노드가 딱 한 번 들어갔다 나오므로 $O(V)$</li>
@@ -632,6 +669,7 @@
 </ul>
 
 <h3 id="dfsdepth-first-search">DFS(Depth First Search)</h3>
+
 <ul>
   <li>
     <p>그래프를 깊이 우선적으로 탐색</p>
@@ -639,7 +677,9 @@
     <p><img src="/assets/images/자료구조/img13.png" alt="DFS" /></p>
   </li>
   <li>자료형으로 스택 사용</li>
-  <li>알고리즘
+  <li>
+    <p>알고리즘</p>
+
     <ol>
       <li>시작 노드를 스택삽입 표시 후 스택에 삽입</li>
       <li>스택에 아무 노드가 없을 때 까지
@@ -678,7 +718,7 @@
       <span class="k">if</span> <span class="n">neighbor</span><span class="p">.</span><span class="n">visited</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># 처음 보는 노드들만
 </span>        <span class="n">neighbor</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># 스택에 넣는다는 표시를 하고
 </span>        <span class="n">stack</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">neighbor</span><span class="p">)</span>  <span class="c1"># 스택에 넣는다.
-</span>    
+</span>
 <span class="s">'''
   visited를 True, False가 아닌 0, 1, 2로 세분화 하는 이유
   =&gt; stack에 넣는 과정에서 방문 과정(visited = True)을 수행하면 A -&gt; B -&gt; C 의 방문으로 표시가 된다.
@@ -691,7 +731,7 @@
 
   <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">.</span><span class="n">values</span><span class="p">():</span>
     <span class="n">node</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="bp">False</span>
-    
+
   <span class="n">start_node</span><span class="p">.</span><span class="n">visited</span> <span class="o">=</span> <span class="bp">True</span>
   <span class="n">stack</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">start_node</span><span class="p">)</span>
 
@@ -716,6 +756,7 @@
 <h2 id="최단-경로-알고리즘">최단 경로 알고리즘</h2>
 
 <h3 id="bfs">BFS</h3>
+
 <ul>
   <li>predecessor(BFS를 할 때 특정 노드에 오기 직전의 노드)를 멤버 변수에 추가</li>
   <li>알고리즘
@@ -780,11 +821,12 @@
 </span>  <span class="k">while</span> <span class="n">temp</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
     <span class="n">res_str</span> <span class="o">=</span> <span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">temp</span><span class="p">.</span><span class="n">value</span><span class="si">}</span><span class="s"> </span><span class="si">{</span><span class="n">res_str</span><span class="si">}</span><span class="s">"</span> <span class="c1"># 결과 문자열에 방문한 노드 값을 더하고
 </span>    <span class="n">temp</span> <span class="o">=</span> <span class="n">temp</span><span class="p">.</span><span class="n">predecessor</span> <span class="c1"># temp를 다음 노드로 바꿔준다.
-</span>  
+</span>
   <span class="k">return</span> <span class="n">res_str</span>
 </code></pre></div></div>
 
 <h3 id="dijkstra">Dijkstra</h3>
+
 <ul>
   <li>변수
     <ol>
@@ -928,7 +970,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/coding/language/javascript/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B8%B0%EC%B4%88/" rel="permalink">JavaScript 기초
+        <a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A45/" rel="permalink">데이터 만들기
 </a>
       
     </h2>
@@ -946,14 +988,14 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          7 분 소요
+          1 분 소요
         
       </span>
     
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">자바스크립트 기초
+    <p class="archive__item-excerpt" itemprop="description">데이터를 만드는 방법
 </p>
   </article>
 </div>
@@ -968,7 +1010,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/coding/computer%20science/data%20structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B02/" rel="permalink">트리
+        <a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A44/" rel="permalink">데이터 퀄리티 높이기
 </a>
       
     </h2>
@@ -986,14 +1028,14 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          10 분 소요
+          1 분 소요
         
       </span>
     
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">트리란?
+    <p class="archive__item-excerpt" itemprop="description">좋은 데이터의 기준
 </p>
   </article>
 </div>
@@ -1008,7 +1050,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/coding/computer%20science/data%20structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B01/" rel="permalink">기본 자료 구조들
+        <a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A43/" rel="permalink">데이터 분석과 시각화
 </a>
       
     </h2>
@@ -1026,14 +1068,14 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          18 분 소요
+          3 분 소요
         
       </span>
     
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">자료 구조란?
+    <p class="archive__item-excerpt" itemprop="description">시각화와 그래프
 </p>
   </article>
 </div>
@@ -1048,7 +1090,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/coding/computer%20science/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%984/" rel="permalink">문제 해결 능력 기르기
+        <a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A42/" rel="permalink">DataFrame 다루기
 </a>
       
     </h2>
@@ -1066,15 +1108,15 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          9 분 소요
+          3 분 소요
         
       </span>
     
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">투자 귀재 규식이 II
-규식이는 친구들 사이에서 투자의 귀재로 알려져 있습니다. 페이수북과 인수타그램에 자신의 성과를 과시하기 때문인데요. 사실 규식이가 그 정도의 실력자는 아닙니다. 성과가 좋을 때에만 SNS에 공유해서 그렇게 비춰질 뿐이죠. 계속해서 멋진 모습을 보여주기 위해,...</p>
+    <p class="archive__item-excerpt" itemprop="description">DataFrame 인덱싱
+</p>
   </article>
 </div>
 

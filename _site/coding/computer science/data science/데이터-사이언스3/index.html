@@ -1,0 +1,997 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+
+<!-- begin _includes/seo.html --><title>데이터 분석과 시각화 - Domiki’s Computer Lecture Note</title>
+<meta name="description" content="시각화와 그래프">
+
+
+  <meta name="author" content="Domiki">
+  
+  <meta property="article:author" content="Domiki">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="Domiki's Computer Lecture Note">
+<meta property="og:title" content="데이터 분석과 시각화">
+<meta property="og:url" content="http://localhost:4000/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A43/">
+
+
+  <meta property="og:description" content="시각화와 그래프">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-12-21T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2023-12-21T09:01:18+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A43/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Domiki",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+ 
+<link
+  href="/feed.xml"
+  type="application/atom+xml"
+  rel="alternate"
+  title="Domiki's Computer Lecture Note Feed"
+/>
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<script>
+  document.documentElement.className =
+    document.documentElement.className.replace(/\bno-js\b/g, "") + " js ";
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css" />
+<link
+  rel="preload"
+  href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"
+  as="style"
+  onload="this.onload=null;this.rel='stylesheet'"
+/>
+<noscript
+  ><link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"
+/></noscript>
+
+
+
+<!-- Mathjax Support -->
+<script
+  type="text/javascript"
+  async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"
+></script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Domiki
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/">Main</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/coding">Coding</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/profile.jpg" alt="Domiki" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Domiki</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Coding, coffee, picture, and starlight.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:ado505@snu.ac.kr" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://www.instagram.com/ando_domiki/?hl=ko" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">Instagram</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <a href="/categories/coding"><span class="nav__sub-title">모아보기</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">언어</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/coding/language/javascript/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B8%B0%EC%B4%88/">자바스크립트 기초</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">알고리즘</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/coding/computer%20science/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%981/">좋은 알고리즘이란?</a></li>
+          
+            <li><a href="/coding/computer%20science/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%982/">재귀함수</a></li>
+          
+            <li><a href="/coding/computer%20science/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%983/">알고리즘 패러다임</a></li>
+          
+            <li><a href="/coding/computer%20science/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%984/">문제 해결 능력 기르기</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">자료구조</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/coding/computer%20science/data%20structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B01/">기본 자료 구조</a></li>
+          
+            <li><a href="/coding/computer%20science/data%20structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B02/">트리</a></li>
+          
+            <li><a href="/coding/computer%20science/data%20structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B03/">그래프</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">데이터 사이언스</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A41/">데이터 사이언스 기본</a></li>
+          
+            <li><a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A42/">DataFrame 다루기</a></li>
+          
+            <li><a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A43/">데이터 분석과 시각화</a></li>
+          
+            <li><a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A44/">데이터 퀄리티 높이기</a></li>
+          
+            <li><a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A45/">데이터 만들기</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="데이터 분석과 시각화">
+    <meta itemprop="description" content="시각화와 그래프">
+    <meta itemprop="datePublished" content="2023-12-21T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2023-12-21T09:01:18+09:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A43/" class="u-url" itemprop="url">데이터 분석과 시각화
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 데이터 분석과 시각화</h4></header>
+              <ul class="toc__menu"><li><a href="#시각화와-그래프">시각화와 그래프</a></li><li><a href="#seaborn-시각화">Seaborn 시각화</a></li><li><a href="#통계-기본-상식">통계 기본 상식</a></li><li><a href="#exploratory-data-analysiseda">Exploratory Data Analysis(EDA)</a></li><li><a href="#새로운-인사이트-발견하기">새로운 인사이트 발견하기</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h2 id="시각화와-그래프">시각화와 그래프</h2>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">df.plot()</code>: 그래프 그리기</p>
+
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">y='col</code>, <code class="language-plaintext highlighter-rouge">y=['col1', 'col2']</code>: 원하는 column만 그래프로 보기
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">df['col1'].plot()</code>, <code class="language-plaintext highlighter-rouge">df[['col1', 'col2']].plot()</code>과 동일</li>
+          <li>pandas Series에도 <code class="language-plaintext highlighter-rouge">plot</code> 함수 사용 가능</li>
+        </ul>
+      </li>
+      <li>
+        <p>그래프 종류 설정 ⇒ <code class="language-plaintext highlighter-rouge">kind</code> 옵션 활용</p>
+
+        <ol>
+          <li>선 그래프(기본값): <code class="language-plaintext highlighter-rouge">kind='line'</code></li>
+          <li>막대 그래프: <code class="language-plaintext highlighter-rouge">kind='bar'</code>
+            <ul>
+              <li>가로 막대 그래프: <code class="language-plaintext highlighter-rouge">kind='barh'</code></li>
+              <li>쌓아올리기: <code class="language-plaintext highlighter-rouge">stacked=True</code></li>
+              <li>x축: <code class="language-plaintext highlighter-rouge">x='col'</code></li>
+            </ul>
+          </li>
+          <li>파이 그래프: <code class="language-plaintext highlighter-rouge">kind='pie'</code></li>
+          <li>히스토그램: <code class="language-plaintext highlighter-rouge">kind='hist'</code>
+            <ul>
+              <li>y축: <code class="language-plaintext highlighter-rouge">y='col'</code></li>
+              <li>n개로 분할: <code class="language-plaintext highlighter-rouge">bins=n</code></li>
+            </ul>
+          </li>
+          <li>
+            <p>박스 플롯: <code class="language-plaintext highlighter-rouge">kind='box'</code></p>
+
+            <ul>
+              <li>
+                <p>다섯 개의 통계값으로 표현</p>
+
+                <p><img src="/assets/images/데이터%20사이언스/img2.png" alt="박스 플롯" width="50%" height="50%" /></p>
+
+                <ul>
+                  <li>box: 25%(Q1) 지점부터 75%(Q3) 지점까지</li>
+                  <li>whisker
+                    <ul>
+                      <li>Q1 지점부터 IQR(Interquartile Range, Q3 - Q1)의 1.5배 내에 있는 가장 멀리 떨어진 데이터 지점(또는 최솟값) 까지의 직선</li>
+                      <li>Q3 지점부터 IQR의 1.5배 내에 있는 가장 멀리 떨어진 데이터 지점(또는 최댓값) 까지의 직선</li>
+                    </ul>
+                  </li>
+                  <li>outlier(이상점): whisker의 범위를 넘어가는 점</li>
+                </ul>
+              </li>
+              <li>
+                <p>박스가 짧을수록 데이터가 균일, 길수록 데이터가 분산</p>
+              </li>
+            </ul>
+          </li>
+          <li>산점도(scatter plot): <code class="language-plaintext highlighter-rouge">kind='scatter'</code>
+            <ul>
+              <li>x축: <code class="language-plaintext highlighter-rouge">x='col1'</code></li>
+              <li>y축: <code class="language-plaintext highlighter-rouge">y='col2'</code></li>
+            </ul>
+          </li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="seaborn-시각화">Seaborn 시각화</h2>
+
+<ul>
+  <li>Statistical Data Visualization ⇒ 통계를 기본으로 한 데이터 시각화</li>
+</ul>
+
+<ol>
+  <li>PDF(PRobability Density Function): 확률 밀도 함수
+    <ul>
+      <li>데이터셋의 분포를 나타냄</li>
+      <li>특정 구간의 확률은 그래프 아래 그 구간의 면적과 동일</li>
+      <li>그래프 아래 모든 면적을 더하면 1</li>
+    </ul>
+  </li>
+  <li>KDE Plot(Kernel Density Estimation)
+    <ul>
+      <li>불균일한 데이터를 부드러운 곡선으로 만들어 확률 밀도 함수 형태로 만듦 → 실제 데이터셋 분포와 다름</li>
+      <li><code class="language-plaintext highlighter-rouge">sns.kdeplot(df['col'])</code>
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">bw=x</code>: bandwidth. 추측의 정도 설정(클수록 곡선이 부드러워짐)</li>
+        </ul>
+      </li>
+      <li><code class="language-plaintext highlighter-rouge">sns.distplot(df['col'], bins=n)</code>: KDE Plot + 히스토그램</li>
+      <li><code class="language-plaintext highlighter-rouge">sns.violinplot(y=df['col'])</code>: violinplot
+        <ul>
+          <li>KDE Plot을 90도 돌린 형태</li>
+          <li>Box Plot과는 다르게 violinplot은 분포 전체를 보여주는 특징이 있음</li>
+          <li><code class="language-plaintext highlighter-rouge">hue='col'</code>: 카테고리별 색깔로 구분 가능</li>
+        </ul>
+      </li>
+      <li><code class="language-plaintext highlighter-rouge">sns.kdeplot(df['col1'], df['col2'])</code>: 등고선도
+        <ul>
+          <li>산점도 + KDE Plot</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>LM Plot
+    <ul>
+      <li>산점도 + 회귀선(regression line)</li>
+      <li><code class="language-plaintext highlighter-rouge">sns.lmplot(data=df, x='col1', y='col2')</code></li>
+    </ul>
+  </li>
+  <li>카테고리별 시각화
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">sns.catplot(data=df, x='col1', y='col2', kind='box', hue='col3')</code>
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">x</code>: x축. 카테고리</li>
+          <li><code class="language-plaintext highlighter-rouge">y</code>: y축. 분포값</li>
+          <li><code class="language-plaintext highlighter-rouge">kind</code>: <code class="language-plaintext highlighter-rouge">box</code>, <code class="language-plaintext highlighter-rouge">violin</code>, <code class="language-plaintext highlighter-rouge">strip</code>(점 형식으로 표시. 데이터 수 확인 용이), <code class="language-plaintext highlighter-rouge">swarm</code>(<code class="language-plaintext highlighter-rouge">strip</code> 형식에서 점들이 펼쳐져서 보임)</li>
+          <li><code class="language-plaintext highlighter-rouge">hue</code>: 같은 x값에서 카테고리별 색깔로 구분 가능</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="통계-기본-상식">통계 기본 상식</h2>
+
+<ol>
+  <li>평균(Mean)
+    <ul>
+      <li>데이터들의 합 / 데이터 개수</li>
+      <li>잘못되거나 특이한 데이터에 대해서 취약</li>
+    </ul>
+  </li>
+  <li>중간값(Median): 데이터셋에서 딱 중간에 있는 값
+    <ul>
+      <li>Q1: 중간값 포함 하위 데이터들 중에서 중간값. numpy/pandas에서는 $(\text{Length} - 1) \times 0.25$ 인덱스로 계산</li>
+      <li>Q2: 중간값</li>
+      <li>Q3: 중간값 포함 상위 데이터들 중에서 중간값. numpy/pandas에서는 $(\text{Length} - 1) \times 0.75$ 인덱스로 계산</li>
+      <li><em>참고: 소수 인덱스는 두 정수 인덱스의 값 사이의 내분으로 계산</em></li>
+    </ul>
+  </li>
+  <li>(피어슨) 상관 계수((Pearson) Correlation Coefficient)
+    <ul>
+      <li>-1 ~ 1 값 가짐</li>
+      <li><code class="language-plaintext highlighter-rouge">df.corr()</code>: DataFrame에 존재하는 숫자 데이터 사이의 상관 계수를 보여줌</li>
+      <li><code class="language-plaintext highlighter-rouge">sns.heatmap(df.corr())</code>: 상관계수 시각화
+        <ul>
+          <li>밝을수록 상관계수가 높음</li>
+          <li><code class="language-plaintext highlighter-rouge">annot=True</code>: 숫자 표기</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="exploratory-data-analysiseda">Exploratory Data Analysis(EDA)</h2>
+
+<ul>
+  <li>탐색적 데이터 분석(EDA)
+    <ul>
+      <li>데이터셋을 다양한 관점에서 살펴보고 탐색하면서 인사이트를 찾는 것</li>
+      <li>시각적인 방법, 통계적인 방법, …</li>
+    </ul>
+  </li>
+  <li>
+    <p>두 데이터의 연관성 확인 ⇒ <code class="language-plaintext highlighter-rouge">sns.jointplot(data=df, x='col1', y='col2')</code></p>
+
+    <p><img src="/assets/images/데이터%20사이언스/img3.png" alt="jointplot" width="50%" height="50%" /></p>
+  </li>
+  <li>상관 관계 분석(Correlation Analysis) ⇒ <code class="language-plaintext highlighter-rouge">sns.heatmap</code> 활용</li>
+  <li>
+    <p>클러스터 분석(Cluster Analysis)</p>
+
+    <ul>
+      <li>데이터를 몇 가지 무리로 나누는 것</li>
+      <li>
+        <p><code class="language-plaintext highlighter-rouge">sns.clustermap(df)</code> 활용</p>
+
+        <p><img src="/assets/images/데이터%20사이언스/img4.png" alt="clustermap" width="50%" height="50%" /></p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="새로운-인사이트-발견하기">새로운 인사이트 발견하기</h2>
+
+<ol>
+  <li>새로운 값 계산하기
+    <ul>
+      <li>모든 column의 합 구하기: <code class="language-plaintext highlighter-rouge">df.sum(axis='columns')</code></li>
+    </ul>
+  </li>
+  <li>문자열 필터링
+    <ul>
+      <li>포함: <code class="language-plaintext highlighter-rouge">df['col'].str.contains('text')</code></li>
+      <li>첫 시작: <code class="language-plaintext highlighter-rouge">df['col'].str.startswith('text')</code></li>
+    </ul>
+  </li>
+  <li>문자열 분리: <code class="language-plaintext highlighter-rouge">df['col'].str.split()</code>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">n=1</code>: 첫 번째 띄어쓰기만 분리</li>
+      <li><code class="language-plaintext highlighter-rouge">expand=True</code>: pandas DataFrame 형태로 출력</li>
+      <li><code class="language-plaintext highlighter-rouge">pat='-'</code>: 분리 요소</li>
+    </ul>
+  </li>
+  <li>
+    <p>카테고리로 분류</p>
+
+    <ul>
+      <li>
+        <p><code class="language-plaintext highlighter-rouge">map</code></p>
+
+        <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mapping_dict</span> <span class="o">=</span> <span class="p">{</span>
+ <span class="s">'A'</span><span class="p">:</span> <span class="s">'a'</span><span class="p">,</span>
+ <span class="s">'B'</span><span class="p">:</span> <span class="s">'b'</span><span class="p">,</span>
+ <span class="p">...</span>
+<span class="p">}</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s">"col"</span><span class="p">].</span><span class="nb">map</span><span class="p">(</span><span class="n">mapping_dict</span><span class="p">)</span>
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p><code class="language-plaintext highlighter-rouge">groupby</code></p>
+
+        <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">groups</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">'col'</span><span class="p">)</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">groups</span><span class="p">)</span> <span class="c1"># DataFrameGroupBy
+</span>
+<span class="n">groups</span><span class="p">.</span><span class="n">count</span><span class="p">()</span>  <span class="c1"># 그룹별 개수
+</span><span class="n">groups</span><span class="p">.</span><span class="nb">max</span><span class="p">()</span>    <span class="c1"># 그룹별 최댓값
+</span><span class="n">groups</span><span class="p">.</span><span class="n">mean</span><span class="p">()</span>   <span class="c1"># 그룹별 평균값
+</span><span class="n">groups</span><span class="p">.</span><span class="n">first</span><span class="p">()</span>  <span class="c1"># 그룹별 첫 번째 레코드
+</span><span class="n">groups</span><span class="p">.</span><span class="n">last</span><span class="p">()</span>   <span class="c1"># 그룹별 마지막 레코드
+</span>
+<span class="n">groups</span><span class="p">.</span><span class="n">plot</span><span class="p">()</span>   <span class="c1"># 그룹별 그래프 그리기
+</span></code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>데이터 합치기: <code class="language-plaintext highlighter-rouge">pd.merge(df1, df2, on='col')</code>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">on</code>: merge의 기준이 되는 축</li>
+      <li><code class="language-plaintext highlighter-rouge">how</code>: merge 방법
+        <ol>
+          <li><code class="language-plaintext highlighter-rouge">inner</code>: inner join(교집합)(기본값)</li>
+          <li><code class="language-plaintext highlighter-rouge">left</code>: left outer join(좌측 df 기준. 없으면 NaN)</li>
+          <li><code class="language-plaintext highlighter-rouge">right</code>: right outer join(우측 df 기준. 없으면 NaN)</li>
+          <li><code class="language-plaintext highlighter-rouge">outer</code>: full outer join(없으면 NaN)</li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#coding" class="page__taxonomy-item p-category" rel="tag">Coding</a><span class="sep">, </span>
+    
+      <a href="/categories/#computer-science" class="page__taxonomy-item p-category" rel="tag">Computer Science</a><span class="sep">, </span>
+    
+      <a href="/categories/#data-science" class="page__taxonomy-item p-category" rel="tag">Data Science</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-12-21">December 21, 2023</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%EB%8D%B0%EC%9D%B4%ED%84%B0+%EB%B6%84%EC%84%9D%EA%B3%BC+%EC%8B%9C%EA%B0%81%ED%99%94%20http%3A%2F%2Flocalhost%3A4000%2Fcoding%2Fcomputer%2520science%2Fdata%2520science%2F%25EB%258D%25B0%25EC%259D%25B4%25ED%2584%25B0-%25EC%2582%25AC%25EC%259D%25B4%25EC%2596%25B8%25EC%258A%25A43%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fcoding%2Fcomputer%2520science%2Fdata%2520science%2F%25EB%258D%25B0%25EC%259D%25B4%25ED%2584%25B0-%25EC%2582%25AC%25EC%259D%25B4%25EC%2596%25B8%25EC%258A%25A43%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fcoding%2Fcomputer%2520science%2Fdata%2520science%2F%25EB%258D%25B0%25EC%259D%25B4%25ED%2584%25B0-%25EC%2582%25AC%25EC%259D%25B4%25EC%2596%25B8%25EC%258A%25A43%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A42/" class="pagination--pager" title="DataFrame 다루기
+">이전</a>
+    
+    
+      <a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A44/" class="pagination--pager" title="데이터 퀄리티 높이기
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A45/" rel="permalink">데이터 만들기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">데이터를 만드는 방법
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A44/" rel="permalink">데이터 퀄리티 높이기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">좋은 데이터의 기준
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A42/" rel="permalink">DataFrame 다루기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">DataFrame 인덱싱
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A41/" rel="permalink">데이터 사이언스 기본
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">데이터 사이언스란?
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/Domiki" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Domiki. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

@@ -7,7 +7,7 @@
 -->
 <html lang="ko" class="no-js">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
 
 <!-- begin _includes/seo.html --><title>좋은 알고리즘이란? - Domiki’s Computer Lecture Note</title>
 <meta name="description" content="알고리즘이란?">
@@ -70,62 +70,65 @@
 
 
 <!-- end _includes/seo.html -->
-
-
-
-  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Domiki's Computer Lecture Note Feed">
+ 
+<link
+  href="/feed.xml"
+  type="application/atom+xml"
+  rel="alternate"
+  title="Domiki's Computer Lecture Note Feed"
+/>
 
 
 <!-- https://t.co/dKP3o1e -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <script>
-  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  document.documentElement.className =
+    document.documentElement.className.replace(/\bno-js\b/g, "") + " js ";
 </script>
 
 <!-- For all browsers -->
-<link rel="stylesheet" href="/assets/css/main.css">
-<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+<link rel="stylesheet" href="/assets/css/main.css" />
+<link
+  rel="preload"
+  href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"
+  as="style"
+  onload="this.onload=null;this.rel='stylesheet'"
+/>
+<noscript
+  ><link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"
+/></noscript>
 
 
 
 <!-- Mathjax Support -->
-<script type="text/javascript" async
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+<script
+  type="text/javascript"
+  async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"
+></script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
 </script>
+
     <!-- start custom head snippets -->
 
 <!-- insert favicons. use https://realfavicongenerator.net/ -->
 
 <!-- end custom head snippets -->
 
-
-    <!-- 22.08.21 GY for mathjax-->
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      TeX: {
-        equationNumbers: {
-          autoNumber: "AMS"
-        }
-      },
-      tex2jax: {
-        inlineMath: [ ['$', '$'] ],
-        displayMath: [ ['$$', '$$'] ],
-        processEscapes: true,
-      }
-    });
-    MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
-      alert("Math Processing Error: "+message[1]);
-    });
-    MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
-      alert("Math Processing Error: "+message[1]);
-    });
-    </script>
-    <script type="text/javascript" async
-      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-    </script>
-    
   </head>
 
   <body class="layout--single">
@@ -316,6 +319,20 @@
     
       <li>
         
+          <span class="nav__sub-title">언어</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/coding/language/javascript/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B8%B0%EC%B4%88/">자바스크립트 기초</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
           <span class="nav__sub-title">알고리즘</span>
         
 
@@ -354,13 +371,21 @@
     
       <li>
         
-          <span class="nav__sub-title">자바스크립트</span>
+          <span class="nav__sub-title">데이터 사이언스</span>
         
 
         
         <ul>
           
-            <li><a href="/coding/language/javascript/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B8%B0%EC%B4%88/">자바스크립트 기초</a></li>
+            <li><a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A41/">데이터 사이언스 기본</a></li>
+          
+            <li><a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A42/">DataFrame 다루기</a></li>
+          
+            <li><a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A43/">데이터 분석과 시각화</a></li>
+          
+            <li><a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A44/">데이터 퀄리티 높이기</a></li>
+          
+            <li><a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A45/">데이터 만들기</a></li>
           
         </ul>
         
@@ -431,38 +456,44 @@
 <h2 id="하나의-문제-여러-가지-알고리즘">하나의 문제, 여러 가지 알고리즘</h2>
 
 <h3 id="탐색">탐색</h3>
+
 <ul>
   <li>저장된 정보들 중에서 원하는 값을 찾는 것</li>
 </ul>
 
 <ol>
-  <li>선형 탐색 알고리즘(linear search algorithm)
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">def</span> <span class="nf">linear_search</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">some_list</span><span class="p">):</span>
-   <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">some_list</span><span class="p">)):</span>
-     <span class="k">if</span> <span class="n">some_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">element</span><span class="p">:</span>
-       <span class="k">return</span> <span class="n">i</span>
-   <span class="k">return</span> <span class="bp">None</span>
+  <li>
+    <p>선형 탐색 알고리즘(linear search algorithm)</p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">linear_search</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">some_list</span><span class="p">):</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">some_list</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="n">some_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">element</span><span class="p">:</span>
+      <span class="k">return</span> <span class="n">i</span>
+  <span class="k">return</span> <span class="bp">None</span>
 </code></pre></div>    </div>
   </li>
-  <li>이진 탐색 알고리즘(binary search algorithm)
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">def</span> <span class="nf">binary_search</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">some_list</span><span class="p">):</span>
-   <span class="n">start_index</span> <span class="o">=</span> <span class="mi">0</span>
-   <span class="n">end_index</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">some_list</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+  <li>
+    <p>이진 탐색 알고리즘(binary search algorithm)</p>
 
-   <span class="k">while</span> <span class="n">start_index</span> <span class="o">&lt;=</span> <span class="n">end_index</span><span class="p">:</span>
-     <span class="n">midpoint</span> <span class="o">=</span> <span class="p">(</span><span class="n">start_index</span> <span class="o">+</span> <span class="n">end_index</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
-     <span class="k">if</span> <span class="n">some_list</span><span class="p">[</span><span class="n">midpoint</span><span class="p">]</span> <span class="o">==</span> <span class="n">element</span><span class="p">:</span>
-       <span class="k">return</span> <span class="n">midpoint</span>
-     <span class="k">elif</span> <span class="n">some_list</span><span class="p">[</span><span class="n">midpoint</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">element</span><span class="p">:</span>
-       <span class="n">end_index</span> <span class="o">=</span> <span class="n">midpoint</span> <span class="o">-</span> <span class="mi">1</span>
-     <span class="k">else</span><span class="p">:</span>
-       <span class="n">start_index</span> <span class="o">=</span> <span class="n">midpoint</span> <span class="o">+</span> <span class="mi">1</span>
-   <span class="k">return</span> <span class="bp">None</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">binary_search</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">some_list</span><span class="p">):</span>
+  <span class="n">start_index</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="n">end_index</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">some_list</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+
+  <span class="k">while</span> <span class="n">start_index</span> <span class="o">&lt;=</span> <span class="n">end_index</span><span class="p">:</span>
+    <span class="n">midpoint</span> <span class="o">=</span> <span class="p">(</span><span class="n">start_index</span> <span class="o">+</span> <span class="n">end_index</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+    <span class="k">if</span> <span class="n">some_list</span><span class="p">[</span><span class="n">midpoint</span><span class="p">]</span> <span class="o">==</span> <span class="n">element</span><span class="p">:</span>
+      <span class="k">return</span> <span class="n">midpoint</span>
+    <span class="k">elif</span> <span class="n">some_list</span><span class="p">[</span><span class="n">midpoint</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">element</span><span class="p">:</span>
+      <span class="n">end_index</span> <span class="o">=</span> <span class="n">midpoint</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="n">start_index</span> <span class="o">=</span> <span class="n">midpoint</span> <span class="o">+</span> <span class="mi">1</span>
+  <span class="k">return</span> <span class="bp">None</span>
 </code></pre></div>    </div>
   </li>
 </ol>
 
 <h3 id="정렬sorting">정렬(Sorting)</h3>
+
 <ul>
   <li>리스트의 원소들을 특정 순서로 정리하는 것</li>
 </ul>
@@ -486,8 +517,11 @@
 <h2 id="알고리즘-평가법">알고리즘 평가법</h2>
 
 <h3 id="시간-복잡도time-complexity">시간 복잡도(Time Complexity)</h3>
+
 <ul>
-  <li>점근 표기법(Big-O)
+  <li>
+    <p>점근 표기법(Big-O)</p>
+
     <ol>
       <li>
         <p>선형 탐색과 이진 탐색</p>
@@ -623,6 +657,7 @@
 </ul>
 
 <h3 id="공간-복잡도space-complexity">공간 복잡도(Space Complexity)</h3>
+
 <ul>
   <li>input 크기에 비례해서 알고리즘이 사용하는 메모리 공간</li>
   <li>Big-O 표기법 사용 가능</li>
@@ -718,7 +753,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/coding/language/javascript/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B8%B0%EC%B4%88/" rel="permalink">JavaScript 기초
+        <a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A45/" rel="permalink">데이터 만들기
 </a>
       
     </h2>
@@ -736,14 +771,14 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          7 분 소요
+          1 분 소요
         
       </span>
     
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">자바스크립트 기초
+    <p class="archive__item-excerpt" itemprop="description">데이터를 만드는 방법
 </p>
   </article>
 </div>
@@ -758,7 +793,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/coding/computer%20science/data%20structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B03/" rel="permalink">그래프
+        <a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A44/" rel="permalink">데이터 퀄리티 높이기
 </a>
       
     </h2>
@@ -776,14 +811,14 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          7 분 소요
+          1 분 소요
         
       </span>
     
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">그래프란?
+    <p class="archive__item-excerpt" itemprop="description">좋은 데이터의 기준
 </p>
   </article>
 </div>
@@ -798,7 +833,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/coding/computer%20science/data%20structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B02/" rel="permalink">트리
+        <a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A43/" rel="permalink">데이터 분석과 시각화
 </a>
       
     </h2>
@@ -816,14 +851,14 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          8 분 소요
+          3 분 소요
         
       </span>
     
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">트리란?
+    <p class="archive__item-excerpt" itemprop="description">시각화와 그래프
 </p>
   </article>
 </div>
@@ -838,7 +873,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/coding/computer%20science/data%20structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B01/" rel="permalink">기본 자료 구조들
+        <a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A42/" rel="permalink">DataFrame 다루기
 </a>
       
     </h2>
@@ -856,14 +891,14 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          18 분 소요
+          3 분 소요
         
       </span>
     
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">자료 구조란?
+    <p class="archive__item-excerpt" itemprop="description">DataFrame 인덱싱
 </p>
   </article>
 </div>

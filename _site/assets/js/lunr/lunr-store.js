@@ -46,4 +46,34 @@ var store = [{
         "tags": [],
         "url": "/coding/language/javascript/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B8%B0%EC%B4%88/",
         "teaser": null
+      },{
+        "title": "데이터 사이언스 기본",
+        "excerpt":"데이터 사이언스란? 데이터 사이언스: 데이터를 다루는 일 데이터가 많다 → 할 수 있는 일이 많다 데이터 사이언스 프로세스 문제 정의하기: 해결하고자 하는 문제를 정의 목표 설정: 기간 설정, 평가 방법 설정, 필요한 데이터 설정 데이터 모으기: 필요한 데이터를 모을 수 있는 방법 찾기 웹 크롤링, 자료 모으기, 파일 읽고 쓰기...","categories": ["Coding","Computer Science","Data Science"],
+        "tags": [],
+        "url": "/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A41/",
+        "teaser": null
+      },{
+        "title": "DataFrame 다루기",
+        "excerpt":"DataFrame 인덱싱 인덱싱 결과 한 줄인 경우의 type ⇒ pandas.Series 인덱싱 결과 여러 줄인 경우의 type ⇒ pandas.DataFrame 한 값만 가져오기 df.loc[\"row\", \"col\"] 이름으로 인덱싱하기   기본 형태 단축 형태 하나의 row 이름 df.loc[\"row\"] df.loc[\"row\", :]   row 이름의 리스트 df.loc[[\"row1\", \"row2\", \"row3\"]] df.loc[[\"row1\", \"row2\", \"row3\"], :]   row 이름의...","categories": ["Coding","Computer Science","Data Science"],
+        "tags": [],
+        "url": "/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A42/",
+        "teaser": null
+      },{
+        "title": "데이터 분석과 시각화",
+        "excerpt":"시각화와 그래프 df.plot(): 그래프 그리기 y='col, y=['col1', 'col2']: 원하는 column만 그래프로 보기 df['col1'].plot(), df[['col1', 'col2']].plot()과 동일 pandas Series에도 plot 함수 사용 가능 그래프 종류 설정 ⇒ kind 옵션 활용 선 그래프(기본값): kind='line' 막대 그래프: kind='bar' 가로 막대 그래프: kind='barh' 쌓아올리기: stacked=True x축: x='col' 파이 그래프: kind='pie' 히스토그램: kind='hist' y축: y='col'...","categories": ["Coding","Computer Science","Data Science"],
+        "tags": [],
+        "url": "/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A43/",
+        "teaser": null
+      },{
+        "title": "데이터 퀄리티 높이기",
+        "excerpt":"좋은 데이터의 기준 완결성(Completeness): 필수적인 데이터는 모두 기록되어 있어야 함 결측값(채워져야 하는데 비어 있는 값, NaN(Not a Number))이 없어야 함 유일성(Uniqueness): 동일한 데이터가 불필요하게 중복되어 있으면 안 됨 예&gt; 가입기록 ⇒ 이메일 인증, 휴대폰 번호 본인 확인, 주민등록번호 본인 확인 통일성(Conformity): 데이터가 동일한 형식으로 저장되어 있어야 함 표기법, 포멧 등...","categories": ["Coding","Computer Science","Data Science"],
+        "tags": [],
+        "url": "/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A44/",
+        "teaser": null
+      },{
+        "title": "데이터 만들기",
+        "excerpt":"데이터를 만드는 방법 데이터 다운로드 받기 서울열린데이터광장 공공데이터포털 e-나라지표 국가통계포털 서울특별시 빅데이터 캠퍼스 통계청 구글 데이터 검색 캐글 Awesome Public Datasets Github Data and Story Library 데이터허브 센서 사용하기: 아두이노, 라즈베리파이 등 웹에서 모으기 웹 스크레이핑(Web Scraping): 하나의 특정 웹페이지에서 원하는 정보를 얻어오기 웹 크롤링(Web Crawling): 여러 페이지에서 원하는 정보를...","categories": ["Coding","Computer Science","Data Science"],
+        "tags": [],
+        "url": "/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A45/",
+        "teaser": null
       }]

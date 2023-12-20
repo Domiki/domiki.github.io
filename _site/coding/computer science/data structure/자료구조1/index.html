@@ -7,7 +7,7 @@
 -->
 <html lang="ko" class="no-js">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
 
 <!-- begin _includes/seo.html --><title>기본 자료 구조들 - Domiki’s Computer Lecture Note</title>
 <meta name="description" content="자료 구조란?">
@@ -70,62 +70,65 @@
 
 
 <!-- end _includes/seo.html -->
-
-
-
-  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Domiki's Computer Lecture Note Feed">
+ 
+<link
+  href="/feed.xml"
+  type="application/atom+xml"
+  rel="alternate"
+  title="Domiki's Computer Lecture Note Feed"
+/>
 
 
 <!-- https://t.co/dKP3o1e -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <script>
-  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  document.documentElement.className =
+    document.documentElement.className.replace(/\bno-js\b/g, "") + " js ";
 </script>
 
 <!-- For all browsers -->
-<link rel="stylesheet" href="/assets/css/main.css">
-<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+<link rel="stylesheet" href="/assets/css/main.css" />
+<link
+  rel="preload"
+  href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"
+  as="style"
+  onload="this.onload=null;this.rel='stylesheet'"
+/>
+<noscript
+  ><link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"
+/></noscript>
 
 
 
 <!-- Mathjax Support -->
-<script type="text/javascript" async
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+<script
+  type="text/javascript"
+  async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"
+></script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
 </script>
+
     <!-- start custom head snippets -->
 
 <!-- insert favicons. use https://realfavicongenerator.net/ -->
 
 <!-- end custom head snippets -->
 
-
-    <!-- 22.08.21 GY for mathjax-->
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      TeX: {
-        equationNumbers: {
-          autoNumber: "AMS"
-        }
-      },
-      tex2jax: {
-        inlineMath: [ ['$', '$'] ],
-        displayMath: [ ['$$', '$$'] ],
-        processEscapes: true,
-      }
-    });
-    MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
-      alert("Math Processing Error: "+message[1]);
-    });
-    MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
-      alert("Math Processing Error: "+message[1]);
-    });
-    </script>
-    <script type="text/javascript" async
-      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-    </script>
-    
   </head>
 
   <body class="layout--single">
@@ -316,6 +319,20 @@
     
       <li>
         
+          <span class="nav__sub-title">언어</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/coding/language/javascript/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B8%B0%EC%B4%88/">자바스크립트 기초</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
           <span class="nav__sub-title">알고리즘</span>
         
 
@@ -354,13 +371,21 @@
     
       <li>
         
-          <span class="nav__sub-title">자바스크립트</span>
+          <span class="nav__sub-title">데이터 사이언스</span>
         
 
         
         <ul>
           
-            <li><a href="/coding/language/javascript/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B8%B0%EC%B4%88/">자바스크립트 기초</a></li>
+            <li><a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A41/">데이터 사이언스 기본</a></li>
+          
+            <li><a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A42/">DataFrame 다루기</a></li>
+          
+            <li><a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A43/">데이터 분석과 시각화</a></li>
+          
+            <li><a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A44/">데이터 퀄리티 높이기</a></li>
+          
+            <li><a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A45/">데이터 만들기</a></li>
           
         </ul>
         
@@ -417,7 +442,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 기본 자료 구조들</h4></header>
-              <ul class="toc__menu"><li><a href="#자료-구조란">자료 구조란?</a></li><li><a href="#컴퓨터가-데이터를-저장하는-방법">컴퓨터가 데이터를 저장하는 방법</a></li><li><a href="#배열">배열</a><ul><li><a href="#배열-1">배열</a></li></ul></li><li><a href="#링크드-리스트linked-list">링크드 리스트(Linked List)</a><ul><li><a href="#싱글리-링크드-리스트">(싱글리) 링크드 리스트</a></li><li><a href="#더블리-링크드-리스트">더블리 링크드 리스트</a></li><li><a href="#싱글리-vs-더블리-링크드-리스트">싱글리 vs 더블리 링크드 리스트</a></li></ul></li><li><a href="#해시-테이블">해시 테이블</a><ul><li><a href="#해시-테이블hash-table">해시 테이블(Hash Table)</a></li></ul></li><li><a href="#추상-자료형">추상 자료형</a><ul><li><a href="#1-list">1. list</a></li><li><a href="#2-queue">2. queue</a></li><li><a href="#3-stack">3. stack</a></li><li><a href="#4-dictionary">4. dictionary</a></li><li><a href="#5-set">5. set</a></li><li><a href="#파이썬-자료형-주요-시간-복잡도-정리">파이썬 자료형 주요 시간 복잡도 정리</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#자료-구조란">자료 구조란?</a></li><li><a href="#컴퓨터가-데이터를-저장하는-방법">컴퓨터가 데이터를 저장하는 방법</a></li><li><a href="#배열">배열</a><ul><li><a href="#배열-1">배열</a></li></ul></li><li><a href="#링크드-리스트linked-list">링크드 리스트(Linked List)</a><ul><li><a href="#싱글리-링크드-리스트">(싱글리) 링크드 리스트</a></li><li><a href="#더블리-링크드-리스트">더블리 링크드 리스트</a></li><li><a href="#싱글리-vs-더블리-링크드-리스트">싱글리 vs 더블리 링크드 리스트</a></li></ul></li><li><a href="#해시-테이블">해시 테이블</a><ul><li><a href="#해시-테이블hash-table">해시 테이블(Hash Table)</a></li><li><a href="#해시-테이블-연산">해시 테이블 연산</a></li><li><a href="#code">code</a></li></ul></li><li><a href="#추상-자료형">추상 자료형</a><ul><li><a href="#1-list">1. list</a></li><li><a href="#2-queue">2. queue</a></li><li><a href="#3-stack">3. stack</a></li><li><a href="#4-dictionary">4. dictionary</a></li><li><a href="#5-set">5. set</a></li><li><a href="#파이썬-자료형-주요-시간-복잡도-정리">파이썬 자료형 주요 시간 복잡도 정리</a></li></ul></li></ul>
 
             </nav>
           </aside>
@@ -486,6 +511,7 @@
 </ul>
 
 <h2 id="배열">배열</h2>
+
 <ul>
   <li>C 배열
     <ul>
@@ -553,18 +579,19 @@
     </table>
 
     <p>※ 분할 상환 분석(Amortized Analysis)</p>
+
     <ul>
       <li>같은 동작을 $n$번 했을 때 드는 시간이 $X$일 때 동작을 한 번 하는데 걸린 시간: $\frac{X}{n}$</li>
     </ul>
 
     <ol>
       <li>새로운 데이터를 동적 배열 맨 끝에 단순히 저장하는 데 걸리는 시간 <br />
-    ⇒ 인덱스에 데이터를 저장하는 데 걸리는 시간 1 → 이 행동을 $n$번 → $O(n)$</li>
+⇒ 인덱스에 데이터를 저장하는 데 걸리는 시간 1 → 이 행동을 $n$번 → $O(n)$</li>
       <li>더 큰 배열을 만들고 그 배열에 기존의 데이터를 옮기는 데 걸리는 시간 <br />
-    ⇒ 추가 연산을 $n$번 했을 때, 가장 마지막에 데이터를 $m$개 옮겼다고 가정 → $m + \frac{m}{2} + \frac{m}{4} + \cdots + 1 = 2m - 1 (m &lt; n)$ <br />
-    ⇒ 연속으로 추가 연산을 $n$번 하면 데이터를 옮겨서 저장하는 데 걸리는 총 시간은 $2n$보다 작다.</li>
+⇒ 추가 연산을 $n$번 했을 때, 가장 마지막에 데이터를 $m$개 옮겼다고 가정 → $m + \frac{m}{2} + \frac{m}{4} + \cdots + 1 = 2m - 1 (m &lt; n)$ <br />
+⇒ 연속으로 추가 연산을 $n$번 하면 데이터를 옮겨서 저장하는 데 걸리는 총 시간은 $2n$보다 작다.</li>
       <li>1과 2에 의해 총 드는 시간은 $3n$보다 적은 시간
-    ⇒ $\therefore O(3n) = O(n)$</li>
+⇒ $\therefore O(3n) = O(n)$</li>
       <li>연속으로 $n$번 수행하는 작업이므로 분할 상환 분석에 의하여 $\frac{O(n)}{n} = O(1)$</li>
       <li>따라서, 동적 배열의 추가(append) 연산은 최악의 경우 <span style="color: red"> $O(n)$ </span> 이고, 분할 상환 분석을 하면 <span style="color: red"> $O(1)$ </span>이다.</li>
     </ol>
@@ -573,7 +600,9 @@
       <li>최악의 경우보다 분할 상환 분석을 한 시간 복잡도가 더 적으면 분할 상환 분석을 한 시간 복잡도를 사용</li>
     </ul>
   </li>
-  <li><strong>삽입 연산(insert operation)</strong>(동적 배열)
+  <li>
+    <p><strong>삽입 연산(insert operation)</strong>(동적 배열)</p>
+
     <ul>
       <li>배열의 임의의 공간에 투입</li>
     </ul>
@@ -601,7 +630,9 @@
       <li>삽입 연산 시간 복잡도: <span style="color: red"> $O(n)$ </span></li>
     </ul>
   </li>
-  <li><strong>삭제 연산</strong>(동적 배열)
+  <li>
+    <p><strong>삭제 연산</strong>(동적 배열)</p>
+
     <ul>
       <li>최악의 경우: 맨 앞 데이터를 지울 때 $O(n)$ → 이런 상황이 잦으면 동적 배열은 비효율적</li>
       <li>맨 뒤 데이터를 지울 때 $O(1)$</li>
@@ -612,7 +643,7 @@
             <ul>
               <li>동적 배열 맨 끝에 데이터 삭제 시간 복잡도
                 <ul>
-                  <li>최악의 경우: 새 배열 복사 ⇒ <span style="color: red">  $O(n)$ </span></li>
+                  <li>최악의 경우: 새 배열 복사 ⇒ <span style="color: red"> $O(n)$ </span></li>
                   <li>분할 상환 분석: 대부분 $O(1)$, 드물게 $O(n)$ ⇒ <span style="color: red"> $O(1)$ </span></li>
                 </ul>
               </li>
@@ -622,7 +653,9 @@
       </li>
     </ul>
   </li>
-  <li><strong>(정리)</strong> 배열 vs 동적 배열
+  <li>
+    <p><strong>(정리)</strong> 배열 vs 동적 배열</p>
+
     <ul>
       <li>
         <p>시간 복잡도</p>
@@ -681,7 +714,9 @@
 <ul>
   <li>데이터를 순서대로 저장한다.</li>
   <li>요소를 계속 추가할 수 있다.</li>
-  <li>노드(Node)들을 단위로 하여 데이터를 저장, 노드들을 순서대로 연결
+  <li>
+    <p>노드(Node)들을 단위로 하여 데이터를 저장, 노드들을 순서대로 연결</p>
+
     <ul>
       <li>각 노드는 데이터와 다음에 올 노드를 저장</li>
       <li>마지막 노드는 다음의 노드를 비워둠</li>
@@ -701,7 +736,9 @@
       <li>노드들은 연속적이지 않고 메모리에 흩어져있다.</li>
     </ul>
   </li>
-  <li><strong>링크드 리스트 접근 연산</strong>
+  <li>
+    <p><strong>링크드 리스트 접근 연산</strong></p>
+
     <ul>
       <li>특정 위치에 있는 노드를 리턴하는 연산</li>
       <li>링크드 리스트 접근 시간 복잡도
@@ -713,13 +750,17 @@
       </li>
     </ul>
   </li>
-  <li><strong>링크드 리스트 탐색 연산</strong>
+  <li>
+    <p><strong>링크드 리스트 탐색 연산</strong></p>
+
     <ul>
       <li>가장 앞 노드부터 다음 노드를 하나씩 보면서 원하는 데이터를 찾는다(선형 탐색)</li>
       <li>찾으려는 데이터가 마지막 노드에 있는 최악의 경우 <span style="color: red"> $O(n)$ </span></li>
     </ul>
   </li>
-  <li><strong>링크드 리스트 삽입/삭제 연산</strong>
+  <li>
+    <p><strong>링크드 리스트 삽입/삭제 연산</strong></p>
+
     <ul>
       <li>삽입/삭제할 인덱스의 주변 노드들에 연결된 레퍼런스만 수정 ⇒ $O(1)$</li>
       <li>그러나 삽입/삭제 전 <code class="language-plaintext highlighter-rouge">previous_node</code>를 먼저 찾아야 하므로 이를 탐색/접근 연산으로 찾아야 함 ⇒ <span style="color: red"> $O(n+1) = O(n)$ </span></li>
@@ -758,14 +799,14 @@
   <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
     <span class="bp">self</span><span class="p">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>  <span class="c1"># 실제 노드가 저장하는 데이터
 </span>    <span class="bp">self</span><span class="p">.</span><span class="nb">next</span> <span class="o">=</span> <span class="bp">None</span>  <span class="c1"># 다음 노드에 대한 레퍼런스
-</span>  
-  
+</span>
+
 <span class="k">class</span> <span class="nc">LinkedList</span><span class="p">:</span>
   <span class="s">"""링크드 리스트 클래스"""</span>
   <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="bp">self</span><span class="p">.</span><span class="n">head</span> <span class="o">=</span> <span class="bp">None</span>  <span class="c1"># 링크드 리스트의 가장 앞 노드
 </span>    <span class="bp">self</span><span class="p">.</span><span class="n">tail</span> <span class="o">=</span> <span class="bp">None</span>  <span class="c1"># 링크드 리스트의 가장 뒤 노드
-</span>    
+</span>
   <span class="k">def</span> <span class="nf">pop_left</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="s">"""링크드 리스트의 가장 앞 노드 삭제 메소드. 단, 링크드 리스트에 항상 노드가 있다고 가정한다"""</span>
     <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">head</span><span class="p">.</span><span class="n">data</span> <span class="c1"># 삭제할 노드를 미리 저장해놓는다
@@ -776,9 +817,9 @@
       <span class="bp">self</span><span class="p">.</span><span class="n">tail</span> <span class="o">=</span> <span class="bp">None</span>
     <span class="k">else</span><span class="p">:</span>
       <span class="bp">self</span><span class="p">.</span><span class="n">head</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">head</span><span class="p">.</span><span class="nb">next</span>
-      
+
     <span class="k">return</span> <span class="n">data</span> <span class="c1">#삭제된 노드의 데이터를 리턴한다
-</span>    
+</span>
   <span class="k">def</span> <span class="nf">prepend</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="s">"""링크드 리스트의 가장 앞에 데이터 삽입"""</span>
     <span class="n">new_node</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="c1"># 새로운 노드를 만든다
@@ -788,9 +829,9 @@
       <span class="bp">self</span><span class="p">.</span><span class="n">tail</span> <span class="o">=</span> <span class="n">new_node</span>
     <span class="k">else</span><span class="p">:</span>
       <span class="n">new_node</span><span class="p">.</span><span class="nb">next</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">head</span>  <span class="c1"># 리스트의 head_node를 새롭게 삽입한 노드로 정해준다.
-</span>      
+</span>
     <span class="bp">self</span><span class="p">.</span><span class="n">head</span> <span class="o">=</span> <span class="n">new_node</span>  <span class="c1"># 리스트의 head_node를 새롭게 삽입한 노드로 정해준다.
-</span>    
+</span>
   <span class="k">def</span> <span class="nf">delete_after</span><span class="p">(</span><span class="n">slef</span><span class="p">,</span> <span class="n">previous_node</span><span class="p">):</span>
     <span class="s">"""링크드 리스트 삭제연산, 주어진 노드 뒤 노드를 삭제한다"""</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">previous_node</span><span class="p">.</span><span class="nb">next</span><span class="p">.</span><span class="n">data</span>
@@ -802,9 +843,9 @@
     <span class="c1"># 두 노드 사이 노드를 지울 때
 </span>    <span class="k">else</span><span class="p">:</span>
       <span class="n">previous_node</span><span class="p">.</span><span class="nb">next</span> <span class="o">=</span> <span class="n">previous_node</span><span class="p">.</span><span class="nb">next</span><span class="p">.</span><span class="nb">next</span>
-      
+
     <span class="k">return</span> <span class="n">data</span>
-    
+
   <span class="k">def</span> <span class="nf">insert_after</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">previous_node</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
     <span class="s">"""링크드 리스트 주어진 노드 뒤 삽입 연산 메소드"""</span>
     <span class="n">new_node</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
@@ -816,16 +857,16 @@
     <span class="k">else</span><span class="p">:</span> <span class="c1"># 두 노드 사이에 삽입
 </span>      <span class="n">new_node</span><span class="p">.</span><span class="nb">next</span> <span class="o">=</span> <span class="n">previous_node</span><span class="p">.</span><span class="nb">next</span>
       <span class="n">previous_node</span><span class="p">.</span><span class="nb">next</span> <span class="o">=</span> <span class="n">new_node</span>
-      
+
   <span class="k">def</span> <span class="nf">find_node_at</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
     <span class="s">"""링크드 리스트 접근 연산 메소드. 파라미터 인덱스는 항상 있다고 가정"""</span>
     <span class="n">iterator</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">head</span>
 
     <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">index</span><span class="p">):</span>
       <span class="n">iterator</span> <span class="o">=</span> <span class="n">iterator</span><span class="p">.</span><span class="nb">next</span>
-      
+
     <span class="k">return</span> <span class="n">iterator</span>
-    
+
   <span class="k">def</span> <span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
     <span class="s">"""링크드 리스트 추가 연산 메소드"""</span>
     <span class="n">new_node</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
@@ -836,7 +877,7 @@
     <span class="k">else</span><span class="p">:</span>
       <span class="bp">self</span><span class="p">.</span><span class="n">tail</span><span class="p">.</span><span class="nb">next</span> <span class="o">=</span> <span class="n">new_node</span>
       <span class="bp">self</span><span class="p">.</span><span class="n">tail</span> <span class="o">=</span> <span class="n">new_node</span>
-      
+
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
       <span class="s">"""링크드 리스트를 문자열로 표현해서 리턴하는 메소드"""</span>
       <span class="n">res_str</span> <span class="o">=</span> <span class="s">"|"</span>
@@ -849,7 +890,7 @@
         <span class="c1"># 각 노드의 데이터를 리턴하는 문자열에 더해준다
 </span>        <span class="n">res_str</span> <span class="o">+=</span> <span class="sa">f</span><span class="s">" </span><span class="si">{</span><span class="n">iterator</span><span class="p">.</span><span class="n">data</span><span class="si">}</span><span class="s"> |"</span>
         <span class="n">iterator</span> <span class="o">=</span> <span class="n">iterator</span><span class="p">.</span><span class="nb">next</span>  <span class="c1"># 다음 노드로 넘어간다
-</span>        
+</span>
       <span class="k">return</span> <span class="n">res_str</span>
 </code></pre></div>    </div>
   </li>
@@ -861,7 +902,9 @@
   <li>더블리 링크드 리스트 노드: <code class="language-plaintext highlighter-rouge">data</code>, <code class="language-plaintext highlighter-rouge">next</code>, <code class="language-plaintext highlighter-rouge">prev</code></li>
   <li>더블리 링크드 리스트 연산 &amp; 시간 복잡도</li>
   <li><strong>접근 &amp; 탐색 연산</strong>: 싱글리 링크드 리스트 접근 &amp; 탐색과 동일 ⇒ <span style="color: red"> $O(n)$ </span></li>
-  <li><strong>삽입 &amp; 삭제 연산</strong>
+  <li>
+    <p><strong>삽입 &amp; 삭제 연산</strong></p>
+
     <ul>
       <li>삽입/삭제할 인덱스의 주변 노드들에 연결된 레퍼런스만 수정 ⇒ $O(1)$</li>
       <li>그러나 삽입/삭제 전 <code class="language-plaintext highlighter-rouge">previous_node</code>를 먼저 찾아야 하므로 이를 탐색/접근 연산으로 찾아야 함 ⇒ <span style="color: red"> $O(n+1) = O(n)$ </span></li>
@@ -905,7 +948,7 @@
     <span class="bp">self</span><span class="p">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>  <span class="c1"># 노드가 저장하는 데이터
 </span>    <span class="bp">self</span><span class="p">.</span><span class="nb">next</span> <span class="o">=</span> <span class="bp">None</span>  <span class="c1"># 다음 노드에 대한 레퍼런스
 </span>    <span class="bp">self</span><span class="p">.</span><span class="n">prev</span> <span class="o">=</span> <span class="bp">None</span>  <span class="c1"># 이전 노드에 대한 레퍼런스
-</span>  
+</span>
 <span class="k">class</span> <span class="nc">LinkedList</span><span class="p">:</span>
   <span class="s">"""링크드 리스트 클래스"""</span>
   <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -928,9 +971,9 @@
     <span class="k">else</span><span class="p">:</span>
       <span class="n">node_to_delete</span><span class="p">.</span><span class="n">prev</span><span class="p">.</span><span class="nb">next</span> <span class="o">=</span> <span class="n">node_to_delete</span><span class="p">.</span><span class="nb">next</span>
       <span class="n">node_to_delete</span><span class="p">.</span><span class="nb">next</span><span class="p">.</span><span class="n">prev</span> <span class="o">=</span> <span class="n">node_to_delete</span><span class="p">.</span><span class="n">prev</span>
-      
+
     <span class="k">return</span> <span class="n">data</span>
-    
+
   <span class="k">def</span> <span class="nf">insert_after</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">previous_node</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
     <span class="s">"""링크드 리스트 추가 연산 메소드"""</span>
     <span class="n">new_node</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
@@ -945,16 +988,16 @@
       <span class="n">new_node</span><span class="p">.</span><span class="nb">next</span> <span class="o">=</span> <span class="n">previous_node</span><span class="p">.</span><span class="nb">next</span>
       <span class="n">previous_node</span><span class="p">.</span><span class="nb">next</span> <span class="o">=</span> <span class="n">new_node</span>
       <span class="n">new_node</span><span class="p">.</span><span class="nb">next</span><span class="p">.</span><span class="n">prev</span> <span class="o">=</span> <span class="n">new_node</span>
-      
+
   <span class="k">def</span> <span class="nf">find_node_at</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
     <span class="s">"""링크드 리스트 접근 연산 메소드. 파라미터 인덱스는 항상 있다고 가정"""</span>
     <span class="n">iterator</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">head</span>
 
     <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">index</span><span class="p">):</span>
       <span class="n">iterator</span> <span class="o">=</span> <span class="n">iterator</span><span class="p">.</span><span class="nb">next</span>
-      
+
     <span class="k">return</span> <span class="n">iterator</span>
-    
+
   <span class="k">def</span> <span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
     <span class="s">"""링크드 리스트 추가 연산 메소드"""</span>
     <span class="n">new_node</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="c1"># 새로운 데이터를 저장하는 노드
@@ -967,7 +1010,7 @@
 </span>      <span class="bp">self</span><span class="p">.</span><span class="n">tail</span><span class="p">.</span><span class="nb">next</span> <span class="o">=</span> <span class="n">new_node</span>
       <span class="n">new_node</span><span class="p">.</span><span class="n">prev</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">tail</span>
       <span class="bp">self</span><span class="p">.</span><span class="n">tail</span> <span class="o">=</span> <span class="n">new_node</span>
-      
+
   <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="s">"""링크드 리스트를 문자열로 표현해서 리턴하는 메소드"""</span>
     <span class="n">res_str</span> <span class="o">=</span> <span class="s">"|"</span>
@@ -980,7 +1023,7 @@
       <span class="c1"># 각 노드의 데이터를 리턴하는 문자열에 더해준다
 </span>      <span class="n">res_str</span> <span class="o">+=</span> <span class="sa">f</span><span class="s">" </span><span class="si">{</span><span class="n">iterator</span><span class="p">.</span><span class="n">data</span><span class="si">}</span><span class="s"> |"</span>
       <span class="n">iterator</span> <span class="o">=</span> <span class="n">iterator</span><span class="p">.</span><span class="nb">next</span>  <span class="c1"># 다음 노드로 넘어간다
-</span>      
+</span>
     <span class="k">return</span> <span class="n">res_str</span>
 </code></pre></div>    </div>
   </li>
@@ -1058,12 +1101,12 @@
         <ol>
           <li>나눗셈의 나머지</li>
           <li>곱셈
-  a. $0 &lt; \alpha &lt; 1$인 아무 값 $\alpha$를 지정
-  b. $\alpha$에 key를 곱한 후, 소수 부분만 남김
-  c. 남은 소수 부분에 배열의 크기를 곱한 후, 정수 부분만 남김</li>
+a. $0 &lt; \alpha &lt; 1$인 아무 값 $\alpha$를 지정
+b. $\alpha$에 key를 곱한 후, 소수 부분만 남김
+c. 남은 소수 부분에 배열의 크기를 곱한 후, 정수 부분만 남김</li>
           <li><code class="language-plaintext highlighter-rouge">hash</code> 함수
-  a. 같은 값을 넣으면 항상 같은 정수를 리턴하고, 다른 값을 넣으면 항상 다른 정수를 리턴
-  b. 다른 타입의 데이터들을 자신만의 고유한 정수 값으로 변환해줌
+a. 같은 값을 넣으면 항상 같은 정수를 리턴하고, 다른 값을 넣으면 항상 다른 정수를 리턴
+b. 다른 타입의 데이터들을 자신만의 고유한 정수 값으로 변환해줌
             <ul>
               <li>불변 타입 자료형에만 사용 가능(불린, 정수, 소수, 튜플, 문자열)</li>
             </ul>
@@ -1090,71 +1133,75 @@
   </li>
 </ul>
 
-<p><br /></p>
+<h3 id="해시-테이블-연산">해시 테이블 연산</h3>
 
 <ul>
-  <li>해시 테이블 연산
-    <ul>
-      <li><strong>탐색(search)</strong>
-        <ul>
-          <li>원하는 key에 해당하는 value를 찾는 연산</li>
-          <li>탐색 연산 시간 복잡도
-            <ol>
-              <li>해시 함수 계산: $O(1)$</li>
-              <li>배열 인덱스 접근: $O(1)$</li>
-              <li>링크드 리스트 탐색: 링크드 리스트 길이 $m$일 때 $O(m)$
-                <ul>
-                  <li>최악의 경우: $n$개의 key-value 데이터 쌍이 모두 한 링크드 리스트에 저장된 경우: $O(n)$</li>
-                </ul>
-              </li>
-            </ol>
-          </li>
-        </ul>
+  <li>
+    <p><strong>탐색(search)</strong></p>
 
-        <p>⇒ <span style="color: red"> $O(n)$ </span></p>
-      </li>
-      <li><strong>삽입(save)</strong>
-        <ul>
-          <li>key-value 데이터 쌍을 저장 또는 수정
+    <ul>
+      <li>원하는 key에 해당하는 value를 찾는 연산</li>
+      <li>탐색 연산 시간 복잡도
+        <ol>
+          <li>해시 함수 계산: $O(1)$</li>
+          <li>배열 인덱스 접근: $O(1)$</li>
+          <li>링크드 리스트 탐색: 링크드 리스트 길이 $m$일 때 $O(m)$
             <ul>
-              <li>삽입하려는 key가 이미 있는지 확인
-                <ol>
-                  <li>있으면 수정</li>
-                  <li>없으면 추가</li>
-                </ol>
-              </li>
+              <li>최악의 경우: $n$개의 key-value 데이터 쌍이 모두 한 링크드 리스트에 저장된 경우: $O(n)$</li>
             </ul>
           </li>
-          <li>삽입 연산 시간 복잡도
-            <ol>
-              <li>해시 함수 계산: $O(1)$</li>
-              <li>배열 인덱스 접근: $O(1)$</li>
-              <li>링크드 리스트 탐색: $O(n)$</li>
-              <li>링크드 리스트 저장/노드 수정: $O(1)$</li>
-            </ol>
-          </li>
-        </ul>
-
-        <p>⇒ <span style="color: red"> $O(n)$ </span></p>
-      </li>
-      <li><strong>삭제(delete)</strong>
-        <ul>
-          <li>원하는 key에 대한 key-value 데이터 쌍을 삭제</li>
-          <li>삭제 시간 복잡도
-            <ol>
-              <li>해시 함수 계산: $O(1)$</li>
-              <li>배열 인덱스 접근: $O(1)$</li>
-              <li>링크드 리스트 노드 탐색: $O(n)$</li>
-              <li>링크드 리스트 노드 삭제: $O(1)$</li>
-            </ol>
-          </li>
-        </ul>
-
-        <p>⇒ <span style="color: red"> $O(n)$ </span></p>
+        </ol>
       </li>
     </ul>
+
+    <p>⇒ <span style="color: red"> $O(n)$ </span></p>
   </li>
-  <li>평균 시간 복잡도를 이용한 해시 테이블 연산 시간 복잡도
+  <li>
+    <p><strong>삽입(save)</strong></p>
+
+    <ul>
+      <li>key-value 데이터 쌍을 저장 또는 수정
+        <ul>
+          <li>삽입하려는 key가 이미 있는지 확인
+            <ol>
+              <li>있으면 수정</li>
+              <li>없으면 추가</li>
+            </ol>
+          </li>
+        </ul>
+      </li>
+      <li>삽입 연산 시간 복잡도
+        <ol>
+          <li>해시 함수 계산: $O(1)$</li>
+          <li>배열 인덱스 접근: $O(1)$</li>
+          <li>링크드 리스트 탐색: $O(n)$</li>
+          <li>링크드 리스트 저장/노드 수정: $O(1)$</li>
+        </ol>
+      </li>
+    </ul>
+
+    <p>⇒ <span style="color: red"> $O(n)$ </span></p>
+  </li>
+  <li>
+    <p><strong>삭제(delete)</strong></p>
+
+    <ul>
+      <li>원하는 key에 대한 key-value 데이터 쌍을 삭제</li>
+      <li>삭제 시간 복잡도
+        <ol>
+          <li>해시 함수 계산: $O(1)$</li>
+          <li>배열 인덱스 접근: $O(1)$</li>
+          <li>링크드 리스트 노드 탐색: $O(n)$</li>
+          <li>링크드 리스트 노드 삭제: $O(1)$</li>
+        </ol>
+      </li>
+    </ul>
+
+    <p>⇒ <span style="color: red"> $O(n)$ </span></p>
+  </li>
+  <li>
+    <p>평균 시간 복잡도를 이용한 해시 테이블 연산 시간 복잡도</p>
+
     <ul>
       <li>배열에 저장된 각 링크드 리스트 길이는 평균적으로 $\cfrac{n}{m}$
         <ul>
@@ -1167,10 +1214,11 @@
       <li>따라서, 세 연산은 최악의 경우 $O(m)$, 평균 $O(1)$</li>
     </ul>
   </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">code</code></p>
+</ul>
 
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Node</span><span class="p">:</span>
+<h3 id="code"><code class="language-plaintext highlighter-rouge">code</code></h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Node</span><span class="p">:</span>
   <span class="s">"""링크드 리스트의 노드 클래스"""</span>
   <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
     <span class="bp">self</span><span class="p">.</span><span class="n">key</span> <span class="o">=</span> <span class="n">key</span>
@@ -1183,7 +1231,7 @@
   <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="bp">self</span><span class="p">.</span><span class="n">head</span> <span class="o">=</span> <span class="bp">None</span>  <span class="c1"># 링크드 리스트의 가장 앞 노드
 </span>    <span class="bp">self</span><span class="p">.</span><span class="n">tail</span> <span class="o">=</span> <span class="bp">None</span>  <span class="c1"># 링크드 리스트의 가장 뒤 노드
-</span>    
+</span>
   <span class="k">def</span> <span class="nf">find_node_with_key</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
     <span class="s">"""링크드 리스트에서 주어진 데이터를 갖고있는 노드를 리턴한다. 단 해당 노드가 없으면 None을 리턴한다"""</span>
     <span class="n">iterator</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">head</span>  <span class="c1"># 링크드 리스트를 돌기 위해 필요한 노드 변수
@@ -1191,11 +1239,11 @@
     <span class="k">while</span> <span class="n">iterator</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
       <span class="k">if</span> <span class="n">iterator</span><span class="p">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">key</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">iterator</span>
-        
+
       <span class="n">iterator</span> <span class="o">=</span> <span class="n">iterator</span><span class="p">.</span><span class="nb">next</span>
-      
+
     <span class="k">return</span> <span class="bp">None</span>
-    
+
   <span class="k">def</span> <span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
     <span class="s">"""링크드 리스트 추가 연산 메소드"""</span>
     <span class="n">new_node</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
@@ -1209,7 +1257,7 @@
       <span class="bp">self</span><span class="p">.</span><span class="n">tail</span><span class="p">.</span><span class="nb">next</span> <span class="o">=</span> <span class="n">new_node</span> <span class="c1"># 마지막 노드의 다음 노드로 추가
 </span>      <span class="n">new_node</span><span class="p">.</span><span class="n">prev</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">tail</span>
       <span class="bp">self</span><span class="p">.</span><span class="n">tail</span> <span class="o">=</span> <span class="n">new_node</span>  <span class="c1">#마지막 노드 업데이트
-</span>    
+</span>
   <span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node_to_delete</span><span class="p">):</span>
     <span class="s">"""더블리 링크드 리스트 삭제 연산 메소드"""</span>
 
@@ -1222,19 +1270,19 @@
 </span>    <span class="k">elif</span> <span class="n">node_to_delete</span> <span class="ow">is</span> <span class="bp">self</span><span class="p">.</span><span class="n">head</span><span class="p">:</span>
       <span class="bp">self</span><span class="p">.</span><span class="n">head</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">head</span><span class="p">.</span><span class="nb">next</span>
       <span class="bp">self</span><span class="p">.</span><span class="n">head</span><span class="p">.</span><span class="n">prev</span> <span class="o">=</span> <span class="bp">None</span>
-      
+
     <span class="c1"># 링크드 리스트 가장 뒤 데이터 삭제할 때
 </span>    <span class="k">elif</span> <span class="n">node_to_delete</span> <span class="ow">is</span> <span class="bp">self</span><span class="p">.</span><span class="n">tail</span><span class="p">:</span>
       <span class="bp">self</span><span class="p">.</span><span class="n">tail</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">tail</span><span class="p">.</span><span class="n">prev</span>
       <span class="bp">self</span><span class="p">.</span><span class="n">tail</span><span class="p">.</span><span class="nb">next</span> <span class="o">=</span> <span class="bp">None</span>
-      
+
     <span class="c1"># 두 노드 사이에 있는 데이터 삭제할 때
 </span>    <span class="k">else</span><span class="p">:</span>
       <span class="n">node_to_delete</span><span class="p">.</span><span class="n">prev</span><span class="p">.</span><span class="nb">next</span> <span class="o">=</span> <span class="n">node_to_delete</span><span class="p">.</span><span class="nb">next</span>
       <span class="n">node_to_delete</span><span class="p">.</span><span class="nb">next</span><span class="p">.</span><span class="n">prev</span> <span class="o">=</span> <span class="n">node</span><span class="p">.</span><span class="n">to_delete</span><span class="p">.</span><span class="n">prev</span>
-      
+
     <span class="k">return</span> <span class="n">node_to_delete</span><span class="p">.</span><span class="n">value</span>
-    
+
   <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="s">"""링크드 리스트 문자열로 표현해서 리턴하는 메소드"""</span>
     <span class="n">res_str</span> <span class="o">=</span> <span class="s">""</span>
@@ -1249,34 +1297,34 @@
       <span class="n">iterator</span> <span class="o">=</span> <span class="n">iterator</span><span class="p">.</span><span class="nb">next</span>  <span class="c1"># 다음 노드로 넘어간다.
 </span>
     <span class="k">return</span> <span class="n">res_str</span>
-  
+
 <span class="k">class</span> <span class="nc">HashTable</span><span class="p">:</span>
   <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">capacity</span><span class="p">):</span>
     <span class="bp">self</span><span class="p">.</span><span class="n">_capacity</span> <span class="o">=</span> <span class="n">capacity</span> <span class="c1"># 파이썬 리스트 수용 크기 저장
 </span>    <span class="bp">self</span><span class="p">.</span><span class="n">_table</span> <span class="o">=</span> <span class="p">[</span><span class="n">LinkedList</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">_capacity</span><span class="p">)]</span> <span class="c1"># 파이썬 리스트에 각 링크드 리스트 저장
-</span>      
+</span>
   <span class="k">def</span> <span class="nf">_hash_function</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
     <span class="s">"""
       주어진 key에 나누기 방법을 사용해서 해시된 값을 리턴하는 메소드
       주의: key는 파이썬 불변 타입이어야 한다.
     """</span>
     <span class="k">return</span> <span class="nb">hash</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="o">%</span> <span class="bp">self</span><span class="p">.</span><span class="n">_capacity</span>
-    
+
   <span class="k">def</span> <span class="nf">_get_linked_list_for_key</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
     <span class="s">"""주어진 key에 대응하는 인덱스에 저장된 링크드 리스트를 리턴하는 메소드"""</span>
     <span class="n">hashed_index</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">_hash_function</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">_table</span><span class="p">[</span><span class="n">hashed_index</span><span class="p">]</span>
-    
+
   <span class="k">def</span> <span class="nf">_look_up_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
     <span class="s">"""파라미터로 받은 key를 갖고 있는 노드를 리턴하는 메소드"""</span>
     <span class="n">linked_list</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">_get_linked_list_for_key</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">linked_list</span><span class="p">.</span><span class="n">find_node_with_key</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-    
+
   <span class="k">def</span> <span class="nf">look_up_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
     <span class="s">"""주어진 key에 해당하는 데이터를 리턴하는 메소드"""</span>
     <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">_look_up_node</span><span class="p">(</span><span class="n">key</span><span class="p">).</span><span class="n">value</span>
-    
+
   <span class="k">def</span> <span class="nf">insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
     <span class="s">"""
       새로운 key-value 쌍을 삽입시켜주는 메소드
@@ -1290,7 +1338,7 @@
       <span class="c1"># 없는 key면 링크드 리스트에 새롭게 삽입시켜준다.
 </span>      <span class="n">linked_list</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">_get_linked_list_for_key</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
       <span class="n">linked_list</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
-      
+
   <span class="k">def</span> <span class="nf">delete_by_key</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
     <span class="s">"""주어진 key에 해당하는 key-value 쌍을 삭제하는 메소드"""</span>
     <span class="n">node_to_delete</span> <span class="o">-</span> <span class="bp">self</span><span class="p">.</span><span class="n">_look_up_node</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>  <span class="c1"># 이미 저장된 key인지 확인한다.
@@ -1299,7 +1347,7 @@
 </span>    <span class="k">if</span> <span class="n">node_to_delete</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
       <span class="n">linked_list</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">_get_linked_list_for_key</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
       <span class="n">linked_list</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="n">node_to_delete</span><span class="p">)</span>
-      
+
   <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="s">"""해시 테이블 문자열 메소드"""</span>
     <span class="n">res_str</span> <span class="o">=</span> <span class="s">""</span>
@@ -1308,9 +1356,12 @@
       <span class="n">res_str</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="n">linked_list</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">res_str</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-</code></pre></div>    </div>
-  </li>
-  <li>Open Addressing
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>Open Addressing</p>
+
     <ul>
       <li>충돌이 발생했을 시 비어있는 다른 인덱스를 탐색</li>
       <li>탐색 방법
@@ -1322,7 +1373,9 @@
       <li>탐색: 해시 함수를 통해 반환된 값의 메모리 위치를 확인하고, 선형탐사, 제곱탐사 등의 방법으로 찾아가기</li>
       <li>삭제: 탐색 후 찾으면 제거, 이때 탐색을 위해 DELETED를 표시</li>
       <li>삽입, 탐색, 삭제 최악의 경우: 탐색 시 배열이 꽉 찼을 때 ⇒ $O(n)$</li>
-      <li>평균 시간 복잡도
+      <li>
+        <p>평균 시간 복잡도</p>
+
         <ul>
           <li>load factor: $\alpha = \cfrac{n}{m}$
             <ul>
@@ -1331,34 +1384,37 @@
               <li>$m$: 해시 테이블이 사용하는 배열의 크기</li>
             </ul>
           </li>
-          <li>Open addressing을 사용하는 해시 테이블에서 평균적으로 탐사를 해야 하는 횟수의 기댓값은 $\cfrac{1}{1-\alpha}$보다 작다.
+          <li>
+            <p>Open addressing을 사용하는 해시 테이블에서 평균적으로 탐사를 해야 하는 횟수의 기댓값은 $\cfrac{1}{1-\alpha}$보다 작다.</p>
+
             <ul>
               <li>$\alpha = 0.9$: 평균적으로 10개 이하로 탐색 가능</li>
-              <li>$\alpha = 0.5$: 평균적으로 2개 이하로 탐색 가능</li>
-            </ul>
-            <details>
+              <li>
+                <p>$\alpha = 0.5$: 평균적으로 2개 이하로 탐색 가능</p>
+
+                <details>
 <summary> 증명 </summary>
 <div style="background-color: #e9dcbe">
 
-                <p>$m$ 길이의 해시 테이블에서 현재 $n$개의 데이터 쌍이 들어가 있다고 하자. 빈 인덱스를 탐사할 때 $i$번 이상 탐사를 해야 할 확률을 $P_i$라고 하면, 즉 첫 번째 인덱스부터 $i-1$ 인덱스까지 임의로 확인했을 때 차있었을 확률은</p>
+                    <p>$m$ 길이의 해시 테이블에서 현재 $n$개의 데이터 쌍이 들어가 있다고 하자. 빈 인덱스를 탐사할 때 $i$번 이상 탐사를 해야 할 확률을 $P_i$라고 하면, 즉 첫 번째 인덱스부터 $i-1$ 인덱스까지 임의로 확인했을 때 차있었을 확률은</p>
 
-                <p>$
-  P_i = \cfrac{n}{m} \times \cfrac{n-1}{m-1} \times \cdots \times \cfrac{n-i+2}{m-i+2} &lt; {\left(\cfrac{n}{m}\right)}^{i-1} = {\alpha}^{i-1}
-  $</p>
+\[P_i = \cfrac{n}{m} \times \cfrac{n-1}{m-1} \times \cdots \times \cfrac{n-i+2}{m-i+2} &lt; {\left(\cfrac{n}{m}\right)}^{i-1} = {\alpha}^{i-1}\]
 
-                <p>따라서 빈 인덱스를 찾기 위해 탐색해야 할 횟수의 기댓값을 $E[X]$라 하면</p>
+                    <p>따라서 빈 인덱스를 찾기 위해 탐색해야 할 횟수의 기댓값을 $E[X]$라 하면</p>
 
-                <p>$\begin{align}
-  E[X] &amp;= \sum\limits_{i=1}^{\infty} i \times P{X=i} <br />
-  &amp;=\sum\limits_{i=0}^{\infty} i \left( P{X \geq i} - P{X \geq i + 1} \right) <br />
-  &amp;=\sum\limits_{i=1}^{\infty} P{X \geq i} <br />
-  &amp;=P_1 + P_2 + P_3 + \cdots <br />
-  &amp;&lt;1 + \alpha + {\alpha}^2 + \cdots <br />
-  &amp;&lt;\cfrac{1}{1-\alpha}
-  \end{align}$</p>
+\[\begin{aligned}
+E[X] &amp;= \sum\limits_{i=1}^{\infty} i \times P\{X=i\} \\
+&amp;=\sum\limits_{i=0}^{\infty} i \left( P\{X \geq i\} - P\{X \geq i + 1\} \right) \\
+&amp;=\sum\limits_{i=1}^{\infty} P\{X \geq i\} \\
+&amp;=P_1 + P_2 + P_3 + \cdots \\
+&amp;&lt;1 + \alpha + {\alpha}^2 + \cdots \\
+&amp;&lt;\cfrac{1}{1-\alpha}
+\end{aligned}\]
 
-              </div>
+                  </div>
 </details>
+              </li>
+            </ul>
           </li>
           <li>해시 테이블에서 항상 load factor가 0.9가 넘지 않게 약속하겠다고 약속 ⇒ 평균적으로 10개 이하로 탐색 가능 ⇒ $O(1)$</li>
         </ul>
@@ -1381,9 +1437,13 @@
       <li>추상 자료형: 자료 구조를 추상화한 것. 데이터를 저장/사용할 때 기능만 생각</li>
     </ul>
   </li>
-  <li>추상 자료형(Abstract Data Type)
+  <li>
+    <p>추상 자료형(Abstract Data Type)</p>
+
     <ul>
-      <li>e.g. 리스트
+      <li>
+        <p>e.g. 리스트</p>
+
         <ul>
           <li>데이터간 순서 관계를 유지할 수 있다.</li>
         </ul>
@@ -1415,9 +1475,13 @@
           </tbody>
         </table>
       </li>
-      <li>자료 구조와의 차이: 자료 구조는 구체적인 구현 방법을 보유
+      <li>
+        <p>자료 구조와의 차이: 자료 구조는 구체적인 구현 방법을 보유</p>
+
         <ul>
-          <li>e.g. 동적 배열
+          <li>
+            <p>e.g. 동적 배열</p>
+
             <ul>
               <li>데이터를 메모리에 순서대로 그리고 연속적으로 저장한다.</li>
             </ul>
@@ -1453,7 +1517,9 @@
           <li>자료 구조는 코드의 성능을 분석하거나 최적화할 때 생각</li>
         </ul>
       </li>
-      <li>기능만 생각할 수 있어 코드의 흐름에 집중할 수 있다.</li>
+      <li>
+        <p>기능만 생각할 수 있어 코드의 흐름에 집중할 수 있다.</p>
+      </li>
     </ul>
   </li>
 </ul>
@@ -1579,7 +1645,9 @@
     </ul>
   </li>
   <li>queue는 더블리 링크드 리스트가 유리</li>
-  <li>파이썬: <code class="language-plaintext highlighter-rouge">deque</code>
+  <li>
+    <p>파이썬: <code class="language-plaintext highlighter-rouge">deque</code></p>
+
     <ul>
       <li>Doubly-ended-queue의 약자</li>
       <li>맨 앞과 뒤에 데이터를 삽입하고 삭제할 수 있게 해주는 자료형</li>
@@ -1607,7 +1675,7 @@
 </span><span class="k">print</span><span class="p">(</span><span class="n">queue</span><span class="p">.</span><span class="n">popleft</span><span class="p">())</span>
 <span class="k">print</span><span class="p">(</span><span class="n">queue</span><span class="p">.</span><span class="n">popleft</span><span class="p">())</span>
 <span class="k">print</span><span class="p">(</span><span class="n">queue</span><span class="p">.</span><span class="n">popleft</span><span class="p">())</span>
-    
+
 <span class="k">print</span><span class="p">(</span><span class="n">queue</span><span class="p">)</span>  <span class="c1"># 큐 출력
 </span>
 <span class="c1"># queue에 데이터가 존재하는지 확인
@@ -1618,6 +1686,7 @@
 </ul>
 
 <h3 id="3-stack">3. <code class="language-plaintext highlighter-rouge">stack</code></h3>
+
 <ul>
   <li>데이터간 순서 관계를 유지할 수 있다.</li>
   <li>LIFO: Last-in-first-out
@@ -1678,7 +1747,7 @@
         <span class="n">stack</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span>
       <span class="k">else</span><span class="p">:</span>
         <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"문자열 </span><span class="si">{</span><span class="n">idx</span><span class="si">}</span><span class="s">번째 위치에 있는 닫는 괄호에 맞는 열리는 괄호가 없습니다."</span><span class="p">)</span>
-  
+
   <span class="k">while</span> <span class="n">stack</span><span class="p">:</span>
     <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"문자열 </span><span class="si">{</span><span class="n">stack</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span><span class="si">}</span><span class="s">번째 위치에 있는 괄호가 닫히지 않았습니다."</span><span class="p">)</span>
 
@@ -2033,7 +2102,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/coding/language/javascript/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B8%B0%EC%B4%88/" rel="permalink">JavaScript 기초
+        <a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A45/" rel="permalink">데이터 만들기
 </a>
       
     </h2>
@@ -2051,14 +2120,14 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          7 분 소요
+          1 분 소요
         
       </span>
     
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">자바스크립트 기초
+    <p class="archive__item-excerpt" itemprop="description">데이터를 만드는 방법
 </p>
   </article>
 </div>
@@ -2073,7 +2142,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/coding/computer%20science/data%20structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B03/" rel="permalink">그래프
+        <a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A44/" rel="permalink">데이터 퀄리티 높이기
 </a>
       
     </h2>
@@ -2091,14 +2160,14 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          7 분 소요
+          1 분 소요
         
       </span>
     
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">그래프란?
+    <p class="archive__item-excerpt" itemprop="description">좋은 데이터의 기준
 </p>
   </article>
 </div>
@@ -2113,7 +2182,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/coding/computer%20science/data%20structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B02/" rel="permalink">트리
+        <a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A43/" rel="permalink">데이터 분석과 시각화
 </a>
       
     </h2>
@@ -2131,14 +2200,14 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          8 분 소요
+          3 분 소요
         
       </span>
     
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">트리란?
+    <p class="archive__item-excerpt" itemprop="description">시각화와 그래프
 </p>
   </article>
 </div>
@@ -2153,7 +2222,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/coding/computer%20science/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%984/" rel="permalink">문제 해결 능력 기르기
+        <a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A42/" rel="permalink">DataFrame 다루기
 </a>
       
     </h2>
@@ -2171,15 +2240,15 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          9 분 소요
+          3 분 소요
         
       </span>
     
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">투자 귀재 규식이 II
-규식이는 친구들 사이에서 투자의 귀재로 알려져 있습니다. 페이수북과 인수타그램에 자신의 성과를 과시하기 때문인데요. 사실 규식이가 그 정도의 실력자는 아닙니다. 성과가 좋을 때에만 SNS에 공유해서 그렇게 비춰질 뿐이죠. 계속해서 멋진 모습을 보여주기 위해,...</p>
+    <p class="archive__item-excerpt" itemprop="description">DataFrame 인덱싱
+</p>
   </article>
 </div>
 

@@ -19,6 +19,10 @@ main:
 coding:
   - title: "모아보기"
     url: "categories/coding"
+  - title: "언어"
+    children:
+      - title: "자바스크립트 기초"
+        url: coding/language/javascript/자바스크립트-기초/
   - title: "알고리즘"
     children:
       - title: "좋은 알고리즘이란?"
@@ -37,7 +41,15 @@ coding:
         url: coding/computer science/data structure/자료구조2/
       - title: "그래프"
         url: coding/computer science/data structure/자료구조3/
-  - title: "자바스크립트"
+  - title: "데이터 사이언스"
     children:
-      - title: "자바스크립트 기초"
-        url: coding/language/javascript/자바스크립트-기초/
+      - title: "데이터 사이언스 기본"
+        url: coding/computer science/data science/데이터-사이언스1/
+      - title: "DataFrame 다루기"
+        url: coding/computer science/data science/데이터-사이언스2/
+      - title: "데이터 분석과 시각화"
+        url: coding/computer science/data science/데이터-사이언스3/
+      - title: "데이터 퀄리티 높이기"
+        url: coding/computer science/data science/데이터-사이언스4/
+      - title: "데이터 만들기"
+        url: coding/computer science/data science/데이터-사이언스5/

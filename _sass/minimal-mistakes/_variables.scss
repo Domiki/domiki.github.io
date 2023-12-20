@@ -9,13 +9,15 @@
 $doc-font-size: 16 !default;
 
 /* paragraph indention */
-$paragraph-indent: false !default; // true, false (default)
-$indent-var: 1.3em !default;
+$paragraph-indent: true !default; // true, false (default)
+$line-height: 1.6 !default;
+$indent-var: 0.5em !default;
+$unindent-var: 1em !default;
 
 /* system typefaces */
 $serif: Georgia, Times, serif !default;
-$sans-serif: "default font", -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
-  "Helvetica Neue", "Lucida Grande", Arial, sans-serif !default;
+$sans-serif: "default font", -apple-system, BlinkMacSystemFont, "Roboto",
+  "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif !default;
 $monospace: "coding font", Monaco, Consolas, "Lucida Console", monospace !default;
 
 /* sans serif typefaces */

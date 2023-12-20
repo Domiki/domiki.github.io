@@ -7,7 +7,7 @@
 -->
 <html lang="ko" class="no-js">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
 
 <!-- begin _includes/seo.html --><title>JavaScript 기초 - Domiki’s Computer Lecture Note</title>
 <meta name="description" content="자바스크립트 기초">
@@ -70,62 +70,65 @@
 
 
 <!-- end _includes/seo.html -->
-
-
-
-  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Domiki's Computer Lecture Note Feed">
+ 
+<link
+  href="/feed.xml"
+  type="application/atom+xml"
+  rel="alternate"
+  title="Domiki's Computer Lecture Note Feed"
+/>
 
 
 <!-- https://t.co/dKP3o1e -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <script>
-  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  document.documentElement.className =
+    document.documentElement.className.replace(/\bno-js\b/g, "") + " js ";
 </script>
 
 <!-- For all browsers -->
-<link rel="stylesheet" href="/assets/css/main.css">
-<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+<link rel="stylesheet" href="/assets/css/main.css" />
+<link
+  rel="preload"
+  href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"
+  as="style"
+  onload="this.onload=null;this.rel='stylesheet'"
+/>
+<noscript
+  ><link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"
+/></noscript>
 
 
 
 <!-- Mathjax Support -->
-<script type="text/javascript" async
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+<script
+  type="text/javascript"
+  async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"
+></script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
 </script>
+
     <!-- start custom head snippets -->
 
 <!-- insert favicons. use https://realfavicongenerator.net/ -->
 
 <!-- end custom head snippets -->
 
-
-    <!-- 22.08.21 GY for mathjax-->
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      TeX: {
-        equationNumbers: {
-          autoNumber: "AMS"
-        }
-      },
-      tex2jax: {
-        inlineMath: [ ['$', '$'] ],
-        displayMath: [ ['$$', '$$'] ],
-        processEscapes: true,
-      }
-    });
-    MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
-      alert("Math Processing Error: "+message[1]);
-    });
-    MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
-      alert("Math Processing Error: "+message[1]);
-    });
-    </script>
-    <script type="text/javascript" async
-      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-    </script>
-    
   </head>
 
   <body class="layout--single">
@@ -316,6 +319,20 @@
     
       <li>
         
+          <span class="nav__sub-title">언어</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/coding/language/javascript/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B8%B0%EC%B4%88/">자바스크립트 기초</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
           <span class="nav__sub-title">알고리즘</span>
         
 
@@ -354,13 +371,21 @@
     
       <li>
         
-          <span class="nav__sub-title">자바스크립트</span>
+          <span class="nav__sub-title">데이터 사이언스</span>
         
 
         
         <ul>
           
-            <li><a href="/coding/language/javascript/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B8%B0%EC%B4%88/">자바스크립트 기초</a></li>
+            <li><a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A41/">데이터 사이언스 기본</a></li>
+          
+            <li><a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A42/">DataFrame 다루기</a></li>
+          
+            <li><a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A43/">데이터 분석과 시각화</a></li>
+          
+            <li><a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A44/">데이터 퀄리티 높이기</a></li>
+          
+            <li><a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A45/">데이터 만들기</a></li>
           
         </ul>
         
@@ -432,13 +457,17 @@
 <h3 id="1-숫자형number"><strong>1. 숫자형(Number)</strong></h3>
 
 <ul>
-  <li>선언
+  <li>
+    <p>선언</p>
+
     <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 <span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="mf">1.5</span><span class="p">;</span>
 <span class="kd">let</span> <span class="nx">k</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span><span class="p">;</span>
 </code></pre></div>    </div>
   </li>
-  <li>연산
+  <li>
+    <p>연산</p>
+
     <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">8</span><span class="p">);</span> <span class="c1">// 9</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">6</span> <span class="o">-</span> <span class="mi">7</span><span class="p">);</span> <span class="c1">// -1</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// 4</span>
@@ -478,7 +507,9 @@
 <h3 id="2-문자열string"><strong>2. 문자열(String)</strong></h3>
 
 <ul>
-  <li>선언
+  <li>
+    <p>선언</p>
+
     <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">str1</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Hello World!</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// 큰따옴표</span>
 <span class="kd">let</span> <span class="nx">str2</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Hello World!</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// 작은따옴표</span>
 <span class="kd">let</span> <span class="nx">str3</span> <span class="o">=</span> <span class="s2">`Hello World!`</span><span class="p">;</span> <span class="c1">// 백틱(Backtick)</span>
@@ -526,32 +557,26 @@
     <p>특수 문자열</p>
 
     <table>
-      <thead>
-        <tr>
-          <th style="text-align: center"> </th>
-          <th style="text-align: center"> </th>
-        </tr>
-      </thead>
       <tbody>
         <tr>
-          <td style="text-align: center"><code class="language-plaintext highlighter-rouge">\n</code></td>
-          <td style="text-align: center">줄바꿈</td>
+          <td><code class="language-plaintext highlighter-rouge">\n</code></td>
+          <td>줄바꿈</td>
         </tr>
         <tr>
-          <td style="text-align: center"><code class="language-plaintext highlighter-rouge">\t</code></td>
-          <td style="text-align: center">탭</td>
+          <td><code class="language-plaintext highlighter-rouge">\t</code></td>
+          <td>탭</td>
         </tr>
         <tr>
-          <td style="text-align: center"><code class="language-plaintext highlighter-rouge">\'</code></td>
-          <td style="text-align: center">작은따옴표</td>
+          <td><code class="language-plaintext highlighter-rouge">\'</code></td>
+          <td>작은따옴표</td>
         </tr>
         <tr>
-          <td style="text-align: center"><code class="language-plaintext highlighter-rouge">\"</code></td>
-          <td style="text-align: center">큰따옴표</td>
+          <td><code class="language-plaintext highlighter-rouge">\"</code></td>
+          <td>큰따옴표</td>
         </tr>
         <tr>
-          <td style="text-align: center"><code class="language-plaintext highlighter-rouge">\\</code></td>
-          <td style="text-align: center">백슬래시</td>
+          <td><code class="language-plaintext highlighter-rouge">\\</code></td>
+          <td>백슬래시</td>
         </tr>
       </tbody>
     </table>
@@ -561,7 +586,9 @@
 <h3 id="3-불린형boolean"><strong>3. 불린형(Boolean)</strong></h3>
 
 <ul>
-  <li>선언
+  <li>
+    <p>선언</p>
+
     <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
 <span class="kd">let</span> <span class="nx">y</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
 </code></pre></div>    </div>
@@ -581,12 +608,14 @@
 </code></pre></div>    </div>
 
     <ul>
-      <li><code class="language-plaintext highlighter-rouge">==</code> 연산자는 자동으로 형 변환(type conversion)을 해준다.</li>
-    </ul>
+      <li>
+        <p><code class="language-plaintext highlighter-rouge">==</code> 연산자는 자동으로 형 변환(type conversion)을 해준다.</p>
 
-    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">3</span><span class="dl">"</span> <span class="o">==</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">// true</span>
+        <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">3</span><span class="dl">"</span> <span class="o">==</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">// true</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">3</span><span class="dl">"</span> <span class="o">===</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">// false</span>
-</code></pre></div>    </div>
+</code></pre></div>        </div>
+      </li>
+    </ul>
   </li>
   <li>
     <p>조합 연산자</p>
@@ -639,9 +668,12 @@
       </tbody>
     </table>
   </li>
-  <li>자료형 확인: <code class="language-plaintext highlighter-rouge">typeof</code>
+  <li>
+    <p>자료형 확인: <code class="language-plaintext highlighter-rouge">typeof</code></p>
+
     <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="mi">10</span><span class="p">);</span> <span class="c1">// number</span>
 </code></pre></div>    </div>
+
     <ul>
       <li><code class="language-plaintext highlighter-rouge">typeof</code>의 연산 순서는 사칙연산보다 높다.</li>
     </ul>
@@ -681,16 +713,18 @@
       </tbody>
     </table>
   </li>
-  <li><code class="language-plaintext highlighter-rouge">null</code>과 <code class="language-plaintext highlighter-rouge">undefined</code>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">null</code>과 <code class="language-plaintext highlighter-rouge">undefined</code></p>
+
     <ul>
       <li>값이 없다.</li>
       <li><code class="language-plaintext highlighter-rouge">null</code>: 의도적으로 포현할 때 사용하는 값. type은 <code class="language-plaintext highlighter-rouge">object</code></li>
-      <li><code class="language-plaintext highlighter-rouge">undefined</code>: 값이 없다는 것을 확인하는 값(변수 할당 X, 반환 없는 함수 등). type은 <code class="language-plaintext highlighter-rouge">undefined</code>
-        <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">null</span> <span class="o">==</span> <span class="kc">undefined</span><span class="p">);</span> <span class="c1">// true</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">null</span> <span class="o">===</span> <span class="kc">undefined</span><span class="p">);</span> <span class="c1">// false</span>
-</code></pre></div>        </div>
-      </li>
+      <li><code class="language-plaintext highlighter-rouge">undefined</code>: 값이 없다는 것을 확인하는 값(변수 할당 X, 반환 없는 함수 등). type은 <code class="language-plaintext highlighter-rouge">undefined</code></li>
     </ul>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">null</span> <span class="o">==</span> <span class="kc">undefined</span><span class="p">);</span> <span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">null</span> <span class="o">===</span> <span class="kc">undefined</span><span class="p">);</span> <span class="c1">// false</span>
+</code></pre></div>    </div>
   </li>
 </ul>
 
@@ -955,13 +989,18 @@
 </ul>
 
 <h3 id="숫자형-문자열-메소드">숫자형, 문자열 메소드</h3>
+
 <ul>
   <li>자바스크립트는 객체가 아닌 다른 자료형도 객체처럼 구현이 되어있다. 따라서 숫자형 및 문자형 등에도 다양한 프로퍼티 및 메소드가 존재한다.</li>
-  <li><strong>숫자형 메소드</strong>
+  <li>
+    <p><strong>숫자형 메소드</strong></p>
+
     <ul>
-      <li><code class="language-plaintext highlighter-rouge">.toFixed()</code>: 소수의 소숫점 아래 자릿수를 고정해준다.
+      <li>
+        <p><code class="language-plaintext highlighter-rouge">.toFixed()</code>: 소수의 소숫점 아래 자릿수를 고정해준다.</p>
+
         <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* 숫자에 바로 사용 */</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mf">0.3</span><span class="p">.</span><span class="nx">toFixed</span><span class="p">(</span><span class="mi">2</span><span class="p">));</span> <span class="c1">// 0.30</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">((</span><span class="mf">0.3</span><span class="p">).</span><span class="nx">toFixed</span><span class="p">(</span><span class="mi">2</span><span class="p">));</span> <span class="c1">// 0.30</span>
 
 <span class="cm">/* 숫자형 변수에 사용 */</span>
 <span class="kd">let</span> <span class="nx">num</span> <span class="o">=</span> <span class="mf">0.3591</span><span class="p">;</span>
@@ -984,6 +1023,7 @@
 </ul>
 
 <h3 id="const"><code class="language-plaintext highlighter-rouge">const</code></h3>
+
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">PI</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span> <span class="c1">// 상수는 이름을 대문자로 쓰는 것이 권장된다.</span>
 
 <span class="cm">/*
@@ -991,24 +1031,19 @@
  * 그러나 상수 내부의 요소를 바꾸는 것은 오류가 발생하지 않는다.
  * 따라서, 변수나 객체를 선언할 때는 계속 할당된 값을 바꾸는 상황이 아니라면 대체로 const를 선언한다.
  */</span>
-<span class="kd">const</span> <span class="nx">list</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="dl">'</span><span class="s1">element0</span><span class="dl">'</span><span class="p">,</span>
-  <span class="dl">'</span><span class="s1">element1</span><span class="dl">'</span><span class="p">,</span>
-  <span class="dl">'</span><span class="s1">element2</span><span class="dl">'</span><span class="p">,</span>
-<span class="p">];</span>
+<span class="kd">const</span> <span class="nx">list</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">element0</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">element1</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">element2</span><span class="dl">"</span><span class="p">];</span>
 
-<span class="nx">list</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">newElement2</span><span class="dl">'</span> <span class="c1">// 에러 X</span>
+<span class="nx">list</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">newElement2</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// 에러 X</span>
 
-<span class="nx">list</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="dl">'</span><span class="s1">newElement0</span><span class="dl">'</span><span class="p">,</span>
-  <span class="dl">'</span><span class="s1">newElement1</span><span class="dl">'</span><span class="p">,</span>
-  <span class="dl">'</span><span class="s1">newElement2</span><span class="dl">'</span><span class="p">,</span>
-<span class="p">];</span> <span class="c1">// 에러 O</span>
+<span class="nx">list</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">newElement0</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">newElement1</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">newElement2</span><span class="dl">"</span><span class="p">];</span> <span class="c1">// 에러 O</span>
 </code></pre></div></div>
 
 <h3 id="math-date-내장-객체"><code class="language-plaintext highlighter-rouge">Math</code>, <code class="language-plaintext highlighter-rouge">Date</code> 내장 객체</h3>
+
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">Math</code>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Math</code></p>
+
     <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* PI 프로퍼티 */</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="p">);</span> <span class="c1">// 3.141592653598793</span>
 
@@ -1019,16 +1054,18 @@
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">));</span> <span class="c1">// 2</span>
 </code></pre></div>    </div>
   </li>
-  <li><code class="language-plaintext highlighter-rouge">Date</code>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Date</code></p>
+
     <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* 현재 날짜 생성 */</span>
-<span class="kd">const</span> <span class="nx">date</span><span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">date</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">date</span><span class="p">);</span>
 
 <span class="cm">/* 특정 날짜 생성 */</span>
-<span class="kd">const</span> <span class="nx">date1</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="dl">'</span><span class="s1">2023-07-07</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">date1</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="dl">"</span><span class="s2">2023-07-07</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="cm">/* 문자열로 날짜 생성 YYYY-MM-DDThh:mm:ss */</span>
-<span class="kd">const</span> <span class="nx">date2</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="dl">'</span><span class="s1">2023-07-07T10:05:00</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">date2</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="dl">"</span><span class="s2">2023-07-07T10:05:00</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="cm">/* 숫자로 날짜 생성 new Date(year, month, date)
   주의: month는 월의 인덱스라서 1월은 0, 2월은 1, ..., 12월은 11이다. */</span>
@@ -1037,7 +1074,6 @@
 <span class="cm">/* 숫자로 날짜 생성 new Date(year, month, date, hours, minutes, seconds)
   주의: month는 월의 인덱스라서 1월은 0, 2월은 1, ..., 12월은 11이다. */</span>
 <span class="kd">const</span> <span class="nx">date4</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">05</span><span class="p">,</span> <span class="mi">00</span><span class="p">);</span>
-
 
 <span class="cm">/* 날짜 포매팅 */</span>
 <span class="kd">const</span> <span class="nx">date</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">05</span><span class="p">,</span> <span class="mi">00</span><span class="p">);</span>
@@ -1057,10 +1093,10 @@
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">timeDifference</span><span class="p">);</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">timeDifference</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> 밀리초</span><span class="dl">'</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">timeDifference</span><span class="o">/</span><span class="mi">1000</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> 초</span><span class="dl">'</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">timeDifference</span><span class="o">/</span><span class="mi">1000</span><span class="o">/</span><span class="mi">60</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> 분</span><span class="dl">'</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">timeDifference</span><span class="o">/</span><span class="mi">1000</span><span class="o">/</span><span class="mi">60</span><span class="o">/</span><span class="mi">60</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> 시간</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">timeDifference</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> 밀리초</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">timeDifference</span> <span class="o">/</span> <span class="mi">1000</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> 초</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">timeDifference</span> <span class="o">/</span> <span class="mi">1000</span> <span class="o">/</span> <span class="mi">60</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> 분</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">timeDifference</span> <span class="o">/</span> <span class="mi">1000</span> <span class="o">/</span> <span class="mi">60</span> <span class="o">/</span> <span class="mi">60</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> 시간</span><span class="dl">"</span><span class="p">);</span>
 </code></pre></div>    </div>
   </li>
 </ul>
@@ -1118,7 +1154,8 @@
 ">이전</a>
     
     
-      <a href="#" class="pagination--pager disabled">다음</a>
+      <a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A41/" class="pagination--pager" title="데이터 사이언스 기본
+">다음</a>
     
   </nav>
 
@@ -1142,7 +1179,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/coding/computer%20science/data%20structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B03/" rel="permalink">그래프
+        <a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A45/" rel="permalink">데이터 만들기
 </a>
       
     </h2>
@@ -1160,14 +1197,14 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          6 분 소요
+          1 분 소요
         
       </span>
     
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">그래프란?
+    <p class="archive__item-excerpt" itemprop="description">데이터를 만드는 방법
 </p>
   </article>
 </div>
@@ -1182,7 +1219,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/coding/computer%20science/data%20structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B02/" rel="permalink">트리
+        <a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A44/" rel="permalink">데이터 퀄리티 높이기
 </a>
       
     </h2>
@@ -1200,14 +1237,14 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          10 분 소요
+          1 분 소요
         
       </span>
     
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">트리란?
+    <p class="archive__item-excerpt" itemprop="description">좋은 데이터의 기준
 </p>
   </article>
 </div>
@@ -1222,7 +1259,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/coding/computer%20science/data%20structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B01/" rel="permalink">기본 자료 구조들
+        <a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A43/" rel="permalink">데이터 분석과 시각화
 </a>
       
     </h2>
@@ -1240,14 +1277,14 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          18 분 소요
+          3 분 소요
         
       </span>
     
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">자료 구조란?
+    <p class="archive__item-excerpt" itemprop="description">시각화와 그래프
 </p>
   </article>
 </div>
@@ -1262,7 +1299,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/coding/computer%20science/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%984/" rel="permalink">문제 해결 능력 기르기
+        <a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A42/" rel="permalink">DataFrame 다루기
 </a>
       
     </h2>
@@ -1280,15 +1317,15 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          9 분 소요
+          3 분 소요
         
       </span>
     
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">투자 귀재 규식이 II
-규식이는 친구들 사이에서 투자의 귀재로 알려져 있습니다. 페이수북과 인수타그램에 자신의 성과를 과시하기 때문인데요. 사실 규식이가 그 정도의 실력자는 아닙니다. 성과가 좋을 때에만 SNS에 공유해서 그렇게 비춰질 뿐이죠. 계속해서 멋진 모습을 보여주기 위해,...</p>
+    <p class="archive__item-excerpt" itemprop="description">DataFrame 인덱싱
+</p>
   </article>
 </div>
 

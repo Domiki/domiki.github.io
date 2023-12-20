@@ -7,7 +7,7 @@
 -->
 <html lang="ko" class="no-js">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
 
 <!-- begin _includes/seo.html --><title>알고리즘 패러다임 - Domiki’s Computer Lecture Note</title>
 <meta name="description" content="Brute Force">
@@ -70,62 +70,65 @@
 
 
 <!-- end _includes/seo.html -->
-
-
-
-  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Domiki's Computer Lecture Note Feed">
+ 
+<link
+  href="/feed.xml"
+  type="application/atom+xml"
+  rel="alternate"
+  title="Domiki's Computer Lecture Note Feed"
+/>
 
 
 <!-- https://t.co/dKP3o1e -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <script>
-  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  document.documentElement.className =
+    document.documentElement.className.replace(/\bno-js\b/g, "") + " js ";
 </script>
 
 <!-- For all browsers -->
-<link rel="stylesheet" href="/assets/css/main.css">
-<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+<link rel="stylesheet" href="/assets/css/main.css" />
+<link
+  rel="preload"
+  href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"
+  as="style"
+  onload="this.onload=null;this.rel='stylesheet'"
+/>
+<noscript
+  ><link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"
+/></noscript>
 
 
 
 <!-- Mathjax Support -->
-<script type="text/javascript" async
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+<script
+  type="text/javascript"
+  async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"
+></script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
 </script>
+
     <!-- start custom head snippets -->
 
 <!-- insert favicons. use https://realfavicongenerator.net/ -->
 
 <!-- end custom head snippets -->
 
-
-    <!-- 22.08.21 GY for mathjax-->
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      TeX: {
-        equationNumbers: {
-          autoNumber: "AMS"
-        }
-      },
-      tex2jax: {
-        inlineMath: [ ['$', '$'] ],
-        displayMath: [ ['$$', '$$'] ],
-        processEscapes: true,
-      }
-    });
-    MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
-      alert("Math Processing Error: "+message[1]);
-    });
-    MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
-      alert("Math Processing Error: "+message[1]);
-    });
-    </script>
-    <script type="text/javascript" async
-      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-    </script>
-    
   </head>
 
   <body class="layout--single">
@@ -316,6 +319,20 @@
     
       <li>
         
+          <span class="nav__sub-title">언어</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/coding/language/javascript/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B8%B0%EC%B4%88/">자바스크립트 기초</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
           <span class="nav__sub-title">알고리즘</span>
         
 
@@ -354,13 +371,21 @@
     
       <li>
         
-          <span class="nav__sub-title">자바스크립트</span>
+          <span class="nav__sub-title">데이터 사이언스</span>
         
 
         
         <ul>
           
-            <li><a href="/coding/language/javascript/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B8%B0%EC%B4%88/">자바스크립트 기초</a></li>
+            <li><a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A41/">데이터 사이언스 기본</a></li>
+          
+            <li><a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A42/">DataFrame 다루기</a></li>
+          
+            <li><a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A43/">데이터 분석과 시각화</a></li>
+          
+            <li><a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A44/">데이터 퀄리티 높이기</a></li>
+          
+            <li><a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A45/">데이터 만들기</a></li>
           
         </ul>
         
@@ -439,6 +464,7 @@
 <h2 id="divide-and-conquer">Divide and Conquer</h2>
 
 <h3 id="divide-and-conquer분할-정복">Divide and Conquer(분할 정복)</h3>
+
 <ol>
   <li>Divide</li>
   <li>Conquer → Divide, Conquer, Combine …</li>
@@ -446,6 +472,7 @@
 </ol>
 
 <h3 id="merge-sort합병-정렬">Merge Sort(합병 정렬)</h3>
+
 <ol>
   <li>Divide: 리스트를 반으로 나눈다.</li>
   <li>Conquer: 왼쪽 리스트와 오른쪽 리스트를 각각 정렬한다.</li>
@@ -465,7 +492,7 @@
     <span class="k">else</span><span class="p">:</span>
       <span class="n">merged_list</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">list1</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
       <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
-  
+
   <span class="k">return</span> <span class="n">merged_list</span> <span class="o">+</span> <span class="n">list1</span><span class="p">[</span><span class="n">i</span><span class="p">:]</span> <span class="o">+</span> <span class="n">list2</span><span class="p">[</span><span class="n">j</span><span class="p">:]</span>
 
 <span class="k">def</span> <span class="nf">merge_sort</span><span class="p">(</span><span class="n">my_list</span><span class="p">):</span>
@@ -479,9 +506,12 @@
 </code></pre></div></div>
 
 <h3 id="quick-sort퀵-정렬">Quick Sort(퀵 정렬)</h3>
+
 <ul>
   <li>pivot 기준으로 작은 값은 좌측, 큰 값은 우측으로 정렬</li>
-  <li>partition: 그룹 4개로 분류.
+  <li>
+    <p>partition: 그룹 4개로 분류.</p>
+
     <ol>
       <li>Pivot: 기준점</li>
       <li>Small: Pivot보다 작음</li>
@@ -503,10 +533,10 @@
 <span class="k">def</span> <span class="nf">quicksort</span><span class="p">(</span><span class="n">my_list</span><span class="p">,</span> <span class="n">start</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="bp">None</span><span class="p">):</span>
   <span class="k">if</span> <span class="n">end</span> <span class="o">==</span> <span class="bp">None</span><span class="p">:</span>
     <span class="n">end</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
-  
+
   <span class="k">if</span> <span class="n">start</span> <span class="o">&gt;=</span> <span class="n">end</span><span class="p">:</span>
     <span class="k">return</span> <span class="n">my_list</span>
-  
+
   <span class="n">mid</span> <span class="o">=</span> <span class="n">partition</span><span class="p">(</span><span class="n">my_list</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
   <span class="n">quicksort</span><span class="p">(</span><span class="n">my_list</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
   <span class="n">quicksort</span><span class="p">(</span><span class="n">my_list</span><span class="p">,</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
@@ -528,6 +558,7 @@
 <h2 id="dynamic-programming">Dynamic Programming</h2>
 
 <h3 id="dynamic-programming-1">Dynamic Programming</h3>
+
 <ul>
   <li>Dynamic Programming의 조건
     <ol>
@@ -549,6 +580,7 @@
 </ul>
 
 <h3 id="1-memoization">1. Memoization</h3>
+
 <ul>
   <li>중복되는 계산은 한 번만 계산 후 메모</li>
   <li>하향식 접근(Top-down Approach)</li>
@@ -570,6 +602,7 @@
 </code></pre></div></div>
 
 <h3 id="2-tabulation">2. Tabulation</h3>
+
 <ul>
   <li>Table 방식으로 정리</li>
   <li>상향식 접근(Bottom-up Approach)</li>
@@ -586,8 +619,10 @@
 </code></pre></div></div>
 
 <h3 id="cf-fib_optimization">c.f. fib_optimization</h3>
-<p>위의 두 방식은 시간 복잡도 $O(n)$, 공간 복잡도 $O(n)$ <br />
-but, 이전 값과 현재 값만 저장하면 공간 최적화($O(1)$), 모든 계산값을 저장할 필요가 없다면 공간 사용을 최적화!</p>
+
+<ul>
+  <li>위의 두 방식은 시간 복잡도 $O(n)$, 공간 복잡도 $O(n)$. But, 이전 값과 현재 값만 저장하면 공간 최적화($O(1)$), 모든 계산값을 저장할 필요가 없다면 공간 사용을 최적화!</li>
+</ul>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">fib_optimized</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
   <span class="n">previous</span> <span class="o">=</span> <span class="mi">0</span>
@@ -595,7 +630,7 @@ but, 이전 값과 현재 값만 저장하면 공간 최적화($O(1)$), 모든 �
 
   <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
     <span class="n">current</span><span class="p">,</span> <span class="n">previous</span> <span class="o">=</span> <span class="n">current</span> <span class="o">+</span> <span class="n">previous</span><span class="p">,</span> <span class="n">current</span>
-  
+
   <span class="k">return</span> <span class="n">current</span>
 </code></pre></div></div>
 
@@ -717,7 +752,7 @@ but, 이전 값과 현재 값만 저장하면 공간 최적화($O(1)$), 모든 �
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/coding/language/javascript/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B8%B0%EC%B4%88/" rel="permalink">JavaScript 기초
+        <a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A45/" rel="permalink">데이터 만들기
 </a>
       
     </h2>
@@ -735,14 +770,14 @@ but, 이전 값과 현재 값만 저장하면 공간 최적화($O(1)$), 모든 �
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          7 분 소요
+          1 분 소요
         
       </span>
     
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">자바스크립트 기초
+    <p class="archive__item-excerpt" itemprop="description">데이터를 만드는 방법
 </p>
   </article>
 </div>
@@ -757,7 +792,7 @@ but, 이전 값과 현재 값만 저장하면 공간 최적화($O(1)$), 모든 �
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/coding/computer%20science/data%20structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B03/" rel="permalink">그래프
+        <a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A44/" rel="permalink">데이터 퀄리티 높이기
 </a>
       
     </h2>
@@ -775,14 +810,14 @@ but, 이전 값과 현재 값만 저장하면 공간 최적화($O(1)$), 모든 �
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          7 분 소요
+          1 분 소요
         
       </span>
     
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">그래프란?
+    <p class="archive__item-excerpt" itemprop="description">좋은 데이터의 기준
 </p>
   </article>
 </div>
@@ -797,7 +832,7 @@ but, 이전 값과 현재 값만 저장하면 공간 최적화($O(1)$), 모든 �
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/coding/computer%20science/data%20structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B02/" rel="permalink">트리
+        <a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A43/" rel="permalink">데이터 분석과 시각화
 </a>
       
     </h2>
@@ -815,14 +850,14 @@ but, 이전 값과 현재 값만 저장하면 공간 최적화($O(1)$), 모든 �
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          8 분 소요
+          3 분 소요
         
       </span>
     
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">트리란?
+    <p class="archive__item-excerpt" itemprop="description">시각화와 그래프
 </p>
   </article>
 </div>
@@ -837,7 +872,7 @@ but, 이전 값과 현재 값만 저장하면 공간 최적화($O(1)$), 모든 �
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/coding/computer%20science/data%20structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B01/" rel="permalink">기본 자료 구조들
+        <a href="/coding/computer%20science/data%20science/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A42/" rel="permalink">DataFrame 다루기
 </a>
       
     </h2>
@@ -855,14 +890,14 @@ but, 이전 값과 현재 값만 저장하면 공간 최적화($O(1)$), 모든 �
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          18 분 소요
+          3 분 소요
         
       </span>
     
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">자료 구조란?
+    <p class="archive__item-excerpt" itemprop="description">DataFrame 인덱싱
 </p>
   </article>
 </div>
